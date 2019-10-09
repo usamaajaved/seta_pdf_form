@@ -125,7 +125,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="dob" value="1 January, 1960">
+                <input type="text" class="form-control pickadate-accessibility" name="dob" placeholder="Date of Birth" >
             </div>
         </div>
         <div class="form-group col-lg-4">
