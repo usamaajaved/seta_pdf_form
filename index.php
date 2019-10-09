@@ -103,7 +103,7 @@
                                     <h6>Personal Information</h6>
                                     <fieldset>
                                         <div class="row mt-10">
-                                            <?php require'client_information_form/biographic_info.php';?>
+                                            <?php require'client_information_form/personal_info.php';?>
                                         </div>
                                     </fieldset>
                                     <h6>Address Information</h6>
