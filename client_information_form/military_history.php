@@ -1,39 +1,41 @@
+<!-- edited -->
+
 <?php 
 $query = "SELECT * from countries";
 $result = mysqli_query($con_str,$query);
 ?>
 <div class="col-md-12">
-	<div class="row">
+    <div class="row">
         <div class="form-group mb-3 mb-md-2 col-lg-12 text-center">
             <label class="mb-17 mr-2p">Have you ever been a member of the Canadian Forces?</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="No" id="no_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="Choice1" id="no_member">
                 <label class="custom-control-label" for="no_member"> No</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Former Member" id="former_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="Choice2" id="former_member">
                 <label class="custom-control-label" for="former_member"> Yes - Former</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Current Member" id="current_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="Choice3" id="current_member">
                 <label class="custom-control-label" for="current_member"> Yes - Current</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Reserve Member" id="reserve_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="Choice4" id="reserve_member">
                 <label class="custom-control-label" for="reserve_member"> Yes - Former or Current Reserve Member</label>
             </div>
         </div>
-	</div>
-	<div class="row">
+    </div>
+    <div class="row">
         <div class="form-group mb-3 mb-md-2 col-lg-4">
             <label class="d-block mb-17">If yes, indicate your Unit’s Level of Service:</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="Regular Forces" id="regular_force">
+                <input type="radio" class="custom-control-input" name="force" value="regular" id="regular_force">
                 <label class="custom-control-label" for="regular_force"> Regular Forces</label>
             </div>
 
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="Reserved Forces" id="reserved_force">
+                <input type="radio" class="custom-control-input" name="force" value="reserve" id="reserved_force">
                 <label class="custom-control-label" for="reserved_force"> Reserved Forces</label>
             </div>
         </div>
@@ -69,7 +71,7 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row">
-    	<div class="form-group col-lg-6">
+        <div class="form-group col-lg-6">
             <label>Military / Service ID Number:</label>
             <input type="text" class="form-control" name="service_num" placeholder="Service ID Number">
         </div>
@@ -84,7 +86,7 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row">
-    	<div class="form-group col-lg-6">
+        <div class="form-group col-lg-6">
             <label>From (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
