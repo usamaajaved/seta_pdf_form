@@ -1,3 +1,5 @@
+<!-- edited -->
+
 <?php 
 $query = "SELECT * from countries";
 $result = mysqli_query($con_str, $query);
@@ -247,7 +249,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <input type="text" class="form-control" name="father_first_name" placeholder="First Name">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="mother_famliy_name" placeholder="First Name">
+            <input type="text" class="form-control" name="mother_first_name" placeholder="First Name">
         </div>
     </div>
     <div class="row">
@@ -287,7 +289,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Country of Birth:</label>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control select" name="father_birth_country" data-fouc name="country">
+            <select data-placeholder="Select Country" class="form-control select" name="father_birth_country" data-fouc >
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($father_birth_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>">
@@ -298,7 +300,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             </select>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control select" name="mother_birth_country" data-fouc name="country">
+            <select data-placeholder="Select Country" class="form-control select" name="mother_birth_country" data-fouc >
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($mother_birth_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>">
@@ -325,7 +327,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Country of Residence:</label>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control select" name="father_residence_country" data-fouc name="country">
+            <select data-placeholder="Select Country" class="form-control select" data-fouc name="father_residence_country">
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($father_residence_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>">
@@ -336,7 +338,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             </select>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control select" name="mother_residence_country" data-fouc name="country">
+            <select data-placeholder="Select Country" class="form-control select" name="mother_residence_country" data-fouc >
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($mother_residence_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>">
@@ -394,7 +396,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="f_dob" value="">
+                <input type="text" class="form-control daterange-single" name="c_dob" value="">
             </div>
         </div>
         <div class="form-group col-lg-5">
@@ -402,7 +404,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="m_dob" value="">
+                <input type="text" class="form-control daterange-single" name="f_dob" value="">
             </div>
         </div>
     </div>
@@ -444,7 +446,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             </select>
         </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
         <div class="form-group col-lg-2 pt-10">
             <label>City of Residence:</label>
         </div>
@@ -481,7 +483,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
 
             </select>
         </div>
-    </div>
+    </div> -->
     <div class="row">
         <div class="form-group col-lg-2 pt-10">
             <label>City or Town of Marriage:</label>
@@ -540,7 +542,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="m_dob" value="">
+                <input type="text" class="form-control daterange-single" name="t_m_dob" value="">
             </div>
         </div>
     </div>
@@ -549,7 +551,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Place of Termination of Marriage (MM/DD/YYYY):</label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="former_spouse_marriage_country" placeholder="Place">
+            <input type="text" class="form-control" name="terminate_marriage" placeholder="Place">
         </div>
     </div>
 </div>
