@@ -1,4 +1,5 @@
 <?php include 'header.php'; ?>
+<?php //print_r(base_url); exit;?>
 
 <div class="page-content">
 
@@ -40,7 +41,7 @@
 						</div>
 
 						<div class="form-group">
-							<a href="http://localhost/seta_pdf_form/register.php" class="btn btn-light btn-block">Sign up</a>
+							<a href="<?php echo base_url;?>register.php" class="btn btn-light btn-block">Sign up</a>
 						</div>
 					</div>
 				</div>
