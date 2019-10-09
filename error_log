@@ -1,0 +1,14 @@
+[01-Oct-2019 12:56:39 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[01-Oct-2019 12:56:53 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:37:49 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:40:00 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:41:34 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:41:51 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:41:54 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:42:32 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 20480 bytes) in /home/vpapps/public_html/seta_pdf_form/library/SetaPDF/Core/Type/AbstractType.php on line 167
+[02-Oct-2019 12:54:06 UTC] PHP Warning:  is_file() expects parameter 1 to be a valid path, object given in /home/vpapps/public_html/seta_pdf_form/seta_pdf.php on line 103
+[02-Oct-2019 12:56:24 UTC] PHP Warning:  is_file() expects parameter 1 to be a valid path, object given in /home/vpapps/public_html/seta_pdf_form/seta_pdf.php on line 103
+[02-Oct-2019 12:58:03 UTC] PHP Warning:  is_file() expects parameter 1 to be a valid path, object given in /home/vpapps/public_html/seta_pdf_form/seta_pdf.php on line 103
+[02-Oct-2019 13:49:07 UTC] PHP Parse error:  syntax error, unexpected 'text' (T_STRING) in /home/vpapps/public_html/seta_pdf_form/seta_pdf.php on line 123
+[02-Oct-2019 13:49:46 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/vpapps/public_html/seta_pdf_form/seta_pdf.php:123) in /home/vpapps/public_html/seta_pdf_form/seta_pdf.php on line 124
+[03-Oct-2019 11:07:54 UTC] PHP Warning:  unlink(testing.pdf): No such file or directory in /home/vpapps/public_html/seta_pdf_form/seta_pdf.php on line 121
