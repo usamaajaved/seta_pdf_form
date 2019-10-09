@@ -1,8 +1,14 @@
 <?php
 require_once('library/SetaPDF/Autoload.php');
+include("config/config.php");
+
+//   Insert Form Data into DB
+$form_data = json_encode($_POST);
+$query = "insert into pdf_form (form_data) VALUES ('".$form_data."')";
+$res = mysqli_query($con_str, $query);
 
 
-
+// Generate PDF
 $file = 'CIF_new.pdf';
 
 // create a reader
@@ -142,77 +148,77 @@ $fields['PrevAdT2Y']->setValue($prev_to_date_year1);
 // save it
 $document->save()->finish();
 // copy it over
-$saved_file = copy($tempWriter->getPath(), $_POST['fname'].".pdf");
-$to = 'usama-javed@hotmail.com'
+copy($tempWriter->getPath(), $_POST['fname'].".pdf");
+// $to = 'usama-javed@hotmail.com'
 
-//sender
-$from = 'sender@example.com';
-$fromName = 'Seta PDF';
+// //sender
+// $from = 'sender@example.com';
+// $fromName = 'Seta PDF';
 
-//email subject
-$subject = 'PHP Email with Attachment by Seta PDF'; 
+// //email subject
+// $subject = 'PHP Email with Attachment by Seta PDF'; 
 
-//attachment file path
-$file = $_POST['fname'].".pdf";
+// //attachment file path
+// $file = $_POST['fname'].".pdf";
 
-//email body content
-$htmlContent = '<h1>PHP Email with Attachment by Seta PDF</h1>
-    <p>This email has sent from PHP script with attachment.</p>';
+// //email body content
+// $htmlContent = '<h1>PHP Email with Attachment by Seta PDF</h1>
+//     <p>This email has sent from PHP script with attachment.</p>';
 
-//header for sender info
-$headers = "From: $fromName"." <".$from.">";
+// //header for sender info
+// $headers = "From: $fromName"." <".$from.">";
 
-//boundary 
-$semi_rand = md5(time()); 
-$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
+// //boundary 
+// $semi_rand = md5(time()); 
+// $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
 
-//headers for attachment 
-$headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\""; 
+// //headers for attachment 
+// $headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\""; 
 
-//multipart boundary 
-$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" .
-"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n"; 
+// //multipart boundary 
+// $message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" .
+// "Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n"; 
 
-//preparing attachment
-if(!empty($file) > 0){
-    if(is_file($file)){
-        $message .= "--{$mime_boundary}\n";
-        $fp =    @fopen($file,"rb");
-        $data =  @fread($fp,filesize($file));
+// //preparing attachment
+// if(!empty($file) > 0){
+//     if(is_file($file)){
+//         $message .= "--{$mime_boundary}\n";
+//         $fp =    @fopen($file,"rb");
+//         $data =  @fread($fp,filesize($file));
 
-        @fclose($fp);
-        $data = chunk_split(base64_encode($data));
-        $message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
-        "Content-Description: ".basename($file)."\n" .
-        "Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" . 
-        "Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
-    }
-}
-$message .= "--{$mime_boundary}--";
-$returnpath = "-f" . $from;
+//         @fclose($fp);
+//         $data = chunk_split(base64_encode($data));
+//         $message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
+//         "Content-Description: ".basename($file)."\n" .
+//         "Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" . 
+//         "Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
+//     }
+// }
+// $message .= "--{$mime_boundary}--";
+// $returnpath = "-f" . $from;
 
-//send email
-$mail = @mail($, $subject, $message, $headers, $returnpath);
+// //send email
+// $mail = @mail($, $subject, $message, $headers, $returnpath);
 
-$TY_subject = 'Thank You for reaching us!'
-$TY_to = $_POST['email'];
-$TY_messages = '<h1>Thank You for submitting the form. We will respond to you quickly.</h1>';
-$TY_headers = "From: $fromName"." <".$from.">";
-
-
+// $TY_subject = 'Thank You for reaching us!'
+// $TY_to = $_POST['email'];
+// $TY_messages = '<h1>Thank You for submitting the form. We will respond to you quickly.</h1>';
+// $TY_headers = "From: $fromName"." <".$from.">";
 
 
-unlink($_POST['fname'].".pdf");
 
-$TY_subject = 'Thank You for reaching us!'
-$TY_to = $_POST['email'];
 
-$thankyou_email = @mail($to, $TY_subject, $TY_messages, $TY_headers);
+// unlink($_POST['fname'].".pdf");
 
-//email sending status
-echo $mail?"<h1 style='text-align: center;margin-top: 18%;'>Mail sent to your mail address.</h1>":"<h1>Mail sending failed.</h1>";
-echo "<SCRIPT type='text/javascript'>
-        setTimeout(function(){ window.location.replace('index.php'); }, 2000);
-    </SCRIPT>";
-//echo $mail?"<h1 class='text-center'>Mail sent.</h1>":"<h1>Mail sending failed.</h1>";
-//header('Location: index.php');
+// $TY_subject = 'Thank You for reaching us!'
+// $TY_to = $_POST['email'];
+
+// $thankyou_email = @mail($to, $TY_subject, $TY_messages, $TY_headers);
+
+// //email sending status
+// echo $mail?"<h1 style='text-align: center;margin-top: 18%;'>Mail sent to your mail address.</h1>":"<h1>Mail sending failed.</h1>";
+// echo "<SCRIPT type='text/javascript'>
+//         setTimeout(function(){ window.location.replace('index.php'); }, 2000);
+//     </SCRIPT>";
+// //echo $mail?"<h1 class='text-center'>Mail sent.</h1>":"<h1>Mail sending failed.</h1>";
+// //header('Location: index.php');
