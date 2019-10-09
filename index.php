@@ -1,24 +1,5 @@
 <?php include 'header.php'; ?>
 
-<style type="text/css">
-    .mb-17 {
-        margin-bottom: 17px;
-    }
-    .mb-10 {
-        margin-bottom: 10px;
-    }
-    .mt-10 {
-        margin-top: 10px;
-    }
-    .mr-2p {
-        margin-right: 2%;
-    }
-    .pt-10 {
-        padding-top: 10px;
-    }
-
-</style>
-
 <body>
 
     <div class="page-content">
