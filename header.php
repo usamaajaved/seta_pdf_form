@@ -1,10 +1,5 @@
 <?php include 'config/config.php'; ?>
 <?php include 'config/base_path.php';?>
-<?php session_start();
-
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

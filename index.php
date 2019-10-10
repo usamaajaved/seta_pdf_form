@@ -1,4 +1,9 @@
-
+<?php 
+session_start();
+if (!$_SESSION) {
+    header('Location: login.php');
+}else{
+?>
 <?php include 'header.php'; ?>
 <body>
 
@@ -78,3 +83,4 @@
 
 </body>
 </html>
+<?php }?>
