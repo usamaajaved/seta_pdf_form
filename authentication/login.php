@@ -10,7 +10,8 @@ if(mysqli_num_rows($res) >0){
 	while ($data = mysqli_fetch_array($res)){
 		$_SESSION['user_id'] = $data['id']; 
 		$_SESSION['username'] = $data['username']; 
-		header('Location: ../index.php');
+		echo "Success";
+		//header('Location: ../index.php');
 	}
 }else{
 	echo "wrong email";
