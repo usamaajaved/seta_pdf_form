@@ -13,15 +13,15 @@ $result = mysqli_query($con_str,$query);
                 <label class="custom-control-label" for="no_member"> No</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Choice2" id="former_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="2" id="former_member">
                 <label class="custom-control-label" for="former_member"> Yes - Former</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Choice3" id="current_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="2" id="current_member">
                 <label class="custom-control-label" for="current_member"> Yes - Current</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Choice4" id="reserve_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="3" id="reserve_member">
                 <label class="custom-control-label" for="reserve_member"> Yes - Former or Current Reserve Member</label>
             </div>
         </div>
@@ -30,12 +30,12 @@ $result = mysqli_query($con_str,$query);
         <div class="form-group mb-3 mb-md-2 col-lg-4">
             <label class="d-block mb-17">If yes, indicate your Unit’s Level of Service:</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="regular" id="regular_force">
+                <input type="radio" class="custom-control-input" name="force" value="reg" id="regular_force">
                 <label class="custom-control-label" for="regular_force"> Regular Forces</label>
             </div>
 
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="reserve" id="reserved_force">
+                <input type="radio" class="custom-control-input" name="force" value="1" id="reserved_force">
                 <label class="custom-control-label" for="reserved_force"> Reserved Forces</label>
             </div>
         </div>
