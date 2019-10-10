@@ -47,7 +47,7 @@
 						</div>
 
 						<div class="form-group">
-							<a href="<?php echo base_url; ?>register.php" class="btn btn-light btn-block">Sign up</a>
+							<a href="register.php" class="btn btn-light btn-block">Sign up</a>
 						</div>
 					</div>
 				</div>
