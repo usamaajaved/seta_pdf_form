@@ -163,7 +163,7 @@ $fields['FormI-192[0].#subform[2].Pt2Line18_AptSteFlrNumber[0]']->setValue($_POS
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[3]']->setValue($_POST['prev_city_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[3]']->setValue($_POST['prev_province_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_PostalCode[3]']->setValue($_POST['prev_postal_3']);
-$fields['prev_postal_3']->setValue($_POST['prev_country_3']);
+$fields['FormI-192[0].#subform[2].Pt2Line10_Country[3]']->setValue($_POST['prev_country_3']);
 if (isset($_POST['prev_from_date_3']) && $_POST['prev_from_date_3'] != null) {
     $prev_from_date_3 = explode('/', $_POST['prev_from_date_3']);
     $prev_from_date_month3 = $prev_from_date_3[0];

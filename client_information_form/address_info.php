@@ -54,7 +54,7 @@ $result1 = mysqli_query($con_str,$query1);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="current_date_from" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="current_date_from" placeholder="Date From">
             </div>
             <!-- <input type="text" class="form-control" name="current_date_from" placeholder="From"> -->
         </div>

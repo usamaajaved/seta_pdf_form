@@ -5,7 +5,7 @@
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hispanic_latino" value="H" id="yes_hispanic_latino">
+                <input type="radio" class="custom-control-input" name="hispanic_latino" value="H" id="yes_hispanic_latino" checked="">
                 <label class="custom-control-label" for="yes_hispanic_latino"> Hispanic or Latino</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -19,23 +19,23 @@
             <label class="mr-2p"><strong>2. Race</strong> (Select all applicable boxes)</label>
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline">
                 <input type="checkbox" class="custom-control-input" name="white" value="W" id="white">
                 <label class="custom-control-label" for="white"> White</label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline">
                 <input type="checkbox" class="custom-control-input" name="asian" value="A" id="asian">
                 <label class="custom-control-label" for="asian"> Asian</label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline">
                 <input type="checkbox" class="custom-control-input" name="black" value="B" id="black_african_american">
                 <label class="custom-control-label" for="black_african_american"> Black or African American</label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline">
                 <input type="checkbox" class="custom-control-input" name="american_indian" value="AA" id="american_indian">
                 <label class="custom-control-label" for="american_indian"> American Indian or Alaska Native</label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline">
                 <input type="checkbox" class="custom-control-input" name="native" value="N" id="native_hawaiian">
                 <label class="custom-control-label" for="native_hawaiian"> Native Hawaiian or Other Pacific Islander</label>
             </div>

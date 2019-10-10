@@ -261,7 +261,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="father_dob" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="father_dob" placeholder="Father Date of Birth">
             </div>
         </div>
         <div class="form-group col-lg-5">
@@ -269,7 +269,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="mother_dob" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="mother_dob" placeholder="Mother Date of Birth">
             </div>
         </div>
     </div>
@@ -396,7 +396,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="c_dob" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="c_dob" placeholder="Current Spouse DOB">
             </div>
         </div>
         <div class="form-group col-lg-5">
@@ -404,7 +404,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="f_dob" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="f_dob" placeholder="Former Spouse DOB">
             </div>
         </div>
     </div>
@@ -542,7 +542,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="t_m_dob" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="t_m_dob" placeholder="Marriage Termination Date">
             </div>
         </div>
     </div>
