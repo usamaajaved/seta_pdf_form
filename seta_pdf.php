@@ -158,10 +158,6 @@ if (isset($_POST['prev_to_date_2']) && $_POST['prev_to_date_2'] != null) {
     $fields['PrevAdT2Y']->setValue($prev_to_date_year1);
 }
 
-
-
-
-
 $fields['FormI-192[0].#subform[2].Pt2Line10_StreetNumberName[3]']->setValue($_POST['prev_address_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line18_AptSteFlrNumber[0]']->setValue($_POST['prev_unit_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[3]']->setValue($_POST['prev_city_3']);
@@ -187,57 +183,200 @@ if (isset($_POST['prev_to_date_3']) && $_POST['prev_to_date_3'] != null) {
     $fields['PrevAdT3Y']->setValue($prev_to_date_year3);
 }
 
-
-$fields['']->setValue($_POST['prev_address_4']);
-$fields['']->setValue($_POST['prev_unit_4']);
-$fields['']->setValue($_POST['prev_city_4']);
-$fields['']->setValue($_POST['prev_province_4']);
-$fields['']->setValue($_POST['prev_postal_4']);
-$fields['']->setValue($_POST['prev_country_4']);
+$fields['ResidenceStreet1']->setValue($_POST['prev_address_4']);
+$fields['ResidenceAU1']->setValue($_POST['prev_unit_4']);
+$fields['ResidenceCity1']->setValue($_POST['prev_city_4']);
+$fields['Text1']->setValue($_POST['prev_province_4']);
+$fields['Text2']->setValue($_POST['prev_postal_4']);
+$fields['ResidenceCountry1']->setValue($_POST['prev_country_4']);
 if (isset($_POST['prev_from_date_4']) && $_POST['prev_from_date_4'] != null) {
     $prev_from_date_4 = explode('/', $_POST['prev_from_date_4']);
     $prev_from_date_month4 = $prev_from_date_4[0];
     $prev_from_date_day4 = $prev_from_date_4[1];
     $prev_from_date_year4 = $prev_from_date_4[2];
-    $fields['']->setValue($prev_from_date_day4);
-    $fields['']->setValue($prev_from_date_month4);
-    $fields['']->setValue($prev_from_date_year4);
+    $fields['PrevAdF4D']->setValue($prev_from_date_day4);
+    $fields['PrevAdF4M']->setValue($prev_from_date_month4);
+    $fields['PrevAdF4Y']->setValue($prev_from_date_year4);
 }
 if (isset($_POST['prev_to_date_4']) && $_POST['prev_to_date_4'] != null) {
     $prev_to_date_4 = explode('/', $_POST['prev_to_date_4']);
     $prev_to_date_month4 = $prev_to_date_4[0];
     $prev_to_date_day4 = $prev_to_date_4[1];
     $prev_to_date_year4 = $prev_to_date_4[2];
-    $fields['']->setValue($prev_to_date_day4);
-    $fields['']->setValue($prev_to_date_month4);
-    $fields['']->setValue($prev_to_date_year4);
+    $fields['PrevAdT4D']->setValue($prev_to_date_day4);
+    $fields['PrevAdT4M']->setValue($prev_to_date_month4);
+    $fields['PrevAdT4Y']->setValue($prev_to_date_year4);
 }
-
-
-$fields['']->setValue($_POST['prev_address_5']);
-$fields['']->setValue($_POST['prev_unit_5']);
-$fields['']->setValue($_POST['prev_city_5']);
-$fields['']->setValue($_POST['prev_province_5']);
-$fields['']->setValue($_POST['prev_postal_5']);
-$fields['']->setValue($_POST['prev_country_5']);
+$fields['ResidenceStreet2']->setValue($_POST['prev_address_5']);
+$fields['ResidenceAU2']->setValue($_POST['prev_unit_5']);
+$fields['ResidenceCity2']->setValue($_POST['prev_city_5']);
+$fields['ResidenceState2']->setValue($_POST['prev_province_5']);
+$fields['ResidenceZip2']->setValue($_POST['prev_postal_5']);
+$fields['ResidenceCountry2']->setValue($_POST['prev_country_5']);
 if (isset($_POST['prev_from_date_5']) && $_POST['prev_from_date_5'] != null) {
     $prev_from_date_5 = explode('/', $_POST['prev_from_date_5']);
     $prev_from_date_month5 = $prev_from_date_5[0];
     $prev_from_date_day5 = $prev_from_date_5[1];
     $prev_from_date_year5 = $prev_from_date_5[2];
-    $fields['']->setValue($prev_from_date_day5);
-    $fields['']->setValue($prev_from_date_month5);
-    $fields['']->setValue($prev_from_date_year5);
+    $fields['PrevAdF5D']->setValue($prev_from_date_day5);
+    $fields['PrevAdF5M']->setValue($prev_from_date_month5);
+    $fields['PrevAdF5Y']->setValue($prev_from_date_year5);
 }
 if (isset($_POST['prev_to_date_5']) && $_POST['prev_to_date_5'] != null) {
     $prev_to_date_5 = explode('/', $_POST['prev_to_date_5']);
     $prev_to_date_month5 = $prev_to_date_5[0];
     $prev_to_date_day5 = $prev_to_date_5[1];
     $prev_to_date_year5 = $prev_to_date_5[2];
-    $fields['']->setValue($prev_to_date_day5);
-    $fields['']->setValue($prev_to_date_month5);
-    $fields['']->setValue($prev_to_date_year5);
+    $fields['PrevAdT5D']->setValue($prev_to_date_day5);
+    $fields['PrevAdT5M']->setValue($prev_to_date_month5);
+    $fields['PrevAdT5Y']->setValue($prev_to_date_year5);
 }
+$fields['Employed']->setValue($_POST['employed']);
+if (isset($_POST['Employment']) && $_POST['Employment'] == 'on') {
+    $fields['Employment']->setValue(true);
+}
+
+
+
+$fields['FormI-192[0].#subform[4].EmployerName[0]']->setValue($_POST['emp_name']);
+$fields['FormI-192[0].#subform[4].Pt2Line10_StreetNumberName[6]']->setValue($_POST['emp_address']);
+$fields['FormI-192[0].#subform[4].Pt2Line10_AptSteFlrNumber[2]']->setValue($_POST['emp_unit']);
+$fields['FormI-192[0].#subform[4].Pt2Line10_CityOrTown[6]']->setValue($_POST['emp_city']);
+$fields['FormI-192[0].#subform[4].Pt2Line10_Province[6]']->setValue($_POST['emp_province']);
+$fields['FormI-192[0].#subform[4].Pt2Line10_Country[6]']->setValue($_POST['emp_country']);
+$fields['FormI-192[0].#subform[4].Occupation[0]']->setValue($_POST['emp_occupation']);
+if (isset($_POST['emp_from_date']) && $_POST['emp_from_date'] != null) {
+    $emp_from_date = explode('/', $_POST['emp_from_date']);
+    $emp_from_date_month = $emp_from_date[0];
+    $emp_from_date_day = $emp_from_date[1];
+    $emp_from_date_year = $emp_from_date[2];
+    $fields['empAdF5D']->setValue($emp_from_date_day);
+    $fields['empAdF5M']->setValue($emp_from_date_month);
+    $fields['empAdF5Y']->setValue($emp_from_date_year);
+}
+if (isset($_POST['emp_to_date']) && $_POST['emp_to_date'] != null) {
+    $emp_to_date = explode('/', $_POST['emp_to_date']);
+    $emp_to_date_month = $emp_to_date[0];
+    $emp_to_date_day = $emp_to_date[1];
+    $emp_to_date_year = $emp_to_date[2];
+    $fields['empAdT5D']->setValue($emp_to_date_day);
+    $fields['empAdT5M']->setValue($emp_to_date_month);
+    $fields['empAdT5Y']->setValue($emp_to_date_year);
+}
+
+
+
+// 2
+
+$fields['FormI-192[0].#subform[5].EmployerName[1]']->setValue($_POST['emp_name2']);
+$fields['FormI-192[0].#subform[5].Pt2Line10_StreetNumberName[7]']->setValue($_POST['emp_address2']);
+$fields['FormI-192[0].#subform[5].Pt4Line6_AptSteFlrNumber[0]']->setValue($_POST['emp_unit2']);
+$fields['FormI-192[0].#subform[5].Pt2Line10_CityOrTown[7]']->setValue($_POST['emp_city2']);
+$fields['FormI-192[0].#subform[5].Pt2Line10_Province[7]']->setValue($_POST['emp_province2']);
+$fields['FormI-192[0].#subform[5].Pt2Line10_Country[7]']->setValue($_POST['emp_country2']);
+$fields['FormI-192[0].#subform[5].Occupation[1]']->setValue($_POST['emp_occupation2']);
+if (isset($_POST['emp_from_date2']) && $_POST['emp_from_date2'] != null) {
+    $emp_from_date2 = explode('/', $_POST['emp_from_date2']);
+    $emp_from_date_month2 = $emp_from_date2[0];
+    $emp_from_date_day2 = $emp_from_date2[1];
+    $emp_from_date_year2 = $emp_from_date2[2];
+    $fields['PrevEmpF1D']->setValue($emp_from_date_day2);
+    $fields['PrevEmpF1M']->setValue($emp_from_date_month2);
+    $fields['PrevEmpF1Y']->setValue($emp_from_date_year2);
+}
+if (isset($_POST['emp_to_date2']) && $_POST['emp_to_date2'] != null) {
+    $emp_to_date2 = explode('/', $_POST['emp_to_date2']);
+    $emp_to_date_month2 = $emp_to_date2[0];
+    $emp_to_date_day2 = $emp_to_date2[1];
+    $emp_to_date_year2 = $emp_to_date2[2];
+    $fields['PrevEmpT1D']->setValue($emp_to_date_day2);
+    $fields['PrevEmpT1M']->setValue($emp_to_date_month2);
+    $fields['PrevEmpT1Y']->setValue($emp_to_date_year2);
+}
+
+// 3
+$fields['']->setValue($_POST['emp_name3']);
+$fields['']->setValue($_POST['emp_address3']);
+$fields['']->setValue($_POST['emp_unit3']);
+$fields['']->setValue($_POST['emp_city3']);
+$fields['']->setValue($_POST['emp_province3']);
+$fields['']->setValue($_POST['emp_country3']);
+$fields['']->setValue($_POST['emp_occupation3']);
+if (isset($_POST['emp_from_date3']) && $_POST['emp_from_date3'] != null) {
+    $emp_from_date3 = explode('/', $_POST['emp_from_date3']);
+    $emp_from_date_month3 = $emp_from_date3[0];
+    $emp_from_date_day3 = $emp_from_date3[1];
+    $emp_from_date_year3 = $emp_from_date3[2];
+    $fields['empAdF5D']->setValue($emp_from_date_day3);
+    $fields['empAdF5M']->setValue($emp_from_date_month3);
+    $fields['empAdF5Y']->setValue($emp_from_date_year3);
+}
+if (isset($_POST['emp_to_date3']) && $_POST['emp_to_date3'] != null) {
+    $emp_to_date3 = explode('/', $_POST['emp_to_date3']);
+    $emp_to_date_month3 = $emp_to_date3[0];
+    $emp_to_date_day3 = $emp_to_date3[1];
+    $emp_to_date_year3 = $emp_to_date3[2];
+    $fields['empAdT5D']->setValue($emp_to_date_day3);
+    $fields['empAdT5M']->setValue($emp_to_date_month3);
+    $fields['empAdT5Y']->setValue($emp_to_date_year3);
+}
+
+
+//4
+$fields['']->setValue($_POST['emp_name4']);
+$fields['']->setValue($_POST['emp_address4']);
+$fields['']->setValue($_POST['emp_unit4']);
+$fields['']->setValue($_POST['emp_city4']);
+$fields['']->setValue($_POST['emp_province4']);
+$fields['']->setValue($_POST['emp_country4']);
+$fields['']->setValue($_POST['emp_occupation4']);
+if (isset($_POST['emp_from_date4']) && $_POST['emp_from_date4'] != null) {
+    $emp_from_date4 = explode('/', $_POST['emp_from_date4']);
+    $emp_from_date_month4 = $emp_from_date4[0];
+    $emp_from_date_day4 = $emp_from_date4[1];
+    $emp_from_date_year4 = $emp_from_date4[2];
+    $fields['PrevAdF5D']->setValue($emp_from_date_day4);
+    $fields['PrevAdF5M']->setValue($emp_from_date_month4);
+    $fields['PrevAdF5Y']->setValue($emp_from_date_year4);
+}
+if (isset($_POST['emp_to_date4']) && $_POST['emp_to_date4'] != null) {
+    $emp_to_date4 = explode('/', $_POST['emp_to_date4']);
+    $emp_to_date_month4 = $emp_to_date4[0];
+    $emp_to_date_day4 = $emp_to_date4[1];
+    $emp_to_date_year4 = $emp_to_date4[2];
+    $fields['PrevAdT5D']->setValue($emp_to_date_day4);
+    $fields['PrevAdT5M']->setValue($emp_to_date_month4);
+    $fields['PrevAdT5Y']->setValue($emp_to_date_year4);
+}
+
+//5
+$fields['']->setValue($_POST['emp_name5']);
+$fields['']->setValue($_POST['emp_address5']);
+$fields['']->setValue($_POST['emp_unit5']);
+$fields['']->setValue($_POST['emp_city5']);
+$fields['']->setValue($_POST['emp_province5']);
+$fields['']->setValue($_POST['emp_country5']);
+$fields['']->setValue($_POST['emp_occupation5']);
+if (isset($_POST['emp_from_date5']) && $_POST['emp_from_date5'] != null) {
+    $emp_from_date5 = explode('/', $_POST['emp_from_date5']);
+    $emp_from_date_month5 = $emp_from_date5[0];
+    $emp_from_date_day5 = $emp_from_date5[1];
+    $emp_from_date_year5 = $emp_from_date5[2];
+    $fields['PrevAdF5D']->setValue($emp_from_date_day5);
+    $fields['PrevAdF5M']->setValue($emp_from_date_month5);
+    $fields['PrevAdF5Y']->setValue($emp_from_date_year5);
+}
+if (isset($_POST['emp_to_date5']) && $_POST['emp_to_date5'] != null) {
+    $emp_to_date5 = explode('/', $_POST['emp_to_date5']);
+    $emp_to_date_month5 = $emp_to_date5[0];
+    $emp_to_date_day5 = $emp_to_date5[1];
+    $emp_to_date_year5 = $emp_to_date5[2];
+    $fields['PrevAdT5D']->setValue($emp_to_date_day5);
+    $fields['PrevAdT5M']->setValue($emp_to_date_month5);
+    $fields['PrevAdT5Y']->setValue($emp_to_date_year5);
+}
+
+
 // save it
 $document->save()->finish();
 // copy it over
