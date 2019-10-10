@@ -637,9 +637,9 @@ if (isset($_POST['american_indian']) && $_POST['american_indian'] == 'on') {
 if (isset($_POST['native']) && $_POST['native'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line2_Race[2]']->setValue(true);
 }
-$fields['FormI-192[0].#subform[4].Pt3Line3_HeightFeet[0]']->setValue($_POST['feet']);
-$fields['FormI-192[0].#subform[4].Pt3Line3_HeightInches[0]']->setValue($_POST['inches']);
-$fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue($_POST['pound']);
+// $fields['FormI-192[0].#subform[4].Pt3Line3_HeightFeet[0]']->setValue($_POST['feet']);
+// $fields['FormI-192[0].#subform[4].Pt3Line3_HeightInches[0]']->setValue($_POST['inches']);
+// $fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue($_POST['pound']);
 //$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
 //$fields['arrested']->setValue($_POST['hair_colour']);
 

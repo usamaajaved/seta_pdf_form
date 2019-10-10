@@ -476,7 +476,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="yonge_st_court" value="Y" id="yes_yonge_st_court">
+                <input type="radio" class="custom-control-input" name="yonge_st_court" value="Y" id="yes_yonge_st_court" checked="">
                 <label class="custom-control-label" for="yes_yonge_st_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -489,7 +489,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="1000_finch_avenue_court" value="Y" id="yes_1000_finch_avenue_court">
+                <input type="radio" class="custom-control-input" name="1000_finch_avenue_court" value="Y" checked="">
                 <label class="custom-control-label" for="yes_1000_finch_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -502,7 +502,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="2201_finch_avenue_court" value="Y" id="yes_2201_finch_avenue_court">
+                <input type="radio" class="custom-control-input" name="2201_finch_avenue_court" value="Y" checked="">
                 <label class="custom-control-label" for="yes_2201_finch_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -519,7 +519,7 @@
                 <label class="custom-control-label" for="yes_queen_st_west_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="queen_st_west_court" value="N" id="no_queen_st_west_court">
+                <input type="radio" class="custom-control-input" name="queen_st_west_court" value="N" id="no_queen_st_west_court" checked="">
                 <label class="custom-control-label" for="no_queen_st_west_court"> No</label>
             </div>
         </div>

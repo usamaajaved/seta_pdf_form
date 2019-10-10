@@ -30,12 +30,12 @@ $result = mysqli_query($con_str,$query);
         <div class="form-group mb-3 mb-md-2 col-lg-4">
             <label class="d-block mb-17">If yes, indicate your Unit’s Level of Service:</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="reg" id="regular_force" checked="">
+                <input type="radio" class="custom-control-input" name="force" value="Reg" checked="">
                 <label class="custom-control-label" for="regular_force"> Regular Forces</label>
             </div>
 
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="1" id="reserved_force">
+                <input type="radio" class="custom-control-input" name="force" value="Res" id="reserved_force">
                 <label class="custom-control-label" for="reserved_force"> Reserved Forces</label>
             </div>
         </div>
