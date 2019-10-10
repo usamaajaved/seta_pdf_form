@@ -57,7 +57,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_from_date_1" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_1" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-2">
@@ -66,7 +66,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_to_date_1" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_to_date_1" placeholder="Date To">
             </div>
             <!-- <input type="text" class="form-control" name="prev_to_date_1" placeholder="Present"> -->
         </div>
@@ -113,7 +113,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_from_date_2" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_2" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-2">
@@ -122,7 +122,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_to_date_2" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_to_date_2" placeholder="Date TO">
             </div>
         </div>
     </div>
@@ -168,7 +168,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_from_date_3" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_3" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-2">
@@ -177,7 +177,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_to_date_3" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_to_date_3" placeholder="Date To">
             </div>
         </div>
     </div>
@@ -223,7 +223,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_from_date_4" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_4" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-2">
@@ -232,7 +232,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_to_date_4" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_to_date_4" placeholder="Date To">
             </div>
         </div>
     </div>
@@ -278,7 +278,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_from_date_5" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_5" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-2">
@@ -287,7 +287,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="prev_to_date_5" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="prev_to_date_5" placeholder="Date To">
             </div>
         </div>
     </div>

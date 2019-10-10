@@ -9,7 +9,7 @@ $result = mysqli_query($con_str,$query);
         <div class="form-group mb-3 mb-md-2 col-lg-12 text-center">
             <label class="mb-17 mr-2p">Have you ever been a member of the Canadian Forces?</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force_member" value="Choice1" id="no_member">
+                <input type="radio" class="custom-control-input" name="force_member" value="Choice1" id="no_member" checked="">
                 <label class="custom-control-label" for="no_member"> No</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -30,7 +30,7 @@ $result = mysqli_query($con_str,$query);
         <div class="form-group mb-3 mb-md-2 col-lg-4">
             <label class="d-block mb-17">If yes, indicate your Unit’s Level of Service:</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="force" value="reg" id="regular_force">
+                <input type="radio" class="custom-control-input" name="force" value="reg" id="regular_force" checked="">
                 <label class="custom-control-label" for="regular_force"> Regular Forces</label>
             </div>
 
@@ -92,7 +92,7 @@ $result = mysqli_query($con_str,$query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="military_from" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="military_from" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-6">
@@ -101,7 +101,7 @@ $result = mysqli_query($con_str,$query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="military_to" value="03/18/2013">
+                <input type="text" class="form-control pickadate-accessibility" name="military_to" placeholder="Date To">
             </div>
         </div>
     </div>

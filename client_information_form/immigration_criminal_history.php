@@ -3,7 +3,7 @@
         <div class="form-group mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>1. Were you ever arrested?</strong> (If yes, please indicate City and Police Detachment below. If no, please write N/A)</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="arrested" value="Y" id="yes_arrested">
+                <input type="radio" class="custom-control-input" name="arrested" value="Y" id="yes_arrested" checked="">
                 <label class="custom-control-label" for="yes_arrested"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -21,7 +21,7 @@
         <div class="form-group mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>2. Have you ever been arrested outside of Canada?</strong> (If yes, please explain infull detail below. If no, please write N/A)</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="arrested_outside_canada" value="Y" id="yes_arrested_outside_canada">
+                <input type="radio" class="custom-control-input" name="arrested_outside_canada" value="Y" checked="">
                 <label class="custom-control-label" for="yes_arrested_outside_canada"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -86,7 +86,7 @@
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="sentenced_date_1" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="sentenced_date_1" placeholder="Select Date">
             </div>
         </div>
         <div class="form-group col-lg-6">
@@ -148,7 +148,7 @@
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="sentenced_date_2" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="sentenced_date_2" placeholder="Select Date">
             </div>
         </div>
         <div class="form-group col-lg-6">
@@ -168,7 +168,7 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>1. Do you believe that you may be inadmissible to the United States?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="inadmissible" value="Y" id="yes_inadmissible">
+                <input type="radio" class="custom-control-input" name="inadmissible" value="Y" id="yes_inadmissible" checked="">
                 <label class="custom-control-label" for="yes_inadmissible"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -197,7 +197,7 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>3. Have you ever been refused entry into the United States?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="refused" value="Y" id="yes_refused">
+                <input type="radio" class="custom-control-input" name="refused" value="Y" id="yes_refused" checked="">
                 <label class="custom-control-label" for="yes_refused"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -216,7 +216,7 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>4. Have you ever been deported from the United States?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="deported" value="Y" id="yes_deported">
+                <input type="radio" class="custom-control-input" name="deported" value="Y" id="yes_deported" checked="">
                 <label class="custom-control-label" for="yes_deported"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -235,7 +235,7 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>5. Have you previously filed an application for advance permission to enter the U.S. as a non-immigrant?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="filled_application_before" value="Y" id="yes_filled_application_before">
+                <input type="radio" class="custom-control-input" name="filled_application_before" value="Y" id="yes_filled_application_before" checked="">
                 <label class="custom-control-label" for="yes_filled_application_before"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -251,7 +251,7 @@
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="filled_application_date" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="filled_application_date" placeholder="Select Date">
             </div>
         </div>
     </div>
@@ -292,7 +292,7 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>6. Have you EVER been in the United States for a period of 6 months or more?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="6mos" value="Y" id="yes_filled_application_before">
+                <input type="radio" class="custom-control-input" name="6mos" value="Y" id="yes_filled_application_before" checked="">
                 <label class="custom-control-label" for="yes_filled_application_before"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -308,7 +308,7 @@
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="entered_date" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="entered_date" placeholder="Select Date">
             </div>
         </div>
         <div class="form-group col-lg-3">
@@ -317,7 +317,7 @@
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="entered_date_from" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="entered_date_from" placeholder="Date From">
             </div>
         </div>
         <div class="form-group col-lg-3">
@@ -326,7 +326,7 @@
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control daterange-single" name="exit_date_to" value="">
+                <input type="text" class="form-control pickadate-accessibility" name="exit_date_to" placeholder="Date To">
             </div>
         </div>
     </div>
@@ -340,7 +340,7 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>7. Have you EVER filed an application or petition for Immigration Benefits with the U.S. Government or has one ever been filed on your behalf?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="filed_application_for_immigration_benifit" value="Y" id="yes_filed_application_for_immigration_benifit">
+                <input type="radio" class="custom-control-input" name="filed_application_for_immigration_benifit" value="Y" id="yes_filed_application_for_immigration_benifit" checked="">
                 <label class="custom-control-label" for="yes_filed_application_for_immigration_benifit"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -403,7 +403,7 @@
         <div class="mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>8. Have you EVER been denied or refused an immigration benefit by the U.S. Government or had a benefit revoked or terminated (including but not limited to Visas)?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="immigration_refused" value="Y" id="yes_immigration_refused">
+                <input type="radio" class="custom-control-input" name="immigration_refused" value="Y" id="yes_immigration_refused" checked="">
                 <label class="custom-control-label" for="yes_immigration_refused"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -437,7 +437,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="jarvis_st_court" value="Y" id="yes_jarvis_st_court">
+                <input type="radio" class="custom-control-input" name="jarvis_st_court" value="Y" id="yes_jarvis_st_court" checked="">
                 <label class="custom-control-label" for="yes_jarvis_st_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -450,7 +450,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="university_avenue_court" value="Y" id="yes_university_avenue_court">
+                <input type="radio" class="custom-control-input" name="university_avenue_court" value="Y" id="yes_university_avenue_court" checked="">
                 <label class="custom-control-label" for="yes_university_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -463,7 +463,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="aglinton_avenue_court" value="Y" id="yes_aglinton_avenue_court">
+                <input type="radio" class="custom-control-input" name="aglinton_avenue_court" value="Y" id="yes_aglinton_avenue_court" checked="">
                 <label class="custom-control-label" for="yes_aglinton_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
