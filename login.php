@@ -10,7 +10,7 @@
 		<div class="content d-flex justify-content-center align-items-center">
 
 			<!-- Login card -->
-			<form class="login-form" method="POST" action="authentication/login.php">
+			<form class="login-form" id="login_form" method="POST">
 				<div class="card mb-0">
 					<div class="card-body">
 						<div class="text-center mb-3">
@@ -32,9 +32,15 @@
 							</div>
 						</div>
 
-						<div class="form-group d-flex align-items-center">
-							<a href="login_password_recover.html" class="ml-auto">Forgot password?</a>
+						<div class="row text-center" id="wrong_email" style="display: none;">
+							<div class="col-md-12">
+								<label class="text-danger">Wrong email or password.</label>
+							</div>
 						</div>
+
+						<!-- <div class="form-group text-center">
+							<a href="login_password_recover.html" class="ml-auto">Forgot password?</a>
+						</div> -->
 
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>
@@ -55,3 +61,25 @@
 	<!-- /main content -->
 
 </div>
+
+<script type="text/javascript">
+	$('#login_form').on('submit',function(e){
+		e.preventDefault();
+		var formData = new FormData($(this)[0]);
+		$.ajax({
+			url: 'authentication/login.php',
+			type: 'post',
+			data: formData,
+			processData: false,
+			contentType: false,
+			success:function(data){
+				if (data == "wrong email") {
+					$('#wrong_email').show();
+				}else if(data == "Success"){
+					window.location.replace('index.php');
+				}
+			}
+		});
+		
+	})
+</script>

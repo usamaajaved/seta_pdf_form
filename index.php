@@ -1,7 +1,10 @@
-<?php //print_r($_POST); exit;?>
-
+<?php 
+session_start();
+if (!$_SESSION) {
+    header('Location: login.php');
+}else{
+?>
 <?php include 'header.php'; ?>
-
 <body>
 
     <div class="page-content">
@@ -80,3 +83,4 @@
 
 </body>
 </html>
+<?php }?>

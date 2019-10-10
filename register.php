@@ -13,6 +13,16 @@
 					<div class="col-lg-6 offset-lg-3">
 						<div class="card mb-0">
 							<div class="card-body">
+								<div class="row text-center pt-10 bg-danger form-group" id="email_exist" style="display: none;">
+									<div class="col-md-12">
+										<label>Email already exist.</label>
+									</div>
+								</div>
+								<div class="row text-center pt-10 bg-danger form-group" id="pass-dosent-match" style="display: none;">
+									<div class="col-md-12">
+										<label>Password dosen't match.</label>
+									</div>
+								</div>
 								<div class="text-center mb-3">
 									<h5 class="mb-0">Create account</h5>
 								</div>
@@ -77,7 +87,7 @@
 									</div>
 								</div>
 
-								<div class="row text-center">
+								<div class="row text-center mt-10">
 									<div class="col-md-12">
 										<button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
 									</div>
@@ -108,11 +118,15 @@
 			processData: false,
 			contentType: false,
 			success:function(data){
-				if (data == 'password error') {
-					alert('password cant match');
+				if (data == "email does not exist") {
+					$("#email_exist").show();
+				} else if(data == "password does not match") {
+					$('#pass-dosent-match').show();	
+				} else if(data = "success") {
+					window.location.replace('login.php');
 				}
 			}
 		});
 		
-	})
+	});
 </script>
