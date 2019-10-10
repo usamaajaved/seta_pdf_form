@@ -1,3 +1,5 @@
+<?php //print_r($_POST); exit;?>
+
 <?php include 'header.php'; ?>
 
 <body>

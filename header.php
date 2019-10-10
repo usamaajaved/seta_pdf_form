@@ -1,5 +1,8 @@
 <?php include 'config/config.php'; ?>
 <?php include 'config/base_path.php';?>
+<?php session_start();
+//print_r($_SESSION);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

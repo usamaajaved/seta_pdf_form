@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <?php include 'header.php'; ?>
 <?php //print_r(base_url); exit;?>
 
@@ -12,7 +10,7 @@
 		<div class="content d-flex justify-content-center align-items-center">
 
 			<!-- Login card -->
-			<form class="login-form" action="index.html">
+			<form class="login-form" method="POST" action="authentication/login.php">
 				<div class="card mb-0">
 					<div class="card-body">
 						<div class="text-center mb-3">
@@ -21,14 +19,14 @@
 						</div>
 
 						<div class="form-group form-group-feedback form-group-feedback-left">
-							<input type="text" class="form-control" placeholder="Username">
+							<input type="text" name="email" class="form-control" placeholder="Email">
 							<div class="form-control-feedback">
 								<i class="icon-user text-muted"></i>
 							</div>
 						</div>
 
 						<div class="form-group form-group-feedback form-group-feedback-left">
-							<input type="password" class="form-control" placeholder="Password">
+							<input type="password" name="password" class="form-control" placeholder="Password">
 							<div class="form-control-feedback">
 								<i class="icon-lock2 text-muted"></i>
 							</div>
