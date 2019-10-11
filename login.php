@@ -38,9 +38,9 @@
 							</div>
 						</div>
 
-						<!-- <div class="form-group text-center">
-							<a href="login_password_recover.html" class="ml-auto">Forgot password?</a>
-						</div> -->
+						<div class="form-group text-center">
+							<a href="forgot_password.php" class="ml-auto">Forgot password?</a>
+						</div>
 
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 ml-2"></i></button>

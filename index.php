@@ -6,6 +6,18 @@ if (!$_SESSION) {
 ?>
 <?php include 'header.php'; ?>
 <body>
+    <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
+        <div class="collapse navbar-collapse" id="navbar-mobile">
+            <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item">
+                    <a href="authentication/logout.php" class="navbar-nav-link legitRipple">
+                        <i class="icon-switch2"></i>
+                        <span class="d-md-none ml-2">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <div class="page-content">
 
@@ -26,7 +38,7 @@ if (!$_SESSION) {
                                 <h5 class="card-title">Client Information Form</h5>
                             </div>
                             <div class="card-body">
-                                <form class="wizard-form steps-basic" action="seta_pdf.php" enctype="multipart/form-data" method="post">
+                                <form class="wizard-form steps-validation" action="seta_pdf.php" enctype="multipart/form-data" method="post">
                                     <h6>Personal Information</h6>
                                     <fieldset>
                                         <div class="row mt-10">
