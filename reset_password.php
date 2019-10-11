@@ -1,7 +1,27 @@
 <?php include 'header.php'; ?>
 
-<div class="page-content">
+<?php 
+function my_simple_crypt( $string, $action = 'e' ) {
+  	$secret_key = 'my_simple_secret_key';
+  	$secret_iv = 'my_simple_secret_iv';
+  	$output = false;
+  	$encrypt_method = "AES-256-CBC";
+  	$key = hash( 'sha256', $secret_key );
+  	$iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
+  	if( $action == 'e' ) {
+      	$output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
+  	}	
+  	else if( $action == 'd' ){
+      	$output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
+  	}
+  	return $output;
+}
 
+// $encrypt_id = $_GET['id'];
+// $id = my_simple_crypt($encrypt_id,'d');
+ ?>
+
+<div class="page-content">
 		<!-- Main content -->
 	<div class="content-wrapper">
 
@@ -18,21 +38,27 @@
 						</div>
 
 						<div class="form-group form-group-feedback form-group-feedback-left">
-							<input type="password" name="new_password" class="form-control" placeholder="Enter your new password" required=" ">
+							<input type="password" id="new_password" class="form-control" placeholder="Enter your new password" required=" ">
 							<div class="form-control-feedback">
 								<i class="icon-lock2 text-muted"></i>
 							</div>
 						</div>
 
 						<div class="form-group form-group-feedback form-group-feedback-left">
-							<input type="password" name="confirm_password" class="form-control" placeholder="Confirm your new password" required="">
+							<input type="password" id="confirm_password" class="form-control" placeholder="Confirm your new password" required="">
 							<div class="form-control-feedback">
 								<i class="icon-lock2 text-muted"></i>
 							</div>
 						</div>
 
+						<div class="row text-center" id="wrong_pass" style="display: none;">
+							<div class="col-md-12">
+								<label class="text-danger">Password desen't match.</label>
+							</div>
+						</div>
+
 						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block">Save<i class="icon-circle-right2 ml-2"></i></button>
+							<button type="button"  onclick="reset_password()" class="btn btn-primary btn-block">Save<i class="icon-circle-right2 ml-2"></i></button>
 						</div>
 					</div>
 				</div>
@@ -44,22 +70,24 @@
 
 	</div>
 	<!-- /main content -->
-
 </div>
 
 <script type="text/javascript">
-	$('#reset_pass_form').on('submit',function(e){
-		e.preventDefault();
-		var formData = new FormData($(this)[0]);
-		$.ajax({
-			url: 'authentication/reset_password.php',
-			type: 'post',
-			data: formData,
-			processData: false,
-			contentType: false,
-			success:function(data){
-				
+	function reset_password(){
+		//alert();
+		var new_password = $('#new_password').val();
+		var confirm_password = $('#confirm_password').val();
+		$.post('authentication/reset_password.php',{new_password:new_password,confirm_password:confirm_password}).done(function(data){
+			//console.log(data);
+			if (data == "Password dosent match") {
+				$('#wrong_pass').show();
+			}else if(data == "success"){
+				$('#activated').show();
+				$('#wrong_email').hide();
+				setTimeout(function() {
+			        window.location.replace('login.php');
+			    }, 3000);
 			}
 		});
-	});
+	}
 </script>
