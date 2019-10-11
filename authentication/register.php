@@ -12,7 +12,7 @@ if ($check_email > 0) {
 	echo 'password does not match';
 } else {
 	$password = md5($_POST['password']);
-	$reg_user = "INSERT INTO `users`(`first_name`,`last_name`,`email`,`username`,`password`) VALUES('".$_POST["first_name"]."','".$_POST["last_name"]."','".$_POST["email"]."','".$_POST["username"]."','".$password."')"; mysqli_query($con_str,$reg_user) or die(mysqli_error());
+	$reg_user = "INSERT INTO `users`(`email`,`password`) VALUES('".$_POST["email"]."','".$password."')"; mysqli_query($con_str,$reg_user) or die(mysqli_error());
 	echo "success";
 	//header('Location: '.base_url.'login.php');
 	

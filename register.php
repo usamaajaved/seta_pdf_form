@@ -10,7 +10,7 @@
 			<!-- Registration form -->
 			<form  id="register_form" class="flex-fill" method="POST">
 				<div class="row">
-					<div class="col-lg-6 offset-lg-3">
+					<div class="col-lg-4 offset-lg-4">
 						<div class="card mb-0">
 							<div class="card-body">
 								<div class="row text-center pt-10 bg-danger form-group" id="email_exist" style="display: none;">
@@ -26,40 +26,11 @@
 								<div class="text-center mb-3">
 									<h5 class="mb-0">Create account</h5>
 								</div>
-								
-								<div class="row">
-									<div class="col-md-6">
-										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="text" name="first_name" class="form-control" placeholder="First name">
-											<div class="form-control-feedback">
-												<i class="icon-user-check text-muted"></i>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="text" name="last_name" class="form-control" placeholder="Second name">
-											<div class="form-control-feedback">
-												<i class="icon-user-check text-muted"></i>
-											</div>
-										</div>
-									</div>
-								</div>
 
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="text" name="username" class="form-control" placeholder="Choose username">
-											<div class="form-control-feedback">
-												<i class="icon-user-plus text-muted"></i>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="email" name="email" class="form-control" placeholder="Your email">
+											<input type="email" name="email" class="form-control" placeholder="Your email" required="">
 											<div class="form-control-feedback">
 												<i class="icon-mention text-muted"></i>
 											</div>
@@ -68,18 +39,20 @@
 								</div>
 
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="password" name="password" class="form-control" placeholder="Create password">
+											<input type="password" name="password" class="form-control" placeholder="Create password" required="">
 											<div class="form-control-feedback">
 												<i class="icon-user-lock text-muted"></i>
 											</div>
 										</div>
 									</div>
+								</div>
 
-									<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-12">
 										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="password" name="confirm_password" class="form-control" placeholder="Repeat password">
+											<input type="password" name="confirm_password" class="form-control" placeholder="Repeat password" required="">
 											<div class="form-control-feedback">
 												<i class="icon-user-lock text-muted"></i>
 											</div>
