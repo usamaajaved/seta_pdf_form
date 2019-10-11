@@ -68,7 +68,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row">
         <div class="form-group col-lg-4">
             <label>Family Name:</label>
-            <input type="text" class="form-control" name="fname" placeholder="Your Name ">
+            <input type="text" class="form-control" name="fname" placeholder="Your Name" >
         </div>
         <div class="form-group col-lg-4">
             <label>Given Name:</label>
