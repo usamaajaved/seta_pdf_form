@@ -41,7 +41,6 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
 <div class="col-md-12">
     <div class="row text-center">
         <div class="form-group col-lg-12">
-            <input type="checkbox" name="test">
             <label class="d-block font-weight-semibold"> CHECK OFF THE BOX THAT IS APPLICABLE TO YOUR APPLICATION</label>
             <div class="custom-control custom-checkbox custom-control-inline" style="margin-left: 40px;">
                 <input type="checkbox" class="custom-control-input" id="checkbox1" name="CP" value="1">

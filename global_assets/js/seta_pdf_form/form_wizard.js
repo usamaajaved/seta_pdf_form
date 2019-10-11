@@ -146,7 +146,7 @@ var FormWizard = function() {
             autoFocus: true,
             onStepChanging: function (event, currentIndex, newIndex) {
                 //console.log(event, currentIndex, newIndex);
-                //save_form_data(event, currentIndex, newIndex);
+                save_form_data(event, currentIndex, newIndex);
 
                 // Allways allow previous action even if the current form is not valid!
                 if (currentIndex > newIndex) {
