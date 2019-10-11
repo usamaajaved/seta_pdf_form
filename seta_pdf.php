@@ -3,9 +3,21 @@ require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
 
 //  Insert Form Data into DB
+
 $form_data = json_encode($_POST);
-$query = "insert into pdf_form (form_data) VALUES ('".$form_data."')";
+$checkIfExistsQuery = "SELECT * FROM pdf_form WHERE user_id = ".$_POST['user_id']."";
+$res1 = mysqli_query($con_str, $checkIfExistsQuery);
+if($res1->num_rows==1){
+    $query = "UPDATE `pdf_form` SET `user_id`=".$_POST['user_id'].",`form_data`='".$form_data."' WHERE user_id = ".$_POST['user_id']."";
+}else{
+    $query = "insert into pdf_form (user_id, form_data) VALUES (".$_POST['user_id'].", '".$form_data."')";
+}
 $res = mysqli_query($con_str, $query);
+
+if(isset($_POST['submitType']) && $_POST['submitType']=="ajax"){
+    return false;
+}
+
 
 
 // Generate PDF

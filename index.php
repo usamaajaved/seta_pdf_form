@@ -38,7 +38,8 @@ if (!$_SESSION) {
                                 <h5 class="card-title">Client Information Form</h5>
                             </div>
                             <div class="card-body">
-                                <form class="wizard-form steps-validation" action="seta_pdf.php" enctype="multipart/form-data" method="post">
+                                <form class="wizard-form steps-validation" action="seta_pdf.php" enctype="multipart/form-data" method="post" id="seta_pdf_form_wizard">
+                                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                                     <h6>Personal Information</h6>
                                     <fieldset>
                                         <div class="row mt-10">
@@ -93,6 +94,22 @@ if (!$_SESSION) {
 
     </div>
 
+<script type="">
+    function save_form_data(){
+        var formData = new FormData($("#seta_pdf_form_wizard")[0]);
+        formData.append("submitType", "ajax");
+        $.ajax({
+            url: 'seta_pdf.php',
+            data: formData,
+            type: "POST",
+            processData: false,
+            contentType: false,
+            success: function(data){
+                
+            }
+        });
+    }
+</script>
 </body>
 </html>
 <?php }?>
