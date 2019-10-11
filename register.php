@@ -23,6 +23,11 @@
 										<label>Password dosen't match.</label>
 									</div>
 								</div>
+								<div class="row text-center pt-10 bg-success form-group" id="mail_sent" style="display: none;">
+									<div class="col-md-12">
+										<label>Mail Sent To your Mail Address.</label>
+									</div>
+								</div>
 								<div class="text-center mb-3">
 									<h5 class="mb-0">Create account</h5>
 								</div>
@@ -93,10 +98,17 @@
 			success:function(data){
 				if (data == "email does not exist") {
 					$("#email_exist").show();
+					$('#pass-dosent-match').hide();
 				} else if(data == "password does not match") {
-					$('#pass-dosent-match').show();	
+					$('#pass-dosent-match').show();
+					$("#email_exist").hide();	
 				} else if(data = "success") {
-					window.location.replace('login.php');
+					$('#mail_sent').show();
+					$('#pass-dosent-match').hide();
+					$("#email_exist").hide();
+					setTimeout(function(){
+						location.reload();
+					},3000);
 				}
 			}
 		});
