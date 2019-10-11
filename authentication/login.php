@@ -4,7 +4,7 @@ include "../config/config.php";
 
 $password = md5($_POST['password']);
 
-$query = "SELECT * FROM `users` WHERE `email` = '".$_POST['email']."' and `password` = '".$password."' "; 
+$query = "SELECT * FROM `users` WHERE `email` = '".$_POST['email']."' and `password` = '".$password."' and `is_verfiy` = 'Yes'"; 
 $res = mysqli_query($con_str,$query) or die(mysqli_error());
 if(mysqli_num_rows($res) >0){
 	while ($data = mysqli_fetch_array($res)){
