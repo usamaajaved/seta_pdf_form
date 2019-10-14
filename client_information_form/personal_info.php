@@ -1,5 +1,4 @@
 <!-- edited -->
-
 <?php 
 $query = "SELECT * from countries";
 $result = mysqli_query($con_str, $query);
@@ -68,15 +67,15 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row">
         <div class="form-group col-lg-4">
             <label>Family Name: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="fname" placeholder="First Name" value="<?php echo $formData->fname; ?>">
+            <input type="text" class="form-control" name="fname" placeholder="First Name" value="<?php if (isset($formData) && !empty($formData->fname)){echo $formData->fname;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Given Name: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="gname" placeholder="Last Name" value="<?php echo $formData->gname; ?>">
+            <input type="text" class="form-control" name="gname" placeholder="Last Name">
         </div>
         <div class="form-group col-lg-4">
             <label>Middle Name:</label>
-            <input type="text" class="form-control" name="mname" placeholder="Middle name " value="<?php echo $formData->mname; ?>">
+            <input type="text" class="form-control" name="mname" placeholder="Middle name ">
         </div>
     </div>
     <div class="row">
@@ -86,24 +85,24 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     </div>
     <div class="row">
         <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="oname_1" placeholder="E.g. birth name, alias, previous marrige name" value="<?php echo $formData->oname_1; ?>">
+            <input type="text" class="form-control" name="oname_1" placeholder="E.g. birth name, alias, previous marrige name">
         </div>
         <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="oname_2" placeholder="E.g. birth name, alias, previous marrige name" value="<?php echo $formData->oname_2; ?>">
+            <input type="text" class="form-control" name="oname_2" placeholder="E.g. birth name, alias, previous marrige name">
         </div>
         <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="oname_3" placeholder="E.g. birth name, alias, previous marrige name" value="<?php echo $formData->oname_3; ?>">
-        </div> 
+            <input type="text" class="form-control" name="oname_3" placeholder="E.g. birth name, alias, previous marrige name">
+        </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="oname_4" placeholder="E.g. birth name, alias, previous marrige name" value="<?php echo $formData->oname_4; ?>">
+            <input type="text" class="form-control" name="oname_4" placeholder="E.g. birth name, alias, previous marrige name">
         </div>
         <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="oname_5" placeholder="E.g. birth name, alias, previous marrige name" value="<?php echo $formData->oname_5; ?>">
+            <input type="text" class="form-control" name="oname_5" placeholder="E.g. birth name, alias, previous marrige name">
         </div>
         <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="oname_6" placeholder="E.g. birth name, alias, previous marrige name" value="<?php echo $formData->oname_6; ?>">
+            <input type="text" class="form-control" name="oname_6" placeholder="E.g. birth name, alias, previous marrige name">
         </div>
     </div>
     <div class="row">
@@ -144,11 +143,11 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row">
         <div class="form-group col-lg-4">
             <label>City: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="city" placeholder="Enter City" value="<?php echo $formData->city; ?>">
+            <input type="text" class="form-control" name="city" placeholder="Enter City">
         </div>
         <div class="form-group col-lg-4">
             <label>State: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="state" placeholder="Enter State" value="<?php echo $formData->state; ?>">
+            <input type="text" class="form-control" name="state" placeholder="Enter State">
         </div>
         <div class="form-group col-lg-4">
             <label>Country: <span class="text-danger">*</span></label>
@@ -166,25 +165,25 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row">
         <div class="form-group col-lg-4">
             <label>Home Phone Number:</label>
-            <input type="number" class="form-control" name="home" placeholder="Enter Home Number" value="<?php echo $formData->home; ?>">
+            <input type="number" class="form-control" name="home" placeholder="Enter Home Number">
         </div>
         <div class="form-group col-lg-4">
             <label>Cell Number: <span class="text-danger">*</span></label>
-            <input type="number" class="form-control" name="cell" placeholder="Enter Cell Number" value="<?php echo $formData->cell; ?>">
+            <input type="number" class="form-control" name="cell" placeholder="Enter Cell Number">
         </div>
         <div class="form-group col-lg-4">
             <label>Work Phone Number:</label>
-            <input type="number" class="form-control" name="work" placeholder="Enter Work Number" value="<?php echo $formData->work; ?>">
+            <input type="number" class="form-control" name="work" placeholder="Enter Work Number">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-6">
             <label>Primary Email Address:</label>
-            <input type="email" class="form-control" name="email" placeholder="Enter Your Mail" value="<?php echo $formData->email; ?>">
+            <input type="email" class="form-control" name="email" placeholder="Enter Your Mail">
         </div>
         <div class="form-group col-lg-6">
             <label>Secondary Mail Address:</label>
-            <input type="text" class="form-control" name="email2" placeholder="Enater Secondary Mail " value="<?php echo $formData->email2; ?>">
+            <input type="text" class="form-control" name="email2" placeholder="Enater Secondary Mail ">
         </div>
     </div>
     <div class="row">
