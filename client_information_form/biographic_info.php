@@ -5,11 +5,11 @@
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hispanic_latino" value="H" id="yes_hispanic_latino" checked="">
+                <input type="radio" class="custom-control-input" name="hispanic_latino" value="H" id="yes_hispanic_latino" checked="" <?php if (isset($formData->hispanic_latino) && $formData->hispanic_latino == 'H') {echo 'checked';}?>>
                 <label class="custom-control-label" for="yes_hispanic_latino"> Hispanic or Latino</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hispanic_latino" value="NH" id="no_hispanic_latino">
+                <input type="radio" class="custom-control-input" name="hispanic_latino" value="NH" id="no_hispanic_latino" <?php if (isset($formData->hispanic_latino) && $formData->hispanic_latino == 'NH') {echo 'checked';}?>>
                 <label class="custom-control-label" for="no_hispanic_latino"> Not Hispanic or Latino</label>
             </div>
         </div>
@@ -20,23 +20,23 @@
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="white" value="W" id="white">
+                <input type="checkbox" class="custom-control-input" name="white" value="W" id="white" <?php if (isset($formData->white) && $formData->white == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="white"> White</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="asian" value="A" id="asian">
+                <input type="checkbox" class="custom-control-input" name="asian" value="A" id="asian" <?php if (isset($formData->asian) && $formData->asian == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="asian"> Asian</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="black" value="B" id="black_african_american">
+                <input type="checkbox" class="custom-control-input" name="black" value="B" id="black_african_american" <?php if (isset($formData->black) && $formData->black == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="black_african_american"> Black or African American</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="american_indian" value="AA" id="american_indian">
+                <input type="checkbox" class="custom-control-input" name="american_indian" value="AA" id="american_indian" <?php if (isset($formData->american_indian) && $formData->american_indian == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="american_indian"> American Indian or Alaska Native</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="native" value="N" id="native_hawaiian">
+                <input type="checkbox" class="custom-control-input" name="native" value="N" id="native_hawaiian" <?php if (isset($formData->native) && $formData->native == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="native_hawaiian"> Native Hawaiian or Other Pacific Islander</label>
             </div>
         </div>
@@ -73,39 +73,39 @@
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="BLK" id="black">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="BLK" id="black" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'BLK') {echo 'checked';}?>>
                 <label class="custom-control-label" for="black"> Black</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="BLU" id="blue">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="BLU" id="blue" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'BLU') {echo 'checked';}?>>
                 <label class="custom-control-label" for="blue"> Blue</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="BRN" id="brown">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="BRN" id="brown" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'BRN') {echo 'checked';}?>>
                 <label class="custom-control-label" for="brown"> Brown</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="GRAY" id="gray">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="GRAY" id="gray" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'GRAY') {echo 'checked';}?>>
                 <label class="custom-control-label" for="gray"> Gray</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="GRN" id="green">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="GRN" id="green" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'GRN') {echo 'checked';}?>>
                 <label class="custom-control-label" for="green"> Green</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="HZl" id="Hazel">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="HZl" id="Hazel" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'HZl') {echo 'checked';}?>>
                 <label class="custom-control-label" for="green"> Hazel</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="MRN" id="Maroon">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="MRN" id="Maroon" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'MRN') {echo 'checked';}?>>
                 <label class="custom-control-label" for="Maroon"> Maroon</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="PNK" id="Pink">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="PNK" id="Pink" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'PNK') {echo 'checked';}?>>
                 <label class="custom-control-label" for="Pink"> Pink</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="eye_colour" value="OTH" id="Unknown">
+                <input type="radio" class="custom-control-input" name="eye_colour" value="OTH" id="Unknown" <?php if (isset($formData->eye_colour) && $formData->eye_colour == 'OTH') {echo 'checked';}?>>
                 <label class="custom-control-label" for="Unknown"> Unknown/Other</label>
             </div>
         </div>
@@ -116,39 +116,39 @@
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="BLD" id="bald">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="BLD" id="bald" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'BLD') {echo 'checked';}?>>
                 <label class="custom-control-label" for="bald"> Bald (No hair)</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="BLK" id="black_hair_colour">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="BLK" id="black_hair_colour" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'BLK') {echo 'checked';}?>>
                 <label class="custom-control-label" for="black_hair_colour"> Black</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="BND" id="blonde">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="BND" id="blonde" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'BND') {echo 'checked';}?>>
                 <label class="custom-control-label" for="blonde"> Blonde</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="BRN" id="brown_hair_colour">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="BRN" id="brown_hair_colour" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'BRN') {echo 'checked';}?>>
                 <label class="custom-control-label" for="brown_hair_colour"> Brown</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="GRY" id="gray_hair_colour">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="GRY" id="gray_hair_colour" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'GRY') {echo 'checked';}?>>
                 <label class="custom-control-label" for="gray_hair_colour"> Gray</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="RED" id="red">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="RED" id="red" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'RED') {echo 'checked';}?>>
                 <label class="custom-control-label" for="red"> Red</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="SDY" id="sandy">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="SDY" id="sandy" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'SDY') {echo 'checked';}?> >
                 <label class="custom-control-label" for="sandy"> Sandy</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="WHT" id="white_hair_colour">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="WHT" id="white_hair_colour" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'WHT') {echo 'checked';}?>>
                 <label class="custom-control-label" for="white_hair_colour"> White</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="hair_colour" value="OTH" id="Unknown_hair_colour">
+                <input type="radio" class="custom-control-input" name="hair_colour" value="OTH" id="Unknown_hair_colour" <?php if (isset($formData->hair_colour) && $formData->hair_colour == 'OTH') {echo 'checked';}?>>
                 <label class="custom-control-label" for="Unknown_hair_colour"> Unknown/Other</label>
             </div>
         </div>

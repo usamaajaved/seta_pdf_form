@@ -9,32 +9,32 @@ $result1 = mysqli_query($con_str,$query1);
 	<div class="row">
         <div class="form-group col-lg-8">
             <label>Current Home Address:</label>
-            <input type="text" class="form-control" name="current_address" placeholder="Current Address">
+            <input type="text" class="form-control" name="current_address" placeholder="Current Address" value="<?php if (isset($formData) && !empty($formData->current_address)){echo $formData->current_address;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="current_unit" placeholder="Unit">
+            <input type="text" class="form-control" name="current_unit" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->current_unit)){echo $formData->current_unit;} ?>">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-3">
             <label>City:</label>
-            <input type="text" class="form-control" name="current_city" placeholder="City">
+            <input type="text" class="form-control" name="current_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->current_city)){echo $formData->current_city;} ?>">
         </div>
         <div class="form-group col-lg-3">
             <label>Province:</label>
-            <input type="text" class="form-control" name="current_province" placeholder="Province">
+            <input type="text" class="form-control" name="current_province" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->current_province)){echo $formData->current_province;} ?>">
         </div>
         <div class="form-group col-lg-3">
             <label>Postal Code:</label>
-            <input type="text" class="form-control" name="current_postal" placeholder="Postal Code">
+            <input type="text" class="form-control" name="current_postal" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->current_postal)){echo $formData->current_postal;} ?>">
         </div>
         <div class="form-group col-lg-3">
             <label>Country:</label>
             <select data-placeholder="Select Country" name="current_country" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>">
+                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->current_country == $countries['name']){echo 'selected="selected"';} ?>>
                         <?php echo $countries['name']; ?>
                     </option>
                 <?php } ?>
@@ -54,7 +54,7 @@ $result1 = mysqli_query($con_str,$query1);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="current_date_from" placeholder="Date From">
+                <input type="text" class="form-control pickadate-accessibility" name="current_date_from" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->current_date_from)){echo $formData->current_date_from;} ?>">
             </div>
             <!-- <input type="text" class="form-control" name="current_date_from" placeholder="From"> -->
         </div>
@@ -67,32 +67,32 @@ $result1 = mysqli_query($con_str,$query1);
     <div class="row">
         <div class="form-group col-lg-8">
             <label>Mailing Address:</label>
-            <input type="text" class="form-control" name="mail_address" placeholder="Mailing Address">
+            <input type="text" class="form-control" name="mail_address" placeholder="Mailing Address" value="<?php if (isset($formData) && !empty($formData->mail_address)){echo $formData->mail_address;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="mail_unit" placeholder="Unit">
+            <input type="text" class="form-control" name="mail_unit" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->mail_unit)){echo $formData->mail_unit;} ?>">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-3">
             <label>City:</label>
-            <input type="text" class="form-control" name="mail_city" placeholder="City">
+            <input type="text" class="form-control" name="mail_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mail_city)){echo $formData->mail_city;} ?>">
         </div>
         <div class="form-group col-lg-3">
             <label>Province:</label>
-            <input type="text" class="form-control" name="mail_province" placeholder="Province">
+            <input type="text" class="form-control" name="mail_province" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->mail_province)){echo $formData->mail_province;} ?>">
         </div>
         <div class="form-group col-lg-3">
             <label>Postal Code:</label>
-            <input type="text" class="form-control" name="mail_postal" placeholder="Postal Code">
+            <input type="text" class="form-control" name="mail_postal" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->mail_postal)){echo $formData->mail_postal;} ?>">
         </div>
         <div class="form-group col-lg-3">
             <label>Country:</label>
             <select data-placeholder="Select Country" name="mail_country" class="form-control select" data-fouc>
                 <?php while ($countries = mysqli_fetch_array($result1)) { ?>
                     <option></option>
-                    <option value="<?php echo $countries['name']; ?>">
+                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mail_country == $countries['name']){echo 'selected="selected"';} ?>>
                         <?php echo $countries['name']; ?>
                     </option>
                 <?php } ?>

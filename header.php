@@ -42,7 +42,6 @@
     <script src="assets/js/app.js"></script>
     <script src="global_assets/js/demo_pages/dashboard.js"></script>
     <script src="global_assets/js/seta_pdf_form/form_wizard.js"></script>
-    <script src="global_assets/js/seta_pdf_form/save_form_data.js"></script>
     <script src="global_assets/js/demo_pages/picker_date.js"></script>
 
     <script src="global_assets/js/plugins/ui/moment/moment.min.js"></script>

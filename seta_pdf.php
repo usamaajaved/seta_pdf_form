@@ -92,8 +92,12 @@ $fields['WorkNo']->setValue($_POST['work']);
 $fields['FormI-192[0].#subform[7].Part8_Line6_Email[0]']->setValue($_POST['email']);
 $fields['SecondaryEmail']->setValue($_POST['email2']);
 $fields['DL']->setValue($_POST['d_license']);
-$fields['DLNo']->setValue($_POST['license_no']);
-$fields['DLIssue']->setValue($_POST['license_province']);
+if (isset($_POST['license_no'])) {
+    $fields['DLNo']->setValue($_POST['license_no']);
+}
+if (isset($_POST['license_province'])) {
+    $fields['DLIssue']->setValue($_POST['license_province']);
+}
 $fields['FormI-192[0].#subform[2].Pt2Line10_StreetNumberName[5]']->setValue($_POST['current_address']);
 $fields['FormI-192[0].#subform[2].Pt2Line12_AptSteFlrNumber[0]']->setValue($_POST['current_unit']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[5]']->setValue($_POST['current_city']);
@@ -569,7 +573,7 @@ $fields['FormI-192[0].#subform[3].Part4Line15_StateorProvince[0]']->setValue($_P
 $fields['FormI-192[0].#subform[3].Part4Line15_Country[0]']->setValue($_POST['filed_application_country']);
 $fields['FormI-192[0].#subform[3].#area[0].Pt3Line1_ReceiptNumber[0]']->setValue($_POST['filed_application_receipt_no']);
 
-$fields['6mos']->setValue($_POST['6mos']);
+$fields['6mos']->setValue($_POST['sixmos']);
 if (isset($_POST['entered_date']) && $_POST['entered_date'] != null) {
     $entered_date = explode('/', $_POST['entered_date']);
     $entered_date_month = $entered_date[0];
