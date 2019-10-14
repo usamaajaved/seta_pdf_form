@@ -72,8 +72,10 @@
 				if (data == "email does not exist") {
 					//console.log(data);
 					$('#wrong_email').show();
+					$('#email_sent').hide();
 				} else if (data == "reset password email") {
 					$('#email_sent').show();
+					$('#wrong_email').hide();
 				}
 			}
 		});

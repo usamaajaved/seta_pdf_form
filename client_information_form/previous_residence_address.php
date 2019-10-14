@@ -19,21 +19,21 @@ $e_result = mysqli_query($con_str,$e_query);
     <div class="row">
         <div class="form-group col-lg-8">
             <label>a) Street Number and Name:</label>
-            <input type="text" class="form-control" name="prev_address_1" placeholder="Street Number and Name">
+            <input type="text" class="form-control" name="prev_address_1" value="<?php if (isset($formData) && !empty($formData->prev_address_1)){echo $formData->prev_address_1;} ?>" placeholder="Street Number and Name">
         </div>
         <div class="form-group col-lg-4">
             <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="prev_unit_1" placeholder="Unit">
+            <input type="text" class="form-control" name="prev_unit_1" value="<?php if (isset($formData) && !empty($formData->prev_unit_1)){echo $formData->prev_unit_1;} ?>" placeholder="Unit">
         </div>
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-2">
             <label>City:</label>
-            <input type="text" class="form-control" name="prev_city_1" placeholder="City">
+            <input type="text" class="form-control" name="prev_city_1" value="<?php if (isset($formData) && !empty($formData->prev_city_1)){echo $formData->prev_city_1;} ?>" placeholder="City">
         </div>
         <div class="form-group col-lg-2">
             <label>Province:</label>
-            <input type="text" class="form-control" name="prev_province_1" placeholder="Province">
+            <input type="text" class="form-control" name="prev_province_1" value="<?php if (isset($formData) && !empty($formData->prev_province_1)){echo $formData->prev_province_1;} ?>" placeholder="Province">
         </div>
         <div class="form-group col-lg-2">
             <label>Postal Code:</label>
