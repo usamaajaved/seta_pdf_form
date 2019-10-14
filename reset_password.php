@@ -17,8 +17,8 @@ function my_simple_crypt( $string, $action = 'e' ) {
   	return $output;
 }
 
-// $encrypt_id = $_GET['id'];
-// $id = my_simple_crypt($encrypt_id,'d');
+$encrypt_id = $_GET['id'];
+$id = my_simple_crypt($encrypt_id,'d');
  ?>
 
 <div class="page-content">
@@ -32,6 +32,11 @@ function my_simple_crypt( $string, $action = 'e' ) {
 			<form class="login-form" id="reset_pass_form" method="POST">
 				<div class="card mb-0">
 					<div class="card-body">
+						<div class="row text-center pt-10 bg-success form-group" id="pass_changed" style="display: none;">
+							<div class="col-md-12">
+								<label>Password changed successfuly.</label>
+							</div>
+						</div>
 						<div class="text-center mb-3">
 							<i class="icon-unlocked icon-2x text-slate-300 border-slate-300 border-3 p-3 mb-3 mt-1"></i>
 							<h5 class="mb-0">Reset your password</h5>
@@ -58,7 +63,7 @@ function my_simple_crypt( $string, $action = 'e' ) {
 						</div>
 
 						<div class="form-group">
-							<button type="button"  onclick="reset_password()" class="btn btn-primary btn-block">Save<i class="icon-circle-right2 ml-2"></i></button>
+							<button type="button"  onclick="reset_password(<?php echo $id; ?>)" class="btn btn-primary btn-block">Save<i class="icon-circle-right2 ml-2"></i></button>
 						</div>
 					</div>
 				</div>
@@ -73,17 +78,17 @@ function my_simple_crypt( $string, $action = 'e' ) {
 </div>
 
 <script type="text/javascript">
-	function reset_password(){
+	function reset_password(user_id){
 		//alert();
 		var new_password = $('#new_password').val();
 		var confirm_password = $('#confirm_password').val();
-		$.post('authentication/reset_password.php',{new_password:new_password,confirm_password:confirm_password}).done(function(data){
+		$.post('authentication/reset_password.php',{new_password:new_password,confirm_password:confirm_password,user_id:user_id}).done(function(data){
 			//console.log(data);
 			if (data == "Password dosent match") {
 				$('#wrong_pass').show();
-			}else if(data == "success"){
-				$('#activated').show();
-				$('#wrong_email').hide();
+			}else if(data == "password changed"){
+				$('#pass_changed').show();
+				$('#wrong_pass').hide();
 				setTimeout(function() {
 			        window.location.replace('login.php');
 			    }, 3000);
