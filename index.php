@@ -5,6 +5,12 @@ if (!$_SESSION) {
 }else{
 ?>
 <?php include 'header.php'; ?>
+<?php 
+    $getFormData = "Select * from pdf_form where user_id = ".$_SESSION['user_id']."";
+    $getQuery = mysqli_query($con_str, $getFormData);
+    $res = mysqli_fetch_object($getQuery);
+    $formData = json_decode($res->form_data);
+?>
 <body>
     <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
         <div class="collapse navbar-collapse" id="navbar-mobile">
