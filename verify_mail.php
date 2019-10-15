@@ -35,7 +35,7 @@ $id = my_simple_crypt($encrypt_id,'d');
 						<div class="card mb-0">
 							<div class="card-body">
 								<div class="text-center mb-3">
-									<i class="icon-mail5 icon-2x text-slate-300 border-slate-300 border-3 p-3 mb-3 mt-1"></i>
+									<img src="assets/img/logo-final-02.jpg" height="80px">
 								</div>
 								<div class="row text-center pt-10 bg-success form-group" id="activated" style="display: none;">
 									<div class="col-md-12">

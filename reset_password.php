@@ -38,7 +38,7 @@ $id = my_simple_crypt($encrypt_id,'d');
 							</div>
 						</div>
 						<div class="text-center mb-3">
-							<i class="icon-unlocked icon-2x text-slate-300 border-slate-300 border-3 p-3 mb-3 mt-1"></i>
+							<img src="assets/img/logo-final-02.jpg" height="80px">
 							<h5 class="mb-0">Reset your password</h5>
 						</div>
 

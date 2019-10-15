@@ -18,9 +18,12 @@ if (!$_SESSION) {
         <div class="collapse navbar-collapse" id="navbar-mobile">
             <div class="navbar-brand" style="padding: 0px;">
                 <a href="index.html" class="d-inline-block">
-                    <img src="assets/img/logo-final-02.jpg" alt="Record Removal Services" style="height: 80px;">
+                    <img src="assets/img/logo-final-02.jpg" alt="Record Removal Services" style="height: 76px;">
                 </a>
             </div>
+            <span class="navbar-text ml-md-3" style="padding-bottom: 0px;">
+                <h1 style="color: black;">Client Information Form</h1>
+            </span>
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
                     <a href="authentication/logout.php" class="navbar-nav-link legitRipple">
@@ -38,7 +41,7 @@ if (!$_SESSION) {
 
             <div class="page-header">
                 <div class="card-header header-elements-inline">
-                    <h1 class="card-title">Client Information Form</h1>
+                    <!-- <h1 class="card-title">Client Information Form</h1> -->
                 </div>
             </div>
 

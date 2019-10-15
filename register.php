@@ -29,6 +29,7 @@
 									</div>
 								</div>
 								<div class="text-center mb-3">
+									<img src="assets/img/logo-final-02.jpg" height="80px">
 									<h5 class="mb-0">Create account</h5>
 								</div>
 
