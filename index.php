@@ -13,19 +13,73 @@ if (!$_SESSION) {
         $formData = json_decode($res->form_data);
     }
 ?>
+<style type="text/css">
+
+    .wizard>.steps>ul>li.current .number {
+        font-size: 0;
+        border-color: #9f0509;
+        background-color: #fff;
+        color: #9f0509;
+    }
+    .wizard>.steps>ul>li.done .number {
+        font-size: 0;
+        background-color: #208424;
+        border-color: #208424;
+        color: #fff;
+    }
+    .wizard>.steps>ul>li:after, .wizard>.steps>ul>li:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2.375rem;
+        width: 50%;
+        height: 2px;
+        background-color: #208424;
+        z-index: 9;
+    }
+    .btn-primary{
+        color: #fff;
+        background-color: #9f0509;
+    }
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #b91414;
+    }
+
+</style>
+<!-- <style type="text/css">
+.wizard>.steps>ul>li.done .number {
+    font-size: 0;
+    background-color: #d40a0030;
+}
+.wizard>.steps>ul>li:after, .wizard>.steps>ul>li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2.375rem;
+    width: 50%;
+    height: 2px;
+    background-color: #d40a0030;
+    z-index: 9;
+}
+    span.number {
+        color: #9f0509 !important;
+        border-color: #9f0509 !important;
+    }
+</style> -->
 <body>
-    <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static" style="background-color: #ffff;">
+    <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static" style="background-color: #9f0509;">
         <div class="collapse navbar-collapse" id="navbar-mobile">
-                <a href="index.html" class="d-inline-block">
+                <a href="" class="d-inline-block">
                     <img src="assets/img/logo-final-02.jpg" alt="Record Removal Services" style="height: 76px;">
                 </a>
             <span class="navbar-text ml-md-3" style="padding-bottom: 0px;">
-                <h3 style="color: black;">Client Information Form</h3>
+                <h3 style="font-family: initial; margin-left: 330px;">CLIENT INFORMATION FORM</h3>
             </span>
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
                     <a href="authentication/logout.php" class="navbar-nav-link legitRipple">
-                        <i class="icon-switch2" style="color: black;"></i>
+                        <i class="icon-switch2"></i>
                         <span class="d-md-none ml-2">Logout</span>
                     </a>
                 </li>
@@ -123,6 +177,10 @@ if (!$_SESSION) {
             }
         });
     }
+
+    $('.btn-primary').click(function(){
+        alert();
+    });
 </script>
 </body>
 </html>
