@@ -1,5 +1,31 @@
 <?php include 'header.php'; ?>
-<?php //print_r(base_url); exit;?>
+<?php 
+function my_simple_crypt( $string, $action = 'e' ) {
+  	$secret_key = 'my_simple_secret_key';
+  	$secret_iv = 'my_simple_secret_iv';
+  	$output = false;
+  	$encrypt_method = "AES-256-CBC";
+  	$key = hash( 'sha256', $secret_key );
+  	$iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
+  	if( $action == 'e' ) {
+      	$output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
+  	}	
+  	else if( $action == 'd' ){
+      	$output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
+  	}
+  	return $output;
+}
+
+$encrypt_id = $_GET['id'];
+$id = my_simple_crypt($encrypt_id,'d');
+
+$update_user = "UPDATE users SET is_verfiy = 'Yes' where id = ".$id." ";
+$res = mysqli_query($con_str,$update_user);
+if ($res) {
+	echo "<span id='activated_text' style='text-align: center;margin-top: 25px;font-size: 28px;color: green;background: #c8f4c8;padding: 6px;'>Your Account has been verfied. Please Login!</span>";
+}
+
+?>
 
 <div class="page-content">
 
@@ -63,6 +89,10 @@
 </div>
 
 <script type="text/javascript">
+	setTimeout(function(){
+		$('#activated_text').hide();
+	}, 3000);
+
 	$('#login_form').on('submit',function(e){
 		e.preventDefault();
 		var formData = new FormData($(this)[0]);

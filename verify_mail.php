@@ -1,5 +1,4 @@
 <?php include 'header.php'; ?>
-
 <?php 
 function my_simple_crypt( $string, $action = 'e' ) {
   	$secret_key = 'my_simple_secret_key';
@@ -78,7 +77,8 @@ $id = my_simple_crypt($encrypt_id,'d');
 <script type="text/javascript">
 	function activate_account(user_id){
 		var email = $('#email').val();
-		$.post('authentication/verify_mail.php',{user_id:user_id,email:email}).done(function(data){
+		var url = '<?php echo base_url; ?>';
+		$.post(''+url+'authentication/verify_mail.php',{user_id:user_id,email:email}).done(function(data){
 			if (data == "wrong email") {
 				$('#wrong_email').show();
 			}else if(data == "success"){
