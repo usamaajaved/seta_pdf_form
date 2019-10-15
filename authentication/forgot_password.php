@@ -153,7 +153,7 @@ if(mysqli_num_rows($getUser)){
 		          <tr>
 		            <td align="center" bgcolor="#ffffff" style="padding: 24px; font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
 		              <p style="margin: 0;">If that does not work, copy and paste the following link in your browser:</p>
-		              <p style="margin: 0;padding: 12px;"><a href="'.base_url.'verify_mail.php?id='.$encrypt_id.'">'.base_url.'reset_password.php?id='.$encrypt_id.'</a></p>
+		              <p style="margin: 0;padding: 12px;"><a href="'.base_url.'reset_password.php?id='.$encrypt_id.'">'.base_url.'reset_password.php?id='.$encrypt_id.'</a></p>
 		            </td>
 		            <tr style="height:35px">
 		            <td bgcolor="#ffffff"></td>
