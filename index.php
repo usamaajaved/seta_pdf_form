@@ -16,13 +16,11 @@ if (!$_SESSION) {
 <body>
     <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static" style="background-color: #ffff;">
         <div class="collapse navbar-collapse" id="navbar-mobile">
-            <div class="navbar-brand" style="padding: 0px;">
                 <a href="index.html" class="d-inline-block">
                     <img src="assets/img/logo-final-02.jpg" alt="Record Removal Services" style="height: 76px;">
                 </a>
-            </div>
             <span class="navbar-text ml-md-3" style="padding-bottom: 0px;">
-                <h1 style="color: black;">Client Information Form</h1>
+                <h3 style="color: black;">Client Information Form</h3>
             </span>
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
