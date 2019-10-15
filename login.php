@@ -40,7 +40,7 @@ if ($res) {
 				<div class="card mb-0">
 					<div class="card-body">
 						<div class="text-center mb-3">
-							<i class="icon-reading icon-2x text-slate-300 border-slate-300 border-3 rounded-round p-3 mb-3 mt-1"></i>
+							<img src="assets/img/logo-final-02.jpg" height="80px">
 							<h5 class="mb-0">Login to your account</h5>
 						</div>
 

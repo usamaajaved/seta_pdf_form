@@ -67,11 +67,11 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row">
         <div class="form-group col-lg-4">
             <label>Family Name: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="fname" placeholder="First Name" value="<?php if (isset($formData) && !empty($formData->fname)){echo $formData->fname;} ?>">
+            <input type="text" class="form-control required" name="fname" placeholder="Family Name" value="<?php if (isset($formData) && !empty($formData->fname)){echo $formData->fname;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Given Name: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="gname" placeholder="Last Name" value="<?php if (isset($formData) && !empty($formData->gname)){echo $formData->gname;} ?>">
+            <input type="text" class="form-control required" name="gname" placeholder="Given Name" value="<?php if (isset($formData) && !empty($formData->gname)){echo $formData->gname;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Middle Name:</label>
@@ -124,15 +124,16 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="dob" placeholder="Date of Birth" value="<?php if (isset($formData) && !empty($formData->dob)){echo $formData->dob;} ?>">
+                <input type="text" class="form-control pickadate-accessibility required" name="dob" placeholder="Date of Birth" value="<?php if (isset($formData) && !empty($formData->dob)){echo $formData->dob;} ?>">
             </div>
         </div>
         <div class="form-group col-lg-4">
             <label>Nationality: <span class="text-danger">*</span></label>
-            <select data-placeholder="Enter Nationality" class="form-control form-control-select2" data-fouc name="nationality">
+            <select data-placeholder="Enter Nationality" class="form-control form-control-select2 required" data-fouc name="nationality">
                 <option></option>
                 <?php while ($nationalities = mysqli_fetch_array($result_nat)) { ?>
-                    <option value="<?php echo $nationalities['nationality']; ?>" <?php if (isset($formData) && $formData->nationality == $nationalities['nationality']){echo 'selected="selected"';} ?>>
+                    <option value="<?php echo $nationalities['nationality']; ?>" <?php if (isset($formData) && $formData->nationality == $nationalities['nationality']){echo 'selected="selected"';} 
+                    elseif (!isset($formData) && $nationalities['nationality'] == 'Canadian') {echo 'selected="selected"';}?>>
                         <?php echo $nationalities['nationality']; ?>
                     </option>
                 <?php } ?>
@@ -143,18 +144,18 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row">
         <div class="form-group col-lg-4">
             <label>City: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="city" placeholder="Enter City" value="<?php if (isset($formData) && !empty($formData->city)){echo $formData->city;} ?>">
+            <input type="text" class="form-control required" name="city" placeholder="Enter City" value="<?php if (isset($formData) && !empty($formData->city)){echo $formData->city;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>State: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control" name="state" placeholder="Enter State" value="<?php if (isset($formData) && !empty($formData->state)){echo $formData->state;} ?>">
+            <input type="text" class="form-control required" name="state" placeholder="Enter State" value="<?php if (isset($formData) && !empty($formData->state)){echo $formData->state;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Country: <span class="text-danger">*</span></label>
-            <select data-placeholder="Select Country" class="form-control form-control-select2" data-fouc name="country">
+            <select data-placeholder="Select Country" class="form-control form-control-select2 required" data-fouc name="country">
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->country == $countries['name']){echo 'selected="selected"';} ?>>
+                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->country == $countries['name']){echo 'selected="selected"';}elseif (!isset($formData) && $countries['name'] == 'Canada') {echo 'selected="selected"';} ?>>
                         <?php echo $countries['name']; ?>
                     </option>
                 <?php } ?>
@@ -164,22 +165,22 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     </div>
     <div class="row">
         <div class="form-group col-lg-4">
-            <label>Home Phone Number:</label>
-            <input type="number" class="form-control" name="home" placeholder="Enter Home Number" value="<?php if (isset($formData) && !empty($formData->home)){echo $formData->home;} ?>">
+            <label>Home Phone Number: <span class="text-danger">*</span></label>
+            <input type="number" class="form-control required" name="home" placeholder="Enter Home Number" value="<?php if (isset($formData) && !empty($formData->home)){echo $formData->home;} ?>">
         </div>
         <div class="form-group col-lg-4">
             <label>Cell Number: <span class="text-danger">*</span></label>
-            <input type="number" class="form-control" name="cell" placeholder="Enter Cell Number" value="<?php if (isset($formData) && !empty($formData->cell)){echo $formData->cell;} ?>">
+            <input type="number" class="form-control required" name="cell" placeholder="Enter Cell Number" value="<?php if (isset($formData) && !empty($formData->cell)){echo $formData->cell;} ?>">
         </div>
         <div class="form-group col-lg-4">
-            <label>Work Phone Number:</label>
-            <input type="number" class="form-control" name="work" placeholder="Enter Work Number" value="<?php if (isset($formData) && !empty($formData->work)){echo $formData->work;} ?>">
+            <label>Work Phone Number: <span class="text-danger">*</span></label>
+            <input type="number" class="form-control required" name="work" placeholder="Enter Work Number" value="<?php if (isset($formData) && !empty($formData->work)){echo $formData->work;} ?>">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-6">
-            <label>Primary Email Address:</label>
-            <input type="email" class="form-control" name="email" placeholder="Enter Your Mail" value="<?php if (isset($formData) && !empty($formData->email)){echo $formData->email;} ?>">
+            <label>Primary Email Address: <span class="text-danger">*</span></label>
+            <input type="email" class="form-control required" name="email" placeholder="Enter Your Mail" value="<?php if (isset($formData) && !empty($formData->email)){echo $formData->email;} ?>">
         </div>
         <div class="form-group col-lg-6">
             <label>Secondary Mail Address:</label>
@@ -210,12 +211,12 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-6">
-            <label>U.S Social Security Number:</label>
-            <input type="text" class="form-control" name="security_no" placeholder="Social Security Number" value="<?php if (isset($formData) && !empty($formData->security_no)){echo $formData->security_no;} ?>">
+            <label>U.S Social Security Number: <span class="text-danger">*</span></label>
+            <input type="text" class="form-control required" name="security_no" placeholder="Social Security Number" value="<?php if (isset($formData) && !empty($formData->security_no)){echo $formData->security_no;} ?>">
         </div>
         <div class="form-group col-lg-6">
-            <label>U.S Alien Registration Number:</label>
-            <input type="text" class="form-control" name="alien_no" placeholder="Alien Registration Number" value="<?php if (isset($formData) && !empty($formData->alien_no)){echo $formData->alien_no;} ?>">
+            <label>U.S Alien Registration Number: <span class="text-danger">*</span></label>
+            <input type="text" class="form-control required" name="alien_no" placeholder="Alien Registration Number" value="<?php if (isset($formData) && !empty($formData->alien_no)){echo $formData->alien_no;} ?>">
         </div>
     </div>
 
@@ -234,10 +235,10 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Family Name: <span class="text-danger">*</span></label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="father_family_name" placeholder="Family Name" value="<?php if (isset($formData) && !empty($formData->father_family_name)){echo $formData->father_family_name;} ?>">
+            <input type="text" class="form-control required" name="father_family_name" placeholder="Father's Family Name" value="<?php if (isset($formData) && !empty($formData->father_family_name)){echo $formData->father_family_name;} ?>">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="mother_family_name" placeholder="Family Name" value="<?php if (isset($formData) && !empty($formData->mother_family_name)){echo $formData->mother_family_name;} ?>">
+            <input type="text" class="form-control required" name="mother_family_name" placeholder="Mother's Family Name" value="<?php if (isset($formData) && !empty($formData->mother_family_name)){echo $formData->mother_family_name;} ?>">
         </div>
     </div>
     <div class="row">
@@ -245,10 +246,10 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>First Name: <span class="text-danger">*</span></label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="father_first_name" placeholder="First Name" value="<?php if (isset($formData) && !empty($formData->father_first_name)){echo $formData->father_first_name;} ?>">
+            <input type="text" class="form-control required" name="father_first_name" placeholder="Father's First Name" value="<?php if (isset($formData) && !empty($formData->father_first_name)){echo $formData->father_first_name;} ?>">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="mother_first_name" placeholder="First Name" value="<?php if (isset($formData) && !empty($formData->mother_first_name)){echo $formData->mother_first_name;} ?>">
+            <input type="text" class="form-control required" name="mother_first_name" placeholder="Mother's First Name" value="<?php if (isset($formData) && !empty($formData->mother_first_name)){echo $formData->mother_first_name;} ?>">
         </div>
     </div>
     <div class="row">
@@ -260,7 +261,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="father_dob" placeholder="Father Date of Birth" value="<?php if (isset($formData) && !empty($formData->father_dob)){echo $formData->father_dob;} ?>">
+                <input type="text" class="form-control required pickadate-accessibility" name="father_dob" placeholder="Father's Date of Birth" value="<?php if (isset($formData) && !empty($formData->father_dob)){echo $formData->father_dob;} ?>">
             </div>
         </div>
         <div class="form-group col-lg-5">
@@ -268,7 +269,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="mother_dob" placeholder="Mother Date of Birth" value="<?php if (isset($formData) && !empty($formData->mother_dob)){echo $formData->mother_dob;} ?>">
+                <input type="text" class="form-control required pickadate-accessibility" name="mother_dob" placeholder="Mother's Date of Birth" value="<?php if (isset($formData) && !empty($formData->mother_dob)){echo $formData->mother_dob;} ?>">
             </div>
         </div>
     </div>
@@ -277,10 +278,10 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>City of Birth: <span class="text-danger">*</span></label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="father_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->father_birth_city)){echo $formData->father_birth_city;} ?>">
+            <input type="text" class="form-control required" name="father_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->father_birth_city)){echo $formData->father_birth_city;} ?>">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="mother_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mother_birth_city)){echo $formData->mother_birth_city;} ?>">
+            <input type="text" class="form-control required" name="mother_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mother_birth_city)){echo $formData->mother_birth_city;} ?>">
         </div>
     </div>
     <div class="row">
@@ -288,7 +289,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Country of Birth: <span class="text-danger">*</span></label>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control form-control-select2" name="father_birth_country" data-fouc >
+            <select data-placeholder="Select Country" class="form-control required form-control-select2" name="father_birth_country" data-fouc >
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($father_birth_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->father_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
@@ -299,7 +300,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             </select>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control form-control-select2" name="mother_birth_country" data-fouc >
+            <select data-placeholder="Select Country" class="form-control required form-control-select2" name="mother_birth_country" data-fouc >
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($mother_birth_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mother_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
@@ -315,10 +316,10 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>City of Residence: <span class="text-danger">*</span></label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="father_residence_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->father_residence_city)){echo $formData->father_residence_city;} ?>">
+            <input type="text" class="form-control required" name="father_residence_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->father_residence_city)){echo $formData->father_residence_city;} ?>">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="mother_residence_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mother_residence_city)){echo $formData->mother_residence_city;} ?>">
+            <input type="text" class="form-control required" name="mother_residence_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mother_residence_city)){echo $formData->mother_residence_city;} ?>">
         </div>
     </div>
     <div class="row">
@@ -326,7 +327,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Country of Residence: <span class="text-danger">*</span></label>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control form-control-select2" data-fouc name="father_residence_country">
+            <select data-placeholder="Select Country" class="form-control required form-control-select2" data-fouc name="father_residence_country">
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($father_residence_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->father_residence_country == $countries['name']){echo 'selected="selected"';} ?>>
@@ -337,7 +338,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             </select>
         </div>
         <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control form-control-select2" name="mother_residence_country" data-fouc >
+            <select data-placeholder="Select Country" class="form-control required form-control-select2" name="mother_residence_country" data-fouc >
                 <option></option>
                 <?php while ($countries = mysqli_fetch_array($mother_residence_country_result)) { ?>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mother_residence_country == $countries['name']){echo 'selected="selected"';} ?>>
@@ -369,10 +370,10 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>Family Name:</label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="cfamily_name" placeholder="Family Name" value="<?php if (isset($formData) && !empty($formData->cfamily_name)){echo $formData->cfamily_name;} ?>">
+            <input type="text" class="form-control" name="cfamily_name" placeholder="Current Spouse's Family Name" value="<?php if (isset($formData) && !empty($formData->cfamily_name)){echo $formData->cfamily_name;} ?>">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="ffamily_name" placeholder="Family Name" value="<?php if (isset($formData) && !empty($formData->ffamily_name)){echo $formData->ffamily_name;} ?>">
+            <input type="text" class="form-control" name="ffamily_name" placeholder="Former Spouse's Family Name" value="<?php if (isset($formData) && !empty($formData->ffamily_name)){echo $formData->ffamily_name;} ?>">
         </div>
     </div>
     <div class="row">
@@ -380,10 +381,10 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label>First Name:</label>
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="c_first_name" placeholder="First Name" value="<?php if (isset($formData) && !empty($formData->c_first_name)){echo $formData->c_first_name;} ?>">
+            <input type="text" class="form-control" name="c_first_name" placeholder="Current Spouse's First Name" value="<?php if (isset($formData) && !empty($formData->c_first_name)){echo $formData->c_first_name;} ?>">
         </div>
         <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="f_f_name" placeholder="First Name" value="<?php if (isset($formData) && !empty($formData->f_f_name)){echo $formData->f_f_name;} ?>">
+            <input type="text" class="form-control" name="f_f_name" placeholder="Former Spouse's First Name" value="<?php if (isset($formData) && !empty($formData->f_f_name)){echo $formData->f_f_name;} ?>">
         </div>
     </div>
     <div class="row">
@@ -395,7 +396,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="c_dob" placeholder="Current Spouse DOB" value="<?php if (isset($formData) && !empty($formData->c_dob)){echo $formData->c_dob;} ?>">
+                <input type="text" class="form-control pickadate-accessibility" name="c_dob" placeholder="Current Spouse's DOB" value="<?php if (isset($formData) && !empty($formData->c_dob)){echo $formData->c_dob;} ?>">
             </div>
         </div>
         <div class="form-group col-lg-5">
@@ -403,7 +404,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="f_dob" placeholder="Former Spouse DOB" value="<?php if (isset($formData) && !empty($formData->f_dob)){echo $formData->f_dob;} ?>">
+                <input type="text" class="form-control pickadate-accessibility" name="f_dob" placeholder="Former Spouse's DOB" value="<?php if (isset($formData) && !empty($formData->f_dob)){echo $formData->f_dob;} ?>">
             </div>
         </div>
     </div>

@@ -14,12 +14,20 @@ if (!$_SESSION) {
     }
 ?>
 <body>
-    <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static">
+    <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static" style="background-color: #ffff;">
         <div class="collapse navbar-collapse" id="navbar-mobile">
+            <div class="navbar-brand" style="padding: 0px;">
+                <a href="index.html" class="d-inline-block">
+                    <img src="assets/img/logo-final-02.jpg" alt="Record Removal Services" style="height: 76px;">
+                </a>
+            </div>
+            <span class="navbar-text ml-md-3" style="padding-bottom: 0px;">
+                <h1 style="color: black;">Client Information Form</h1>
+            </span>
             <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item">
                     <a href="authentication/logout.php" class="navbar-nav-link legitRipple">
-                        <i class="icon-switch2"></i>
+                        <i class="icon-switch2" style="color: black;"></i>
                         <span class="d-md-none ml-2">Logout</span>
                     </a>
                 </li>
@@ -31,8 +39,10 @@ if (!$_SESSION) {
 
         <div class="content-wrapper">
 
-            <div class="page-header" style="margin-top: 50px">
-                
+            <div class="page-header">
+                <div class="card-header header-elements-inline">
+                    <!-- <h1 class="card-title">Client Information Form</h1> -->
+                </div>
             </div>
 
 
@@ -42,9 +52,7 @@ if (!$_SESSION) {
 
                         <!-- Basic layout-->
                         <div class="card">
-                            <div class="card-header header-elements-inline">
-                                <h5 class="card-title">Client Information Form</h5>
-                            </div>
+                            
                             <div class="card-body">
                                 <form class="wizard-form steps-validation" action="seta_pdf.php" enctype="multipart/form-data" method="post" id="seta_pdf_form_wizard">
                                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">

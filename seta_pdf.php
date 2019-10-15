@@ -1,6 +1,7 @@
 <?php
 require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
+include("config/base_path.php");
 
 //  Insert Form Data into DB
 
@@ -663,7 +664,7 @@ if (isset($_POST['native']) && $_POST['native'] == 'on') {
 $document->save()->finish();
 // copy it over
 copy($tempWriter->getPath(), $_POST['fname'].".pdf");
-// $to = 'usama-javed@hotmail.com'
+// $to = '.base_email.'
 
 // //sender
 // $from = 'sender@example.com';
