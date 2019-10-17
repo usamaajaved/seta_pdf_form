@@ -1,6 +1,5 @@
 <?php 
 include "../config/config.php";
-include "../config/base_path.php";
 
 function my_simple_crypt( $string, $action = 'e' ) {
     // you may change these values to your own
@@ -29,7 +28,7 @@ if ($check_email > 0) {
 	echo 'password does not match';
 } else {
 	$password = md5($_POST['password']);
-	$reg_user = "INSERT INTO `users`(`email`,`password`,`is_verfiy`) VALUES('".$_POST["email"]."','".$password."','No')"; 
+	$reg_user = "INSERT INTO `users`(`email`,`password`,`is_verfiy`,`is_form`) VALUES('".$_POST["email"]."','".$password."','No','No')"; 
 	$res = mysqli_query($con_str,$reg_user) or die(mysqli_error());
 
 	$last_id = $con_str->insert_id;
@@ -185,7 +184,7 @@ if ($check_email > 0) {
 			</body>
 		</html>';
 
-	mail($to, $subject, $message, $headers);
+		mail($to, $subject, $message, $headers);
 	echo "success";
 }
 //'.url.'password_reset.php?id='.$id.'
