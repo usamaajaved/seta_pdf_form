@@ -16,31 +16,35 @@ $e_query = "SELECT * from countries";
 $e_result = mysqli_query($con_str,$e_query);
 ?>
 <div class="col-md-12">
+    <div class="row mb-10">
+        <div class="form-group mb-3 mb-md-2 col-lg-12 text-center">
+            <strong>List all previous addresses in full that you have resided at for the last 5 years starting with the last place you lived prior to your current physical address.</strong>
+        </div>
+    </div>
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>a) Previous Address Information:</strong>
+        </div>
+    </div>
     <div class="row">
         <div class="form-group col-lg-8">
-            <label>a) Street Number and Name:</label>
             <input type="text" class="form-control" name="prev_address_1" value="<?php if (isset($formData) && !empty($formData->prev_address_1)){echo $formData->prev_address_1;} ?>" placeholder="Street Number and Name">
         </div>
         <div class="form-group col-lg-4">
-            <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="prev_unit_1" value="<?php if (isset($formData) && !empty($formData->prev_unit_1)){echo $formData->prev_unit_1;} ?>" placeholder="Unit">
+            <input type="text" class="form-control" name="prev_unit_1" value="<?php if (isset($formData) && !empty($formData->prev_unit_1)){echo $formData->prev_unit_1;} ?>" placeholder="Unit Number">
         </div>
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-2">
-            <label>City:</label>
             <input type="text" class="form-control" name="prev_city_1" value="<?php if (isset($formData) && !empty($formData->prev_city_1)){echo $formData->prev_city_1;} ?>" placeholder="City">
         </div>
         <div class="form-group col-lg-2">
-            <label>Province:</label>
             <input type="text" class="form-control" name="prev_province_1" value="<?php if (isset($formData) && !empty($formData->prev_province_1)){echo $formData->prev_province_1;} ?>" placeholder="Province">
         </div>
         <div class="form-group col-lg-2">
-            <label>Postal Code:</label>
             <input type="text" class="form-control" name="prev_posta_1" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_posta_1)){echo $formData->prev_posta_1;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Country:</label>
             <select data-placeholder="Select Country" name="prev_country_1" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($a_result)) { ?>
@@ -52,7 +56,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </select>
         </div>
         <div class="form-group col-lg-2">
-            <label>From (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -61,7 +64,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </div>
         </div>
         <div class="form-group col-lg-2">
-            <label>To: (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -72,31 +74,30 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
 
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>b) Previous Address Information:</strong>
+        </div>
+    </div>
     <div class="row">
         <div class="form-group col-lg-8">
-            <label>b) Street Number and Name:</label>
             <input type="text" class="form-control" name="prev_address_2" placeholder="Street Number and Name" value="<?php if (isset($formData) && !empty($formData->prev_address_2)){echo $formData->prev_address_2;} ?>">
         </div>
         <div class="form-group col-lg-4">
-            <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="prev_unit_2" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->prev_unit_2)){echo $formData->prev_unit_2;} ?>">
+            <input type="text" class="form-control" name="prev_unit_2" placeholder="Unit Number" value="<?php if (isset($formData) && !empty($formData->prev_unit_2)){echo $formData->prev_unit_2;} ?>">
         </div>
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-2">
-            <label>City:</label>
             <input type="text" class="form-control" name="prev_city_2" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_2)){echo $formData->prev_city_2;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Province:</label>
             <input type="text" class="form-control" name="prev_province_2" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_2)){echo $formData->prev_province_2;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Postal Code:</label>
             <input type="text" class="form-control" name="prev_postal_2" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_2)){echo $formData->prev_postal_2;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Country:</label>
             <select data-placeholder="Select Country" name="prev_country_2" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($b_result)) { ?>
@@ -108,7 +109,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </select>
         </div>
         <div class="form-group col-lg-2">
-            <label>From (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -117,7 +117,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </div>
         </div>
         <div class="form-group col-lg-2">
-            <label>To: (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -127,31 +126,30 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
 
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>c) Previous Address Information:</strong>
+        </div>
+    </div>
     <div class="row">
         <div class="form-group col-lg-8">
-            <label>c) Street Number and Name:</label>
             <input type="text" class="form-control" name="prev_address_3" placeholder="Street Number and Name" value="<?php if (isset($formData) && !empty($formData->prev_address_3)){echo $formData->prev_address_3;} ?>">
         </div>
         <div class="form-group col-lg-4">
-            <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="prev_unit_3" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->prev_unit_3)){echo $formData->prev_unit_3;} ?>">
+            <input type="text" class="form-control" name="prev_unit_3" placeholder="Unit Number" value="<?php if (isset($formData) && !empty($formData->prev_unit_3)){echo $formData->prev_unit_3;} ?>">
         </div>
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-2">
-            <label>City:</label>
             <input type="text" class="form-control" name="prev_city_3" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_3)){echo $formData->prev_city_3;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Province:</label>
             <input type="text" class="form-control" name="prev_province_3" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_3)){echo $formData->prev_province_3;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Postal Code:</label>
             <input type="text" class="form-control" name="prev_postal_3" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_3)){echo $formData->prev_postal_3;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Country:</label>
             <select data-placeholder="Select Country" name="prev_country_3" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($c_result)) { ?>
@@ -163,7 +161,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </select>
         </div>
         <div class="form-group col-lg-2">
-            <label>From (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -172,7 +169,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </div>
         </div>
         <div class="form-group col-lg-2">
-            <label>To: (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -182,31 +178,30 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
 
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>d) Previous Address Information:</strong>
+        </div>
+    </div>
     <div class="row">
         <div class="form-group col-lg-8">
-            <label>d) Street Number and Name:</label>
             <input type="text" class="form-control" name="prev_address_4" placeholder="Street Number and Name" value="<?php if (isset($formData) && !empty($formData->prev_address_4)){echo $formData->prev_address_4;} ?>">
         </div>
         <div class="form-group col-lg-4">
-            <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="prev_unit_4" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->prev_unit_4)){echo $formData->prev_unit_4;} ?>">
+            <input type="text" class="form-control" name="prev_unit_4" placeholder="Unit Number" value="<?php if (isset($formData) && !empty($formData->prev_unit_4)){echo $formData->prev_unit_4;} ?>">
         </div>
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-2">
-            <label>City:</label>
             <input type="text" class="form-control" name="prev_city_4" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_4)){echo $formData->prev_city_4;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Province:</label>
             <input type="text" class="form-control" name="prev_province_4" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_4)){echo $formData->prev_province_4;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Postal Code:</label>
             <input type="text" class="form-control" name="prev_postal_4" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_4)){echo $formData->prev_postal_4;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Country:</label>
             <select data-placeholder="Select Country" name="prev_country_4" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($d_result)) { ?>
@@ -218,7 +213,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </select>
         </div>
         <div class="form-group col-lg-2">
-            <label>From (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -227,7 +221,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </div>
         </div>
         <div class="form-group col-lg-2">
-            <label>To: (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -237,31 +230,30 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
 
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>e) Previous Address Information:</strong>
+        </div>
+    </div>
     <div class="row">
         <div class="form-group col-lg-8">
-            <label>e) Street Number and Name:</label>
             <input type="text" class="form-control" name="prev_address_5" placeholder="Street Number and Name" value="<?php if (isset($formData) && !empty($formData->prev_address_5)){echo $formData->prev_address_5;} ?>">
         </div>
         <div class="form-group col-lg-4">
-            <label>Apt.#/Unit:</label>
-            <input type="text" class="form-control" name="prev_unit_5" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->prev_unit_5)){echo $formData->prev_unit_5;} ?>">
+            <input type="text" class="form-control" name="prev_unit_5" placeholder="Unit Number" value="<?php if (isset($formData) && !empty($formData->prev_unit_5)){echo $formData->prev_unit_5;} ?>">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-2">
-            <label>City:</label>
             <input type="text" class="form-control" name="prev_city_5" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_5)){echo $formData->prev_city_5;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Province:</label>
             <input type="text" class="form-control" name="prev_province_5" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_5)){echo $formData->prev_province_5;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Postal Code:</label>
             <input type="text" class="form-control" name="prev_postal_5" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_5)){echo $formData->prev_postal_5;} ?>">
         </div>
         <div class="form-group col-lg-2">
-            <label>Country:</label>
             <select data-placeholder="Select Country" name="prev_country_5" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($e_result)) { ?>
@@ -273,7 +265,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </select>
         </div>
         <div class="form-group col-lg-2">
-            <label>From (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -282,7 +273,6 @@ $e_result = mysqli_query($con_str,$e_query);
             </div>
         </div>
         <div class="form-group col-lg-2">
-            <label>To: (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>

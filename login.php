@@ -15,16 +15,16 @@ function my_simple_crypt( $string, $action = 'e' ) {
   	}
   	return $output;
 }
+if (isset($_GET['id'])) {
+	$encrypt_id = $_GET['id'];
+	$id = my_simple_crypt($encrypt_id,'d');
 
-$encrypt_id = $_GET['id'];
-$id = my_simple_crypt($encrypt_id,'d');
-
-$update_user = "UPDATE users SET is_verfiy = 'Yes' where id = ".$id." ";
-$res = mysqli_query($con_str,$update_user);
-if ($res) {
-	echo "<span id='activated_text' style='text-align: center;margin-top: 25px;font-size: 28px;color: green;background: #c8f4c8;padding: 6px;'>Your Account has been verfied. Please Login!</span>";
+	$update_user = "UPDATE users SET is_verfiy = 'Yes' where id = ".$id." ";
+	$res = mysqli_query($con_str,$update_user);
+	if ($res) {
+		echo "<span id='activated_text' style='text-align: center;margin-top: 25px;font-size: 28px;color: green;background: #c8f4c8;padding: 6px;'>Your Account has been verfied. Please Login!</span>";
+	}
 }
-
 ?>
 
 <div class="page-content">
