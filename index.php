@@ -156,10 +156,7 @@ if (!$_SESSION) {
                     </div>
                 </div>
             </div>
-            
-
         </div>
-
     </div>
 
 <script type="">
@@ -177,7 +174,12 @@ if (!$_SESSION) {
             }
         });
     }
-
+    function finish_form(){
+        var id = '<?php echo $_SESSION['user_id']; ?>';
+        $.post('seta_pdf.php',{id:id}).done(function(data){
+            window.location.replace('authentication/logout.php');
+        });
+    }
     $('.btn-primary').click(function(){
         alert();
     });

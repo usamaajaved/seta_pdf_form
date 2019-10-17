@@ -1,10 +1,8 @@
 <?php
 require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
-include("config/base_path.php");
 
 //  Insert Form Data into DB
-
 $form_data = json_encode($_POST);
 $checkIfExistsQuery = "SELECT * FROM pdf_form WHERE user_id = ".$_POST['user_id']."";
 $res1 = mysqli_query($con_str, $checkIfExistsQuery);
@@ -18,7 +16,10 @@ $res = mysqli_query($con_str, $query);
 if(isset($_POST['submitType']) && $_POST['submitType']=="ajax"){
     return false;
 }
-
+if (isset($_POST['id'])) {
+    $finisedForm = 'UPDATE `users` set `is_form`="Yes" where `id` ='.$_POST['id'].'';
+    $res1 = mysqli_query($con_str,$finisedForm);    
+}
 
 
 // Generate PDF

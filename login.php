@@ -27,6 +27,14 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<div class="alert alert-warning alert-styled-left alert-dismissible form_submited" style="display: none;margin: 25px 70px 0px 70px;text-align: center;">
+	<button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+	<span class="font-weight-semibold">Form already submitted, we will response in a few days!
+</div>
+<div class="alert alert-warning alert-styled-left alert-dismissible verify_account" style="display: none;margin: 25px 70px 0px 70px;text-align: center;">
+	<button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+	<span class="font-weight-semibold">Please Verify your Account!
+</div>
 <div class="page-content">
 	<div class="content-wrapper">
 		<div class="content d-flex justify-content-center align-items-center">
@@ -93,6 +101,16 @@ if (isset($_GET['id'])) {
 			success:function(data){
 				if (data == "wrong email") {
 					$('#wrong_email').show();
+				}else if(data == 'Verify acoount'){
+					$('.verify_account').show('fast');
+					setTimeout(function(){
+						$('.verify_account').hide('fast');
+					}, 3000);
+				}else if(data == 'form submited'){
+					$('.form_submited').show('fast');
+					setTimeout(function(){
+						$('.form_submited').hide('fast');
+					}, 3000);
 				}else if(data == "Success"){
 					window.location.replace('index.php');
 				}
