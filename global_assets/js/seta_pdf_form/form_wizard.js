@@ -168,7 +168,7 @@ var FormWizard = function() {
                 return form.valid();
             },
             onFinished: function (event, currentIndex) {
-                console.log('Submitted!');
+                finish_form();
                 $('.wizard-form').submit();
                 //alert('Submitted!');
             }

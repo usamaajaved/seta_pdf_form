@@ -28,14 +28,8 @@ if ($res) {
 ?>
 
 <div class="page-content">
-
-		<!-- Main content -->
 	<div class="content-wrapper">
-
-		<!-- Content area -->
 		<div class="content d-flex justify-content-center align-items-center">
-
-			<!-- Login card -->
 			<form class="login-form" id="login_form" method="POST">
 				<div class="card mb-0">
 					<div class="card-body">
@@ -78,14 +72,8 @@ if ($res) {
 					</div>
 				</div>
 			</form>
-			<!-- /login card -->
-
 		</div>
-		<!-- /content area -->
-
 	</div>
-	<!-- /main content -->
-
 </div>
 
 <script type="text/javascript">
@@ -110,6 +98,5 @@ if ($res) {
 				}
 			}
 		});
-		
-	})
+	});
 </script>
