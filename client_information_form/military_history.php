@@ -5,30 +5,30 @@ $query = "SELECT * from countries";
 $result = mysqli_query($con_str,$query);
 ?>
 <div class="col-md-12">
-    <div class="row">
+    <div class="row mb-10">
         <div class="form-group mb-3 mb-md-2 col-lg-12 text-center">
-            <label class="mb-17 mr-2p">Have you ever been a member of the Canadian Forces?</label>
+            <strong class="mb-17 mr-2p">Have you ever been a member of the Canadian Forces?</strong>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="force_member" value="Choice1" id="no_member" checked="" <?php if (isset($formData->force_member) && $formData->force_member == 'Choice1') {echo 'checked';}?>>
-                <label class="custom-control-label" for="no_member"> No</label>
+                <strong class="custom-control-label" for="no_member"> No</strong>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="force_member" value="2" id="former_member" <?php if (isset($formData->force_member) && $formData->force_member == '2') {echo 'checked';}?>>
-                <label class="custom-control-label" for="former_member"> Yes - Former</label>
+                <strong class="custom-control-label" for="former_member"> Yes - Former</strong>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="force_member" value="2" id="current_member" <?php if (isset($formData->force_member) && $formData->force_member == '2') {echo 'checked';}?>>
-                <label class="custom-control-label" for="current_member"> Yes - Current</label>
+                <strong class="custom-control-label" for="current_member"> Yes - Current</strong>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="force_member" value="3" id="reserve_member" <?php if (isset($formData->force_member) && $formData->force_member == '3') {echo 'checked';}?>>
-                <label class="custom-control-label" for="reserve_member"> Yes - Former or Current Reserve Member</label>
+                <strong class="custom-control-label" for="reserve_member"> Yes - Former or Current Reserve Member</strong>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="form-group mb-3 mb-md-2 col-lg-4">
-            <label class="d-block mb-17">If yes, indicate your Unit’s Level of Service:</label>
+    <div class="row text-center mb-10">
+        <div class="mb-md-2 col-lg-12 text-center">
+            <strong class="mb-17 mr-2p">If yes, indicate your Unit’s Level of Service:</strong>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="force" value="Reg" checked="" <?php if (isset($formData->force) && $formData->force == 'Reg') {echo 'checked';}?>>
                 <label class="custom-control-label" for="regular_force"> Regular Forces</label>
@@ -39,26 +39,28 @@ $result = mysqli_query($con_str,$query);
                 <label class="custom-control-label" for="reserved_force"> Reserved Forces</label>
             </div>
         </div>
-        <div class="form-group mb-3 mb-md-2 col-lg-8">
-            <label>If yes, provide the complete mailing address of your unit: Street Address</label>
+    </div>
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>If yes, provide the complete mailing address of your unit: Street Address</strong>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="form-group mb-3 mb-md-2 col-lg-12">
             <input type="text" class="form-control" name="military_address" id="military_address" placeholder="Address" value="<?php if (isset($formData) && !empty($formData->military_address)){echo $formData->military_address;} ?>">
         </div>
     </div>
     <div class="row">
         <div class="form-group col-lg-3">
-            <label>City:</label>
             <input type="text" class="form-control" name="military_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->military_city)){echo $formData->military_city;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Province:</label>
             <input type="text" class="form-control" name="military_province" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->military_province)){echo $formData->military_province;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Postal Code:</label>
             <input type="text" class="form-control" name="military_postal" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->military_postal)){echo $formData->military_postal;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Country:</label>
             <select data-placeholder="Select Country" name="military_country" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($result)) { ?>
@@ -71,23 +73,13 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-lg-6">
-            <label>Military / Service ID Number:</label>
-            <input type="text" class="form-control" name="service_num" placeholder="Service ID Number" value="<?php if (isset($formData) && !empty($formData->service_num)){echo $formData->service_num;} ?>">
+        <div class="form-group col-lg-3">
+            <input type="text" class="form-control" name="service_num" placeholder="Military / Service ID Number" value="<?php if (isset($formData) && !empty($formData->service_num)){echo $formData->service_num;} ?>">
         </div>
-        <div class="form-group col-lg-6">
-            <label>Unit:</label>
+        <div class="form-group col-lg-3">
             <input type="text" class="form-control" name="military_unit" placeholder="Unit" value="<?php if (isset($formData) && !empty($formData->military_unit)){echo $formData->military_unit;} ?>">
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <label>Years of Serice:</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-6">
-            <label>From (MM/DD/YYYY):</label>
+        <div class="form-group col-lg-3">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -95,8 +87,7 @@ $result = mysqli_query($con_str,$query);
                 <input type="text" class="form-control pickadate-accessibility" name="military_from" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->military_from)){echo $formData->military_from;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-6">
-            <label>To Present:</label>
+        <div class="form-group col-lg-3">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>

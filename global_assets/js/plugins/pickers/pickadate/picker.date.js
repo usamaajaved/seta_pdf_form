@@ -310,7 +310,7 @@
                     }
                     return f.node("select", f.group({
                         min: i,
-                        max: j,
+                        max: j - e,
                         i: 1,
                         node: "option",
                         item: function(a) {

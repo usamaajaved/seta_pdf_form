@@ -42,29 +42,22 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-4 mb-10">
             <strong>3. Height:</strong>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 mb-10">
             <strong>Weight:</strong>
         </div>
-        <div class="form-group col-lg-1 pt-10">
-            <label>Feet:</label>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-2">
+            <input type="number" class="form-control required" name="feet" placeholder="Feet">
         </div>
-        <div class="form-group col-lg-3">
-            <input type="text" class="form-control required" name="feet" placeholder="Feet">
+        <div class="form-group col-lg-2">
+            <input type="number" class="form-control" name="inches" placeholder="Inches">
         </div>
-        <div class="form-group col-lg-1 pt-10">
-            <label>Inches:</label>
-        </div>
-        <div class="form-group col-lg-3">
-            <input type="text" class="form-control" name="inches" placeholder="Inches">
-        </div>
-        <div class="form-group col-lg-1 pt-10">
-            <label>Pounds:</label>
-        </div>
-        <div class="form-group col-lg-3">
-            <input type="text" class="form-control required" name="pound" placeholder="Pound">
+        <div class="form-group col-lg-2">
+            <input type="number" class="form-control required" name="pound" placeholder="Pound">
         </div>
     </div>
     <div class="row">

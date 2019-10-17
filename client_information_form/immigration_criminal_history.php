@@ -40,126 +40,105 @@
             <h5><strong>Criminal Conviction History</strong></h5>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="form-group mb-md-2 col-lg-12">
-            <h5>Conviction #1</h5>
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>Conviction #1</strong>
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
-            <label>a) The Court(s) in which you were convicted Court House</label>
-            <input type="text" class="form-control" name="convicted_court_house_1" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->convicted_court_house_1)){echo $formData->convicted_court_house_1;} ?>">
+            <input type="text" class="form-control" name="convicted_court_house_1" placeholder="The Court(s) in which you were convicted Court House" value="<?php if (isset($formData) && !empty($formData->convicted_court_house_1)){echo $formData->convicted_court_house_1;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>City:</label>
             <input type="text" class="form-control" name="court_conviction_city_1" placeholder="City" value="<?php if (isset($formData) && !empty($formData->court_conviction_city_1)){echo $formData->court_conviction_city_1;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Province:</label>
             <input type="text" class="form-control" name="court_conviction_province_1" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->court_conviction_province_1)){echo $formData->court_conviction_province_1;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
-            <label>b) The Police Detachment(s) that charged and arrested you</label>
-            <input type="text" class="form-control" name="convicted_police_department_1" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->convicted_police_department_1)){echo $formData->convicted_police_department_1;} ?>">
+            <input type="text" class="form-control" name="convicted_police_department_1" placeholder="The Police Detachment(s) that charged and arrested you" value="<?php if (isset($formData) && !empty($formData->convicted_police_department_1)){echo $formData->convicted_police_department_1;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>City:</label>
             <input type="text" class="form-control" name="police_conviction_city_1" placeholder="City" value="<?php if (isset($formData) && !empty($formData->police_conviction_city_1)){echo $formData->police_conviction_city_1;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Province:</label>
             <input type="text" class="form-control" name="police_conviction_province_1" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->police_conviction_province_1)){echo $formData->police_conviction_province_1;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-12">
-            <label>c) The Charge</label>
             <input type="text" class="form-control" name="conviction_charge_1" placeholder="Charge" value="<?php if (isset($formData) && !empty($formData->conviction_charge_1)){echo $formData->conviction_charge_1;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
-            <label>d) The Date(s) of sentence (MM/DD/YYYY) - approximate time if you don’t recall exactly</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="sentenced_date_1" placeholder="Select Date" value="<?php if (isset($formData) && !empty($formData->sentenced_date_1)){echo $formData->sentenced_date_1;} ?>">
+                <input type="text" class="form-control pickadate-accessibility" name="sentenced_date_1" placeholder="The Date(s) of sentence (MM/DD/YYYY) - approximate time if you don’t recall exactly" value="<?php if (isset($formData) && !empty($formData->sentenced_date_1)){echo $formData->sentenced_date_1;} ?>">
             </div>
         </div>
         <div class="form-group col-lg-6">
-            <label>e) The actual sentence(s) you received:</label>
-            <input type="text" class="form-control" name="actual_sentence_1" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->actual_sentence_1)){echo $formData->actual_sentence_1;} ?>">
+            <input type="text" class="form-control" name="actual_sentence_1" placeholder="The actual sentence(s) you received" value="<?php if (isset($formData) && !empty($formData->actual_sentence_1)){echo $formData->actual_sentence_1;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-12">
-            <label>f) If any convictions after 1992 were in Toronto, identify which Court(s) you attended (6 different Courts have operated in Toronto since 1992)</label>
-            <input type="text" class="form-control" name="court_after_1992_1" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->court_after_1992_1)){echo $formData->court_after_1992_1;} ?>">
+            <input type="text" class="form-control" name="court_after_1992_1" placeholder="If any convictions after 1992 were in Toronto, identify which Court(s) you attended (6 different Courts have operated in Toronto since 1992)" value="<?php if (isset($formData) && !empty($formData->court_after_1992_1)){echo $formData->court_after_1992_1;} ?>">
         </div>
     </div>
 
-
-    <div class="row text-center">
-        <div class="form-group mb-md-2 col-lg-12">
-            <h5>Conviction #2</h5>
+    <div class="row mb-10">
+        <div class="col-lg-12">
+            <strong>Conviction #2</strong>
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
-            <label>a) The Court(s) in which you were convicted Court House</label>
-            <input type="text" class="form-control" name="convicted_court_house_2" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->convicted_court_house_2)){echo $formData->convicted_court_house_2;} ?>">
+            <input type="text" class="form-control" name="convicted_court_house_2" placeholder="The Court(s) in which you were convicted Court House" value="<?php if (isset($formData) && !empty($formData->convicted_court_house_2)){echo $formData->convicted_court_house_2;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>City:</label>
             <input type="text" class="form-control" name="court_conviction_city_2" placeholder="City" value="<?php if (isset($formData) && !empty($formData->court_conviction_city_2)){echo $formData->court_conviction_city_2;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Province:</label>
             <input type="text" class="form-control" name="court_conviction_province_2" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->court_conviction_province_2)){echo $formData->court_conviction_province_2;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
-            <label>b) The Police Detachment(s) that charged and arrested you</label>
-            <input type="text" class="form-control" name="convicted_police_department_2" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->convicted_police_department_2)){echo $formData->convicted_police_department_2;} ?>">
+            <input type="text" class="form-control" name="convicted_police_department_2" placeholder="The Police Detachment(s) that charged and arrested you" value="<?php if (isset($formData) && !empty($formData->convicted_police_department_2)){echo $formData->convicted_police_department_2;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>City:</label>
             <input type="text" class="form-control" name="police_conviction_city_2" placeholder="City" value="<?php if (isset($formData) && !empty($formData->police_conviction_city_2)){echo $formData->police_conviction_city_2;} ?>">
         </div>
         <div class="form-group col-lg-3">
-            <label>Province:</label>
             <input type="text" class="form-control" name="police_conviction_province_2" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->police_conviction_province_2)){echo $formData->police_conviction_province_2;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-12">
-            <label>c) The Charge</label>
             <input type="text" class="form-control" name="conviction_charge_2" placeholder="Charge" value="<?php if (isset($formData) && !empty($formData->conviction_charge_2)){echo $formData->conviction_charge_2;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
-            <label>d) The Date(s) of sentence (MM/DD/YYYY) - approximate time if you don’t recall exactly</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="sentenced_date_2" placeholder="Select Date" value="<?php if (isset($formData) && !empty($formData->sentenced_date_2)){echo $formData->sentenced_date_2;} ?>">
+                <input type="text" class="form-control pickadate-accessibility" name="sentenced_date_2" placeholder="The Date(s) of sentence (MM/DD/YYYY) - approximate time if you don’t recall exactly" value="<?php if (isset($formData) && !empty($formData->sentenced_date_2)){echo $formData->sentenced_date_2;} ?>">
             </div>
         </div>
         <div class="form-group col-lg-6">
-            <label>e) The actual sentence(s) you received:</label>
-            <input type="text" class="form-control" name="actual_sentence_2" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->actual_sentence_2)){echo $formData->actual_sentence_2;} ?>">
+            <input type="text" class="form-control" name="actual_sentence_2" placeholder="The actual sentence(s) you received" value="<?php if (isset($formData) && !empty($formData->actual_sentence_2)){echo $formData->actual_sentence_2;} ?>">
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-12">
-            <label>f) If any convictions after 1992 were in Toronto, identify which Court(s) you attended (6 different Courts have operated in Toronto since 1992)</label>
-            <input type="text" class="form-control" name="court_after_1992_2" placeholder="Enter" value="<?php if (isset($formData) && !empty($formData->court_after_1992_2)){echo $formData->court_after_1992_2;} ?>">
+            <input type="text" class="form-control" name="court_after_1992_2" placeholder="If any convictions after 1992 were in Toronto, identify which Court(s) you attended (6 different Courts have operated in Toronto since 1992)" value="<?php if (isset($formData) && !empty($formData->court_after_1992_2)){echo $formData->court_after_1992_2;} ?>">
         </div>
     </div>
 
@@ -179,8 +158,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <label><strong>Explain the reason(s) why you believe that you may not be admissible to the U.S. </strong>(for example, Criminal Conviction(s), Health-related grounds, etc.):</label>
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea1" placeholder="" value="<?php if (isset($formData) && !empty($formData->immigration_textarea1)){echo $formData->immigration_textarea1;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea1" placeholder="Explain the reason(s) why you believe that you may not be admissible to the U.S. (for example, Criminal Conviction(s), Health-related grounds, etc.)" value="<?php if (isset($formData) && !empty($formData->immigration_textarea1)){echo $formData->immigration_textarea1;} ?>"></textarea>
         </div>
     </div>
     <div class="row">
@@ -208,8 +186,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <label>(If yes, please explain in full detail below. If no, please write N/A)</label>
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea3" placeholder="" value="<?php if (isset($formData) && !empty($formData->immigration_textarea3)){echo $formData->immigration_textarea3;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea3" placeholder="(If yes, please explain in full detail below. If no, please write N/A)" value="<?php if (isset($formData) && !empty($formData->immigration_textarea3)){echo $formData->immigration_textarea3;} ?>"></textarea>
         </div>
     </div>
     <div class="row">
@@ -227,8 +204,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <label>(If yes, please explain in full detail below. If no, please write N/A)</label>
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea4" placeholder="" value="<?php if (isset($formData) && !empty($formData->immigration_textarea4)){echo $formData->immigration_textarea4;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea4" placeholder="(If yes, please explain in full detail below. If no, please write N/A)" value="<?php if (isset($formData) && !empty($formData->immigration_textarea4)){echo $formData->immigration_textarea4;} ?>"></textarea>
         </div>
     </div>
     <div class="row">
@@ -261,16 +237,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-lg-4">
-            <label>City or Town:</label>
+        <div class="form-group col-lg-3">
             <input type="text" class="form-control" name="filed_application_city" id="filed_application_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->filed_application_city)){echo $formData->filed_application_city;} ?>">
         </div>
-        <div class="form-group col-lg-4">
-            <label>Province or State:</label>
+        <div class="form-group col-lg-3">
             <input type="text" class="form-control" name="filed_application_province" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->filed_application_province)){echo $formData->filed_application_province;} ?>">
         </div>
-        <div class="form-group col-lg-4">
-            <label>Country:</label>
+        <div class="form-group col-lg-3">
             <select data-placeholder="Select Country" name="filed_application_country" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($result2)) { ?>
@@ -281,10 +254,7 @@
 
             </select>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-4">
-            <label><strong>c) Receipt Number (if available)</strong></label>
+        <div class="form-group col-lg-3">
             <input type="text" class="form-control" name="filed_application_receipt_no" id="" placeholder="Receipt Number" value="<?php if (isset($formData) && !empty($formData->filed_application_receipt_no)){echo $formData->filed_application_receipt_no;} ?>">
         </div>
     </div>
@@ -303,16 +273,14 @@
     </div>
     <div class="row">
         <div class="form-group col-lg-6">
-            <label>If yes, what was the date you entered into the U.S.? (MM/DD/YYYY):</label>
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="entered_date" placeholder="Select Date" value="<?php if (isset($formData) && !empty($formData->entered_date)){echo $formData->entered_date;} ?>">
+                <input type="text" class="form-control pickadate-accessibility" name="entered_date" placeholder="If yes, what was the date you entered into the U.S.? (MM/DD/YYYY)" value="<?php if (isset($formData) && !empty($formData->entered_date)){echo $formData->entered_date;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-3">
-            <label>From (MM/DD/YYYY):</label>
+        <div class="form-group col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -320,8 +288,7 @@
                 <input type="text" class="form-control pickadate-accessibility" name="entered_date_from" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->entered_date_from)){echo $formData->entered_date_from;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-3">
-            <label>To (MM/DD/YYYY):</label>
+        <div class="form-group col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>

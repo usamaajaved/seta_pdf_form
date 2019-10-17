@@ -1,5 +1,4 @@
 <?php include 'config/config.php'; ?>
-<?php include 'config/base_path.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
