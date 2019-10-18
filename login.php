@@ -35,6 +35,10 @@ if (isset($_GET['id'])) {
 	<button type="button" class="close" data-dismiss="alert"><span>×</span></button>
 	<span class="font-weight-semibold">Please Verify your Account!
 </div>
+<!-- <div class="alert alert-success alert-styled-left alert-dismissible success_msg" style="margin: 25px 70px 0px 70px;text-align: center;">
+	<button type="button" class="close" data-dismiss="alert"><span>×</span></button>
+	<span class="font-weight-semibold">Please Verify your Account!
+</div> -->
 <div class="page-content">
 	<div class="content-wrapper">
 		<div class="content d-flex justify-content-center align-items-center">
