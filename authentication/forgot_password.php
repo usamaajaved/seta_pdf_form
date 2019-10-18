@@ -1,7 +1,6 @@
 <?php
 
 include "../config/config.php";
-include "../config/base_path.php";
 
 function my_simple_crypt( $string, $action = 'e' ) {
   	$secret_key = 'my_simple_secret_key';
@@ -26,7 +25,7 @@ if(mysqli_num_rows($getUser)){
 	$user_id = $res->id;
 	$encrypt_id = my_simple_crypt($user_id, 'e');
 	$to = $_POST['email'];
-	$subject = 'Seta Pdf';
+	$subject = 'Record Removal Services';
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	$message = '<!DOCTYPE html>
@@ -100,7 +99,7 @@ if(mysqli_num_rows($getUser)){
 		</head>
 		<body style="background-color: #e9ecef;">
 		  <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #fff; opacity: 0;">
-		    A preheader is the short summary text that follows the subject line when an email is viewed in the inbox.
+		    
 		  </div>
 		  <table border="0" cellpadding="0" cellspacing="0" width="100%">
 		    <tr>
@@ -118,7 +117,7 @@ if(mysqli_num_rows($getUser)){
 		        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
 		          <tr style="text-align:center;">
 		            <td bgcolor="#ffffff" style="padding: 15px; font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
-		              <h1 style="margin-top: 15px; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Reset your password</h1>
+		              <h1 style="margin-top: 15px; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px;">Reset your password <br/></h1>
 		            </td>
 		          </tr>
 		        </table>
@@ -129,7 +128,7 @@ if(mysqli_num_rows($getUser)){
 		        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
 		          <tr>
 		            <td align="center" bgcolor="#ffffff" style="padding:10px; font-family: "Source Sans Pro", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;">
-		              <p style="padding:15px;">Seems like you forgot your password for Seta PDF. Click the below button to reset your password. If you dis not forget your password you can safely ignore the email.</p>
+		              <p style="padding:15px;">Seems like you forgot your password. Click the below button to reset your password. If you did not forget your password you can safely ignore the email.</p>
 		            </td>
 		          </tr>
 		          <tr>

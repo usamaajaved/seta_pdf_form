@@ -40,8 +40,13 @@
 							</div>
 						</div>
 
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary btn-block">Send<i class="icon-circle-right2 ml-2"></i></button>
+						<div class="row text-center mt-10">
+							<div class="col-md-12 text-center form-group">
+								<button type="submit" class="btn btn-primary btn-block btn-labeled btn-labeled-right"><b><i class="icon-circle-right2"></i></b> Send</button>
+							</div>
+							<div class="col-md-12 text-center">
+								<a href="login.php" class="btn btn-light btn-block btn-labeled">Sign in</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -76,6 +81,9 @@
 				} else if (data == "reset password email") {
 					$('#email_sent').show();
 					$('#wrong_email').hide();
+					setTimeout(function(){
+						location.reload();
+					},3000);
 				}
 			}
 		});

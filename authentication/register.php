@@ -1,6 +1,5 @@
 <?php 
 include "../config/config.php";
-include "../config/base_path.php";
 
 function my_simple_crypt( $string, $action = 'e' ) {
     // you may change these values to your own

@@ -11,8 +11,6 @@ if(mysqli_num_rows($res) >0){
 	$row = mysqli_fetch_object($res);
 	if ($row->is_verfiy == 'No') {
 		echo 'Verify acoount';
-	}elseif ($row->is_form == 'Yes') {
-		echo 'form submited';
 	}else{
 		$_SESSION['user_id'] = $row->id;
 		echo "Success";

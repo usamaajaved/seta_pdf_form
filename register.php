@@ -8,69 +8,68 @@
 		<div class="content d-flex justify-content-center align-items-center">
 
 			<!-- Registration form -->
-			<form  id="register_form" class="flex-fill" method="POST">
-				<div class="row">
-					<div class="col-lg-4 offset-lg-4">
-						<div class="card mb-0">
-							<div class="card-body">
-								<div class="row text-center pt-10 bg-danger form-group" id="email_exist" style="display: none;">
-									<div class="col-md-12">
-										<label>Email already exist.</label>
-									</div>
-								</div>
-								<div class="row text-center pt-10 bg-danger form-group" id="pass-dosent-match" style="display: none;">
-									<div class="col-md-12">
-										<label>Password dosen't match.</label>
-									</div>
-								</div>
-								<div class="row text-center pt-10 bg-success form-group" id="mail_sent" style="display: none;">
-									<div class="col-md-12">
-										<label>Mail Sent To your Mail Address.</label>
-									</div>
-								</div>
-								<div class="text-center mb-3">
-									<img src="assets/img/logo-final-02.jpg" height="80px">
-									<h5 class="mb-0">Create account</h5>
-								</div>
+			<form  id="register_form" class="login-form" method="POST">
+				<div class="card mb-0">
+					<div class="card-body">
+						<div class="row text-center pt-10 bg-danger form-group" id="email_exist" style="display: none;">
+							<div class="col-md-12">
+								<label>Email already exist.</label>
+							</div>
+						</div>
+						<div class="row text-center pt-10 bg-danger form-group" id="pass-dosent-match" style="display: none;">
+							<div class="col-md-12">
+								<label>Password dosen't match.</label>
+							</div>
+						</div>
+						<div class="row text-center pt-10 bg-success form-group" id="mail_sent" style="display: none;">
+							<div class="col-md-12">
+								<label>Mail Sent To your Mail Address.</label>
+							</div>
+						</div>
+						<div class="text-center mb-3">
+							<img src="assets/img/logo-final-02.jpg" height="80px">
+							<h5 class="mb-0">Create account</h5>
+						</div>
 
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="email" name="email" class="form-control" placeholder="Your email" required="">
-											<div class="form-control-feedback">
-												<i class="icon-mention text-muted"></i>
-											</div>
-										</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group form-group-feedback form-group-feedback-right">
+									<input type="email" name="email" class="form-control" placeholder="Your email" required="">
+									<div class="form-control-feedback">
+										<i class="icon-mention text-muted"></i>
 									</div>
 								</div>
+							</div>
+						</div>
 
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="password" name="password" class="form-control" placeholder="Create password" required="">
-											<div class="form-control-feedback">
-												<i class="icon-user-lock text-muted"></i>
-											</div>
-										</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group form-group-feedback form-group-feedback-right">
+									<input type="password" name="password" class="form-control" placeholder="Create password" required="">
+									<div class="form-control-feedback">
+										<i class="icon-user-lock text-muted"></i>
 									</div>
 								</div>
+							</div>
+						</div>
 
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group form-group-feedback form-group-feedback-right">
-											<input type="password" name="confirm_password" class="form-control" placeholder="Repeat password" required="">
-											<div class="form-control-feedback">
-												<i class="icon-user-lock text-muted"></i>
-											</div>
-										</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group form-group-feedback form-group-feedback-right">
+									<input type="password" name="confirm_password" class="form-control" placeholder="Repeat password" required="">
+									<div class="form-control-feedback">
+										<i class="icon-user-lock text-muted"></i>
 									</div>
 								</div>
+							</div>
+						</div>
 
-								<div class="row text-center mt-10">
-									<div class="col-md-12">
-										<button type="submit" class="btn bg-teal-400 btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
-									</div>
-								</div>
+						<div class="row text-center mt-10">
+							<div class="col-md-12 text-center form-group">
+								<button type="submit" class="btn bg-teal-400 btn-block btn-labeled btn-labeled-right"><b><i class="icon-plus3"></i></b> Create account</button>
+							</div>
+							<div class="col-md-12 text-center">
+								<a href="login.php" class="btn btn-light btn-block">Sign in</a>
 							</div>
 						</div>
 					</div>
