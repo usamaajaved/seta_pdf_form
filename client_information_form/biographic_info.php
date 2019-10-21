@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <div class="row">
+    <div class="row"> 
         <div class="form-group mb-3 mb-md-2 col-lg-3">
             <label class="mr-2p"><strong>1. Ethnicity</strong> (Select only one box)</label>
         </div>
@@ -20,23 +20,23 @@
         </div>
         <div class="form-group mb-3 mb-md-2 col-lg-9">
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="white" value="W" id="white" <?php if (isset($formData->white) && $formData->white == 'on') {echo 'checked';}?>>
+                <input type="checkbox" class="custom-control-input" name="white" id="white" <?php if (isset($formData->white) && $formData->white == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="white"> White</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="asian" value="A" id="asian" <?php if (isset($formData->asian) && $formData->asian == 'on') {echo 'checked';}?>>
+                <input type="checkbox" class="custom-control-input" name="asian" id="asian" <?php if (isset($formData->asian) && $formData->asian == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="asian"> Asian</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="black" value="B" id="black_african_american" <?php if (isset($formData->black) && $formData->black == 'on') {echo 'checked';}?>>
+                <input type="checkbox" class="custom-control-input" name="black" id="black_african_american" <?php if (isset($formData->black) && $formData->black == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="black_african_american"> Black or African American</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="american_indian" value="AA" id="american_indian" <?php if (isset($formData->american_indian) && $formData->american_indian == 'on') {echo 'checked';}?>>
+                <input type="checkbox" class="custom-control-input" name="american_indian" id="american_indian" <?php if (isset($formData->american_indian) && $formData->american_indian == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="american_indian"> American Indian or Alaska Native</label>
             </div>
             <div class="custom-control custom-checkbox custom-control-inline">
-                <input type="checkbox" class="custom-control-input" name="native" value="N" id="native_hawaiian" <?php if (isset($formData->native) && $formData->native == 'on') {echo 'checked';}?>>
+                <input type="checkbox" class="custom-control-input" name="native" id="native_hawaiian" <?php if (isset($formData->native) && $formData->native == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="native_hawaiian"> Native Hawaiian or Other Pacific Islander</label>
             </div>
         </div>
