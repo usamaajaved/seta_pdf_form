@@ -23,18 +23,18 @@ $result = mysqli_query($con_str,$query);
             <strong class="mb-17 mr-2p">Are you currently employed:</strong>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="employed" value="Y" id="yes_employee" checked="" <?php if (isset($formData->employed) && $formData->employed == 'Y') {echo 'checked';}?>>
-                <strong class="custom-control-label" for="yes_employee"> Yes</strong>
+                <label class="custom-control-label" for="yes_employee"><strong>Yes</strong></label>
             </div>
 
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" class="custom-control-input" name="employed" value="N" id="no_employee" <?php if (isset($formData->employed) && $formData->employed == 'N') {echo 'checked';}?>>
-                <strong class="custom-control-label" for="no_employee"> No</strong>
+                <label  class="custom-control-label" for="no_employee"><strong> No</strong></label>
             </div>
         </div>
         <div class="mb-md-2 col-lg-6">
             <div class="custom-control custom-control-right custom-checkbox custom-control-inline">
-                <input type="checkbox" name="Employment" class="custom-control-input" id="custom_checkbox_inline_right_unchecked" <?php if (isset($formData->Employment) && $formData->Employment == 'on') {echo 'checked';}?>>
-                <strong class="custom-control-label position-static" for="custom_checkbox_inline_right_unchecked">If you have never worked, please indicate here</strong>
+                <input type="checkbox" name="Employment" class="custom-control-input" id="custom_checkbox_inline_right_checked" <?php if (isset($formData->Employment) && $formData->Employment == 'on') {echo 'checked';}?>>
+                <label class="custom-control-label position-static" for="custom_checkbox_inline_right_checked"><strong>If you have never worked, please indicate here</strong></label>
             </div>
         </div>
     </div>

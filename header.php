@@ -55,7 +55,7 @@
     <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
     <script src="global_assets/js/demo_pages/form_select2.js"></script>
     <script src="global_assets/js/plugins/forms/validation/validate.min.js"></script>
+    <script src="global_assets/js/demo_pages/components_buttons.js"></script>
     <!-- /theme JS files -->
-    
 
 </head>

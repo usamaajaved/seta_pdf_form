@@ -168,6 +168,9 @@ var FormWizard = function() {
                 return form.valid();
             },
             onFinished: function (event, currentIndex) {
+                icon = $(this).find("i");
+                icon.toggleClass("icon-spinner4 spinner").removeClass('icon-arrow-right14');
+                //return false;
                 finish_form();
                 $('.wizard-form').submit();
                 //alert('Submitted!');

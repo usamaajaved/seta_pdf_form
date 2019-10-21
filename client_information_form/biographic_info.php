@@ -52,6 +52,9 @@
     <div class="row">
         <div class="form-group col-lg-2">
             <select data-placeholder="Feet" name="feet" placeholder="Feet" class="form-control required form-control-select2" data-fouc>
+                <?php if (isset($formData->feet) && !empty($formData->feet)) { ?>
+                    <option value="<?php echo $formData->feet; ?>"><??><?php echo $formData->feet; ?></option>
+                <?php } ?>
                 <option value=""></option>
                 <option value=" "> </option>
                 <option value="2">2</option>
@@ -61,11 +64,15 @@
                 <option value="6">6</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
+
             </select>
         </div>
         <div class="form-group col-lg-2">
             <select data-placeholder="Inches" name="inches" placeholder="Inches" placeholder="Feet" class="form-control required form-control-select2" data-fouc>
-                <option></option>
+                <?php if (isset($formData->inches) && !empty($formData->inches)) { ?>
+                    <option value="<?php echo $formData->inches; ?>"><??><?php echo $formData->inches; ?></option>
+                <?php } ?>
+                <option value=""></option>
                 <option value=" "> </option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -82,7 +89,7 @@
             </select>
         </div>
         <div class="form-group col-lg-2">
-            <input type="number" class="form-control required" name="pound" placeholder="Pound" maxlength="3">
+            <input type="number" class="form-control required" name="pound" placeholder="Pound" maxlength="3" value="<?php if (isset($formData) && !empty($formData->pound)){echo $formData->pound;} ?>">
         </div>
     </div>
     <div class="row">

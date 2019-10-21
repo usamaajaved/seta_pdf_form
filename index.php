@@ -45,28 +45,13 @@ if (!$_SESSION) {
         color: #fff;
         background-color: #b91414;
     }
+    #scroll-down {
+        background-color: #9f0509;
+        color: #fff;
+    }
 
 </style>
-<!-- <style type="text/css">
-.wizard>.steps>ul>li.done .number {
-    font-size: 0;
-    background-color: #d40a0030;
-}
-.wizard>.steps>ul>li:after, .wizard>.steps>ul>li:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 2.375rem;
-    width: 50%;
-    height: 2px;
-    background-color: #d40a0030;
-    z-index: 9;
-}
-    span.number {
-        color: #9f0509 !important;
-        border-color: #9f0509 !important;
-    }
-</style> -->
+
 <body>
     <div class="navbar navbar-expand-md navbar-dark bg-indigo navbar-static" style="background-color: #9f0509;">
         <div class="collapse navbar-collapse" id="navbar-mobile">
@@ -89,18 +74,16 @@ if (!$_SESSION) {
 
     <div class="page-content">
 
-        <div class="content-wrapper">
-
-            <div class="page-header">
-                <div class="card-header header-elements-inline">
-                    <!-- <h1 class="card-title">Client Information Form</h1> -->
-                </div>
-            </div>
-
+        <div class="content-wrapper" style="padding-top: 20px;">
 
             <div class="content pt-0">
                 <div class="row">
                     <div class="col-md-12">
+                        <div class="row text-right form-group">
+                            <div class="col-md-12">
+                                <button type="button" class="btn" id="scroll-down"><i class="icon-circle-down2"></i></button>
+                            </div>
+                        </div>
 
                         <!-- Basic layout-->
                         <div class="card">
@@ -159,7 +142,7 @@ if (!$_SESSION) {
         </div>
     </div>
 
-<script type="">
+<script>
     function save_form_data(){
         var formData = new FormData($("#seta_pdf_form_wizard")[0]);
         formData.append("submitType", "ajax");
@@ -180,9 +163,14 @@ if (!$_SESSION) {
             window.location.replace('authentication/logout.php');
         });
     }
-    $('.btn-primary').click(function(){
-        alert();
+    // $('.btn-primary').click(function(){
+    //     alert();
+    // });
+
+    $("#scroll-down").click(function(){
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
     });
+    
 </script>
 </body>
 </html>

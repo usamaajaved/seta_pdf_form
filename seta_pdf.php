@@ -1,4 +1,4 @@
-<?php
+<?php //echo "<pre>"; print_r($_POST);exit; 
 require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
 
@@ -655,10 +655,22 @@ if (isset($_POST['american_indian']) && $_POST['american_indian'] == 'on') {
 if (isset($_POST['native']) && $_POST['native'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line2_Race[2]']->setValue(true);
 }
-// $fields['FormI-192[0].#subform[4].Pt3Line3_HeightFeet[0]']->setValue($_POST['feet']);
-// $fields['FormI-192[0].#subform[4].Pt3Line3_HeightInches[0]']->setValue($_POST['inches']);
-// $fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue($_POST['pound']);
-//$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
+
+$fields['FormI-192[0].#subform[4].Pt3Line3_HeightFeet[0]']->setValue($_POST['feet']);
+$fields['FormI-192[0].#subform[4].Pt3Line3_HeightInches[0]']->setValue($_POST['inches']);
+if (isset($_POST['pound']) && $_POST['pound'] != "") {
+    $pounds = $_POST['pound'];
+    $pound1 = $pounds[0];
+    $pound2 = $pounds[1];
+    $pound3 = $pounds[2];
+    $fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue($pound1);
+    $fields['FormI-192[0].#subform[4].Pt3Line4_Pound2[0]']->setValue($pound2);
+    $fields['FormI-192[0].#subform[4].Pt3Line4_Pound3[0]']->setValue($pound3);
+}
+$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
+if (isset($_POST['CP']) && $_POST['CP'] == 'on') {
+    $fields['CP']->setValue(true);
+}
 //$fields['arrested']->setValue($_POST['hair_colour']);
 
 // save it

@@ -21,7 +21,7 @@
         <div class="form-group mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>2. Have you ever been arrested outside of Canada?</strong> (If yes, please explain infull detail below. If no, please write N/A)</label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="arrested_outside_canada" value="Y" checked="" <?php if (isset($formData->arrested_outside_canada) && $formData->arrested_outside_canada == 'Y') {echo 'checked';}?>>
+                <input type="radio" class="custom-control-input" name="arrested_outside_canada" value="Y" checked="" id="yes_arrested_outside_canada" <?php if (isset($formData->arrested_outside_canada) && $formData->arrested_outside_canada == 'Y') {echo 'checked';}?>>
                 <label class="custom-control-label" for="yes_arrested_outside_canada"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -262,12 +262,12 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>6. Have you EVER been in the United States for a period of 6 months or more?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="sixmos" value="Y" id="yes_filled_application_before" checked="" <?php if (isset($formData->sixmos) && $formData->sixmos == 'Y') {echo 'checked';}?>>
-                <label class="custom-control-label" for="yes_filled_application_before"> Yes</label>
+                <input type="radio" class="custom-control-input" name="sixmos" value="Y" id="yes_ever_in_us_for_six_months" checked="" <?php if (isset($formData->sixmos) && $formData->sixmos == 'Y') {echo 'checked';}?>>
+                <label class="custom-control-label" for="yes_ever_in_us_for_six_months"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="sixmos" value="N" id="no_filled_application_before" <?php if (isset($formData->sixmos) && $formData->sixmos == 'N') {echo 'checked';}?>>
-                <label class="custom-control-label" for="no_filled_application_before"> No</label>
+                <input type="radio" class="custom-control-input" name="sixmos" value="N" id="no_ever_in_us_for_six_months" <?php if (isset($formData->sixmos) && $formData->sixmos == 'N') {echo 'checked';}?>>
+                <label class="custom-control-label" for="no_ever_in_us_for_six_months"> No</label>
             </div>
         </div>
     </div>
@@ -307,11 +307,11 @@
         <div class="form-group mt-10 mb-3 mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>7. Have you EVER filed an application or petition for Immigration Benefits with the U.S. Government or has one ever been filed on your behalf?</strong></label>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="filed_application_for_immigration_benifit" value="Y" checked="" <?php if (isset($formData->filed_application_for_immigration_benifit) && $formData->filed_application_for_immigration_benifit == 'Y') {echo 'checked';}?>>
+                <input type="radio" class="custom-control-input" name="filed_application_for_immigration_benifit" id="yes_filed_application_for_immigration_benifit" value="Y" checked="" <?php if (isset($formData->filed_application_for_immigration_benifit) && $formData->filed_application_for_immigration_benifit == 'Y') {echo 'checked';}?>>
                 <label class="custom-control-label" for="yes_filed_application_for_immigration_benifit"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="filed_application_for_immigration_benifit" value="N" <?php if (isset($formData->filed_application_for_immigration_benifit) && $formData->filed_application_for_immigration_benifit == 'N') {echo 'checked';}?>>
+                <input type="radio" class="custom-control-input" name="filed_application_for_immigration_benifit" id="no_filed_application_for_immigration_benifit" value="N" <?php if (isset($formData->filed_application_for_immigration_benifit) && $formData->filed_application_for_immigration_benifit == 'N') {echo 'checked';}?>>
                 <label class="custom-control-label" for="no_filed_application_for_immigration_benifit"> No</label>
             </div>
         </div>
@@ -374,7 +374,7 @@
                 <label class="custom-control-label" for="yes_immigration_refused"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="immigration_refused" value="N" <?php if (isset($formData->immigration_refused) && $formData->immigration_refused == 'N') {echo 'checked';}?>>
+                <input type="radio" class="custom-control-input" name="immigration_refused" id="no_immigration_refused" value="N" <?php if (isset($formData->immigration_refused) && $formData->immigration_refused == 'N') {echo 'checked';}?>>
                 <label class="custom-control-label" for="no_immigration_refused"> No</label>
             </div>
             <textarea rows="2" cols="3" class="form-control" name="immigration_textarea8" placeholder="" value="<?php if (isset($formData) && !empty($formData->immigration_textarea8)){echo $formData->immigration_textarea8;} ?>"></textarea>
@@ -462,7 +462,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="1000_finch_avenue_court" value="Y" checked="">
+                <input type="radio" class="custom-control-input" name="1000_finch_avenue_court" value="Y" checked="" id="yes_1000_finch_avenue_court">
                 <label class="custom-control-label" for="yes_1000_finch_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
@@ -475,7 +475,7 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="2201_finch_avenue_court" value="Y" checked="">
+                <input type="radio" class="custom-control-input" name="2201_finch_avenue_court" value="Y" checked="" id="yes_2201_finch_avenue_court">
                 <label class="custom-control-label" for="yes_2201_finch_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
