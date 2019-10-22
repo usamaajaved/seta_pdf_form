@@ -1,4 +1,4 @@
-<?php //echo "<pre>"; print_r($_POST);exit; 
+<?php echo "<pre>"; print_r($_POST);exit; 
 require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
 
@@ -128,7 +128,7 @@ $fields['FormI-192[0].#subform[2].Pt2Line14_AptSteFlrNumber[0]']->setValue($_POS
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[2]']->setValue($_POST['prev_city_1']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_Province[2]']->setValue($_POST['prev_province_1']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_PostalCode[2]']->setValue($_POST['prev_posta_1']);
-$fields['FormI-192[0].#subform[2].Pt2Line10_PostalCode[2]']->setValue($_POST['prev_country_1']);
+$fields['FormI-192[0].#subform[2].Pt2Line10_Country[2]']->setValue($_POST['prev_country_1']);
 if (isset($_POST['prev_from_date_1']) && $_POST['prev_from_date_1'] != null) {
     $prev_from_date_1 = explode('/', $_POST['prev_from_date_1']);
     $prev_from_date_month = $prev_from_date_1[0];
@@ -179,7 +179,7 @@ if (isset($_POST['prev_to_date_2']) && $_POST['prev_to_date_2'] != null) {
 $fields['FormI-192[0].#subform[2].Pt2Line10_StreetNumberName[3]']->setValue($_POST['prev_address_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line18_AptSteFlrNumber[0]']->setValue($_POST['prev_unit_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[3]']->setValue($_POST['prev_city_3']);
-$fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[3]']->setValue($_POST['prev_province_3']);
+$fields['FormI-192[0].#subform[2].Pt2Line10_Province[3]']->setValue($_POST['prev_province_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_PostalCode[3]']->setValue($_POST['prev_postal_3']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_Country[3]']->setValue($_POST['prev_country_3']);
 if (isset($_POST['prev_from_date_3']) && $_POST['prev_from_date_3'] != null) {
@@ -266,18 +266,18 @@ if (isset($_POST['emp_from_date']) && $_POST['emp_from_date'] != null) {
     $emp_from_date_month = $emp_from_date[0];
     $emp_from_date_day = $emp_from_date[1];
     $emp_from_date_year = $emp_from_date[2];
-    $fields['empAdF5D']->setValue($emp_from_date_day);
-    $fields['empAdF5M']->setValue($emp_from_date_month);
-    $fields['empAdF5Y']->setValue($emp_from_date_year);
+    $fields['CurEmpF1D']->setValue($emp_from_date_day);
+    $fields['CurEmpF1M']->setValue($emp_from_date_month);
+    $fields['CurEmpF1Y']->setValue($emp_from_date_year);
 }
 if (isset($_POST['emp_to_date']) && $_POST['emp_to_date'] != null) {
     $emp_to_date = explode('/', $_POST['emp_to_date']);
     $emp_to_date_month = $emp_to_date[0];
     $emp_to_date_day = $emp_to_date[1];
     $emp_to_date_year = $emp_to_date[2];
-    $fields['empAdT5D']->setValue($emp_to_date_day);
-    $fields['empAdT5M']->setValue($emp_to_date_month);
-    $fields['empAdT5Y']->setValue($emp_to_date_year);
+    $fields['CurEmpT1D']->setValue($emp_to_date_day);
+    $fields['CurEmpT1M']->setValue($emp_to_date_month);
+    $fields['CurEmpT1Y']->setValue($emp_to_date_year);
 }
 
 // PAGE # 04
@@ -309,7 +309,7 @@ if (isset($_POST['emp_to_date2']) && $_POST['emp_to_date2'] != null) {
 }
 
 $fields['Employer.0']->setValue($_POST['emp_name3']);
-$fields['Employer.0']->setValue($_POST['emp_address3']);
+$fields['EmployerStreet.0']->setValue($_POST['emp_address3']);
 $fields['EmployerUnit.0']->setValue($_POST['emp_unit3']);
 $fields['EmployerCity.0']->setValue($_POST['emp_city3']);
 $fields['EmployerState.0']->setValue($_POST['emp_province3']);
@@ -474,6 +474,24 @@ $fields['FormI-192[0].#subform[6].Pt4Line30b_StateOrProvince[2]']->setValue($_PO
 $fields['FormI-192[0].#subform[6].Pt4Line30b_StateOrProvince[0]']->setValue($_POST['former_spouse_marriage_state']);
 $fields['FormI-192[0].#subform[6].Pt4Line30c_Country[2]']->setValue($_POST['current_spouse_marriage_country']);
 $fields['FormI-192[0].#subform[6].Pt4Line30c_Country[0]']->setValue($_POST['former_spouse_marriage_country']);
+if (isset($_POST['c_dom']) && $_POST['c_dom'] != null) {
+    $c_dom = explode('/', $_POST['c_dom']);
+    $c_dom_month = $c_dom[0];
+    $c_dom_day = $c_dom[1];
+    $c_dom_year = $c_dom[2];
+    $fields['CurMarriageD']->setValue($c_dom_day);
+    $fields['CurMarriageM']->setValue($c_dom_month);
+    $fields['CurMarriageY']->setValue($c_dom_year);
+} 
+if (isset($_POST['f_dom']) && $_POST['f_dom'] != null) {
+    $f_dom = explode('/', $_POST['f_dom']);
+    $f_dom_month = $f_dom[0];
+    $f_dom_day = $f_dom[1];
+    $f_dom_year = $f_dom[2];
+    $fields['PriorMarriageD']->setValue($f_dom_day);
+    $fields['PriorMarriageM']->setValue($f_dom_month);
+    $fields['PriorMarriageY']->setValue($f_dom_year);
+} 
 if (isset($_POST['t_m_dob']) && $_POST['t_m_dob'] != null) {
     $t_m_dob = explode('/', $_POST['t_m_dob']);
     $t_m_dob_month = $t_m_dob[0];
@@ -581,27 +599,27 @@ if (isset($_POST['entered_date']) && $_POST['entered_date'] != null) {
     $entered_date_month = $entered_date[0];
     $entered_date_day = $entered_date[1];
     $entered_date_year = $entered_date[2];
-    $fields['Conviction2D']->setValue($entered_date_day);
-    $fields['Conviction2M']->setValue($entered_date_month);
-    $fields['Conviction2Y']->setValue($entered_date_year);
+    $fields['EnteredUSAFM']->setValue($entered_date_day);
+    $fields['EnteredUSAFM']->setValue($entered_date_month);
+    $fields['EnteredUSAFY']->setValue($entered_date_year);
 }
 if (isset($_POST['entered_date_from']) && $_POST['entered_date_from'] != null) {
     $entered_date_from = explode('/', $_POST['entered_date_from']);
     $entered_date_from_month = $entered_date_from[0];
     $entered_date_from_day = $entered_date_from[1];
     $entered_date_from_year = $entered_date_from[2];
-    $fields['Conviction2D']->setValue($entered_date_from_day);
-    $fields['Conviction2M']->setValue($entered_date_from_month);
-    $fields['Conviction2Y']->setValue($entered_date_from_year);
+    $fields['EnteredUSAFD']->setValue($entered_date_from_day);
+    $fields['EnteredUSAFM']->setValue($entered_date_from_month);
+    $fields['EnteredUSAFY']->setValue($entered_date_from_year);
 }
 if (isset($_POST['exit_date_to']) && $_POST['exit_date_to'] != null) {
     $exit_date_to = explode('/', $_POST['exit_date_to']);
     $exit_date_to_month = $exit_date_to[0];
     $exit_date_to_day = $exit_date_to[1];
     $exit_date_to_year = $exit_date_to[2];
-    $fields['Conviction2D']->setValue($exit_date_to_day);
-    $fields['Conviction2M']->setValue($exit_date_to_month);
-    $fields['Conviction2Y']->setValue($exit_date_to_year);
+    $fields['LeftUSATD']->setValue($exit_date_to_day);
+    $fields['LeftUSATM']->setValue($exit_date_to_month);
+    $fields['LeftUSATY']->setValue($exit_date_to_year);
 }
 $fields['ImmigrationStatus']->setValue($_POST['immigration_status']);
 
@@ -639,7 +657,14 @@ $fields['1000Finch']->setValue($_POST['1000_finch_avenue_court']);
 $fields['2201Finch']->setValue($_POST['2201_finch_avenue_court']);
 $fields['Queen']->setValue($_POST['queen_st_west_court']);
 
-$fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[1]']->setValue($_POST['hispanic_latino']);
+//$fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[1]']->setValue($_POST['hispanic_latino']);
+if (isset($_POST['hispanic_latino']) && $_POST['hispanic_latino'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[1]']->setValue(true);
+}
+if (isset($_POST['not_hispanic_latino']) && $_POST['not_hispanic_latino'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[0]']->setValue(true);
+}
+
 if (isset($_POST['white']) && $_POST['white'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line2_Race[4]']->setValue(true);
 }
@@ -652,7 +677,7 @@ if (isset($_POST['black']) && $_POST['black'] == 'on') {
 if (isset($_POST['american_indian']) && $_POST['american_indian'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line2_Race[3]']->setValue(true);
 }
-if (isset($_POST['native']) && $_POST['native'] == 'on') {
+if (isset($_POST['native_hawaiian']) && $_POST['native_hawaiian'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line2_Race[2]']->setValue(true);
 }
 
@@ -667,10 +692,57 @@ if (isset($_POST['pound']) && $_POST['pound'] != "") {
     $fields['FormI-192[0].#subform[4].Pt3Line4_Pound2[0]']->setValue($pound2);
     $fields['FormI-192[0].#subform[4].Pt3Line4_Pound3[0]']->setValue($pound3);
 }
-$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
-if (isset($_POST['CP']) && $_POST['CP'] == 'on') {
-    $fields['CP']->setValue(true);
+//$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
+
+if (isset($_POST['black_eye_color']) && $_POST['black_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue(true);
 }
+if (isset($_POST['blue_eye_color']) && $_POST['blue_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[0]']->setValue(true);
+}
+if (isset($_POST['brown_eye_color']) && $_POST['brown_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[1]']->setValue(true);
+}
+if (isset($_POST['gray_eye_color']) && $_POST['gray_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[6]']->setValue(true);
+}
+if (isset($_POST['green_eye_color']) && $_POST['green_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[2]']->setValue(true);
+}
+if (isset($_POST['hazel_eye_color']) && $_POST['hazel_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[2]']->setValue(true);
+}
+if (isset($_POST['maroon_eye_color']) && $_POST['maroon_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[4]']->setValue(true);
+}
+if (isset($_POST['pink_eye_color']) && $_POST['pink_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[3]']->setValue(true);
+}
+if (isset($_POST['unknown_eye_color']) && $_POST['unknown_eye_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[8]']->setValue(true);
+}
+
+if (isset($_POST['bald']) && $_POST['bald'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[0]']->setValue(true);
+}if (isset($_POST['black_hair_colour']) && $_POST['black_hair_colour'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[1]']->setValue(true);
+}if (isset($_POST['blonde_hair_color']) && $_POST['blonde_hair_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[2]']->setValue(true);
+}if (isset($_POST['brown_hair_colour']) && $_POST['brown_hair_colour'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[3]']->setValue(true);
+}if (isset($_POST['gray_hair_colour']) && $_POST['gray_hair_colour'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[4]']->setValue(true);
+}if (isset($_POST['red_hair_color']) && $_POST['red_hair_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[5]']->setValue(true);
+}if (isset($_POST['sandy_hair_color']) && $_POST['sandy_hair_color'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[6]']->setValue(true);
+}if (isset($_POST['white_hair_colour']) && $_POST['white_hair_colour'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[7]']->setValue(true);
+}if (isset($_POST['unknown_hair_colour']) && $_POST['unknown_hair_colour'] == 'on') {
+    $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[8]']->setValue(true);
+}
+
+
 //$fields['arrested']->setValue($_POST['hair_colour']);
 
 // save it

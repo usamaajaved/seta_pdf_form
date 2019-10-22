@@ -447,6 +447,27 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     </div>
     <div class="row">
         <div class="form-group col-lg-2 pt-10">
+            <label><strong>Date of Marriage (MM/DD/YYYY): </strong><span class="text-danger">*</span></label>
+        </div>
+        <div class="form-group col-lg-5">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                </span>
+                <input type="text" class="form-control required pickadate-accessibility" name="c_dom" placeholder="Current Spouse's Date of Marriage" value="<?php if (isset($formData) && !empty($formData->c_dom)){echo $formData->c_dom;} ?>">
+            </div>
+        </div>
+        <div class="form-group col-lg-5">
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                </span>
+                <input type="text" class="form-control required pickadate-accessibility" name="f_dom" placeholder="Former Spouse's Date of Marriage" value="<?php if (isset($formData) && !empty($formData->f_dom)){echo $formData->f_dom;} ?>">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-2 pt-10">
             <label><strong>City or Town of Marriage:</strong></label>
         </div>
         <div class="form-group col-lg-5">

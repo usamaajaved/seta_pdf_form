@@ -31,7 +31,7 @@ $result1 = mysqli_query($con_str,$query1);
         </div>
         <div class="form-group col-lg-3">
             <select data-placeholder="Select Country" name="current_country" class="form-control required form-control-select2" data-fouc>
-                <option value="Canadian">Canadian</option>
+                <option value="Canadian">Canada</option>
                 <?php while ($countries = mysqli_fetch_assoc($result)) { ?>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->current_country == $countries['name']){echo 'selected="selected"';} ?>>
                         <?php echo $countries['name']; ?>
@@ -86,8 +86,8 @@ $result1 = mysqli_query($con_str,$query1);
         </div>
         <div class="form-group col-lg-3">
             <select data-placeholder="Select Country" name="mail_country" class="form-control select" data-fouc>
+                <option value="Canada">Canada</option>
                 <?php while ($countries = mysqli_fetch_array($result1)) { ?>
-                    <option value="Canada">Canada</option>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mail_country == $countries['name']){echo 'selected="selected"';} ?>>
                         <?php echo $countries['name']; ?>
                     </option>
