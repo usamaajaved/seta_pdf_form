@@ -160,7 +160,6 @@ if (!$_SESSION) {
     function finish_form(){
         var id = '<?php echo $_SESSION['user_id']; ?>';
         $.post('seta_pdf.php',{id:id}).done(function(data){
-            console.log(data); return false;
             window.location.replace('authentication/logout.php');
         });
     }

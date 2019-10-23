@@ -178,4 +178,15 @@
             </div>
         </div>
     </div>
+    <div class="row form-group">
+        <div class="form-group col-lg-3">
+            <label><strong>Date Completed: </strong></label>
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                </span>
+                <input type="text" class="form-control pickadate-accessibility" name="complete_date" placeholder="Completion Date" value="<?php if (isset($formData) && !empty($formData->complete_date)){echo $formData->complete_date;} ?>">
+            </div>
+        </div>
+    </div>
 </div>

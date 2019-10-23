@@ -1,3 +1,7 @@
+<?php 
+$query = "SELECT * from countries";
+$result = mysqli_query($con_str, $query);
+?>
 <div class="col-md-12">
     <div class="row">
         <div class="form-group mb-3 mb-md-2 col-lg-12">
@@ -14,7 +18,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <textarea rows="2" cols="3" class="form-control" name="Arrested_textarea" placeholder="" value="<?php if (isset($formData) && !empty($formData->Arrested_textarea)){echo $formData->Arrested_textarea;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="Arrested_textarea" placeholder=""><?php if (isset($formData) && !empty($formData->Arrested_textarea)){echo $formData->Arrested_textarea;} ?></textarea>
         </div>
     </div>
     <div class="row">
@@ -32,7 +36,125 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <textarea rows="2" cols="3" class="form-control" name="ArrestedOutsideCA" placeholder="" value="<?php if (isset($formData) && !empty($formData->ArrestedOutsideCA)){echo $formData->ArrestedOutsideCA;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="ArrestedOutsideCA"><?php if (isset($formData) && !empty($formData->ArrestedOutsideCA)){echo $formData->ArrestedOutsideCA;} ?></textarea>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="form-group mb-md-2 col-lg-12">
+            <h5><strong>Travel Information</strong></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <label><strong>Location at which you plan to enter the United States (desired Port-of-Entry):</strong></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-4">
+            <input type="text" class="form-control" name="plan_location_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->plan_location_city)){echo $formData->plan_location_city;} ?>">
+        </div>
+        <div class="form-group col-lg-4">
+            <select data-placeholder="Select State" name="plan_location_country" class="form-control select" data-fouc>
+                <?php if (isset($formData->plan_location_country) && !empty($formData->plan_location_country)) { ?>
+                    <option value="<?php echo $formData->plan_location_country; ?>"><??><?php echo $formData->plan_location_country; ?></option>
+                <?php } ?>
+                <option></option>
+                <option value=" "> </option>
+                <option value="AA">AA</option>
+                <option value="AE">AE</option>
+                <option value="AK">AK</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AR">AR</option>
+                <option value="AS">AS</option>
+                <option value="AZ">AZ</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DC">DC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="FM">FM</option>
+                <option value="GA">GA</option>
+                <option value="GU">GU</option>
+                <option value="HI">HI</option>
+                <option value="IA">IA</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="MA">MA</option>
+                <option value="MD">MD</option>
+                <option value="ME">ME</option>
+                <option value="MH">MH</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MO">MO</option>
+                <option value="MP">MP</option>
+                <option value="MP">MP</option>
+                <option value="MS">MS</option>
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="NE">NE</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NV">NV</option>
+                <option value="NY">NY</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="PR">PR</option>
+                <option value="PW">PW</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="WA">WA</option>
+                <option value="WI">WI</option>
+                <option value="WV">WV</option>
+                <option value="WY">WY</option>
+            </select>
+        </div>
+        <div class="form-group col-lg-4">
+            <input type="text" class="form-control" name="plan_location_poe" placeholder="Port-of-Entry Name" value="<?php if (isset($formData) && !empty($formData->plan_location_poe)){echo $formData->plan_location_poe;} ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-lg-4">
+            <label><strong>How do you plan to travel to the U.S.? </strong></label>
+            <input type="text" class="form-control" name="plan_to_travel" placeholder="for example by plane, ship, car" value="<?php if (isset($formData) && !empty($formData->plan_to_travel)){echo $formData->plan_to_travel;} ?>">
+        </div>
+        <div class="form-group col-lg-4">
+            <label><strong>When do you plan to enter the U.S. (MM/DD/YYYY): </strong></label>
+            <div class="input-group">
+                <span class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                </span>
+                <input type="text" class="form-control pickadate-accessibility" name="plan_doe" placeholder="Date of Birth" value="<?php if (isset($formData) && !empty($formData->plan_doe)){echo $formData->plan_doe;} ?>">
+            </div>
+        </div>
+        <div class="form-group col-lg-4">
+            <label><strong>Approximate Length of Stay in the U.S.: </strong></label>
+            <input type="text" class="form-control" name="length_stay" placeholder="Enter Days, Weeks or Months" value="<?php if (isset($formData) && !empty($formData->length_stay)){echo $formData->length_stay;} ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="mt-10 col-lg-12">
+            <label><strong>What is the purpose of your stay in the United States? Explain fully below.</strong></label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="mb-md-2 col-lg-12">
+            <textarea rows="2" cols="3" name="staying_purpose" class="form-control"><?php if (isset($formData) && !empty($formData->staying_purpose)){echo $formData->staying_purpose;} ?></textarea>
         </div>
     </div>
     <div class="row text-center">
@@ -158,7 +280,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea1" placeholder="Explain the reason(s) why you believe that you may not be admissible to the U.S. (for example, Criminal Conviction(s), Health-related grounds, etc.)" value="<?php if (isset($formData) && !empty($formData->immigration_textarea1)){echo $formData->immigration_textarea1;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea1" placeholder="Explain the reason(s) why you believe that you may not be admissible to the U.S. (for example, Criminal Conviction(s), Health-related grounds, etc.)"><?php if (isset($formData) && !empty($formData->immigration_textarea1)){echo $formData->immigration_textarea1;} ?></textarea>
         </div>
     </div>
     <div class="row">
@@ -168,7 +290,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <textarea rows="2" cols="3" name="immigration_textarea2" class="form-control" placeholder="" value="<?php if (isset($formData) && !empty($formData->immigration_textarea2)){echo $formData->immigration_textarea2;} ?>"></textarea>
+            <textarea rows="2" cols="3" name="immigration_textarea2" class="form-control"><?php if (isset($formData) && !empty($formData->immigration_textarea2)){echo $formData->immigration_textarea2;} ?></textarea>
         </div>
     </div>
     <div class="row">
@@ -186,7 +308,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea3" placeholder="(If yes, please explain in full detail below. If no, please write N/A)" value="<?php if (isset($formData) && !empty($formData->immigration_textarea3)){echo $formData->immigration_textarea3;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea3" placeholder="(If yes, please explain in full detail below. If no, please write N/A)"><?php if (isset($formData) && !empty($formData->immigration_textarea3)){echo $formData->immigration_textarea3;} ?></textarea>
         </div>
     </div>
     <div class="row">
@@ -204,7 +326,7 @@
     </div>
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea4" placeholder="(If yes, please explain in full detail below. If no, please write N/A)" value="<?php if (isset($formData) && !empty($formData->immigration_textarea4)){echo $formData->immigration_textarea4;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea4" placeholder="(If yes, please explain in full detail below. If no, please write N/A)"><?php if (isset($formData) && !empty($formData->immigration_textarea4)){echo $formData->immigration_textarea4;} ?></textarea>
         </div>
     </div>
     <div class="row">
@@ -246,7 +368,7 @@
         <div class="form-group col-lg-3">
             <select data-placeholder="Select Country" name="filed_application_country" class="form-control select" data-fouc>
                 <option></option>
-                <?php while ($countries = mysqli_fetch_assoc($result2)) { ?>
+                <?php while ($countries = mysqli_fetch_assoc($result)) { ?>
                     <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->filed_application_country == $countries['name']){echo 'selected="selected"';} ?>>
                         <?php echo $countries['name']; ?>
                     </option>
@@ -299,7 +421,7 @@
     </div>
     <div class="row form-group">
         <div class="form-group col-lg-12">
-            <label>What was your immigration status at the time of entry into the U.S.?</label>
+            <label><strong>What was your immigration status at the time of entry into the U.S.?</strong></label>
             <input type="text" class="form-control" name="immigration_status" placeholder="Immigration Status" value="<?php if (isset($formData) && !empty($formData->immigration_status)){echo $formData->immigration_status;} ?>">
         </div>
     </div>
@@ -377,7 +499,7 @@
                 <input type="radio" class="custom-control-input" name="immigration_refused" id="no_immigration_refused" value="N" <?php if (isset($formData->immigration_refused) && $formData->immigration_refused == 'N') {echo 'checked';}?>>
                 <label class="custom-control-label" for="no_immigration_refused"> No</label>
             </div>
-            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea8" placeholder="" value="<?php if (isset($formData) && !empty($formData->immigration_textarea8)){echo $formData->immigration_textarea8;} ?>"></textarea>
+            <textarea rows="2" cols="3" class="form-control" name="immigration_textarea8"><?php if (isset($formData) && !empty($formData->immigration_textarea8)){echo $formData->immigration_textarea8;} ?></textarea>
         </div>
     </div>
     <div class="row mb-10 text-center">
@@ -410,11 +532,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="jarvis_st_court" value="Y" id="yes_jarvis_st_court" checked="">
+                <input type="radio" class="custom-control-input" name="jarvis_st_court" value="Y" id="yes_jarvis_st_court" checked="" <?php if (isset($formData->jarvis_st_court) && $formData->jarvis_st_court == 'Y') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_jarvis_st_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="jarvis_st_court" value="N" id="no_jarvis_st_court">
+                <input type="radio" class="custom-control-input" name="jarvis_st_court" value="N" id="no_jarvis_st_court" <?php if (isset($formData->jarvis_st_court) && $formData->jarvis_st_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_jarvis_st_court"> No</label>
             </div>
         </div>
@@ -423,11 +545,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="university_avenue_court" value="Y" id="yes_university_avenue_court" checked="">
+                <input type="radio" class="custom-control-input" name="university_avenue_court" value="Y" id="yes_university_avenue_court" checked="" <?php if (isset($formData->university_avenue_court) && $formData->university_avenue_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_university_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="university_avenue_court" value="N" id="no_university_avenue_court">
+                <input type="radio" class="custom-control-input" name="university_avenue_court" value="Choice1" id="no_university_avenue_court" <?php if (isset($formData->university_avenue_court) && $formData->university_avenue_court == 'Choice1') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_university_avenue_court"> No</label>
             </div>
         </div>
@@ -436,11 +558,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="aglinton_avenue_court" value="Y" id="yes_aglinton_avenue_court" checked="">
+                <input type="radio" class="custom-control-input" name="aglinton_avenue_court" value="Y" id="yes_aglinton_avenue_court" checked="" <?php if (isset($formData->aglinton_avenue_court) && $formData->aglinton_avenue_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_aglinton_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="aglinton_avenue_court" value="N" id="no_aglinton_avenue_court">
+                <input type="radio" class="custom-control-input" name="aglinton_avenue_court" value="N" id="no_aglinton_avenue_court" <?php if (isset($formData->aglinton_avenue_court) && $formData->aglinton_avenue_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_aglinton_avenue_court"> No</label>
             </div>
         </div>
@@ -449,11 +571,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="yonge_st_court" value="Y" id="yes_yonge_st_court" checked="">
+                <input type="radio" class="custom-control-input" name="yonge_st_court" value="Y" id="yes_yonge_st_court" checked="" <?php if (isset($formData->yonge_st_court) && $formData->yonge_st_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_yonge_st_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="yonge_st_court" value="N" id="no_yonge_st_court">
+                <input type="radio" class="custom-control-input" name="yonge_st_court" value="N" id="no_yonge_st_court" <?php if (isset($formData->yonge_st_court) && $formData->yonge_st_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_yonge_st_court"> No</label>
             </div>
         </div>
@@ -462,11 +584,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="1000_finch_avenue_court" value="Y" checked="" id="yes_1000_finch_avenue_court">
+                <input type="radio" class="custom-control-input" name="finch_avenue_court_1000" value="Y" checked="" id="yes_1000_finch_avenue_court" <?php if (isset($formData->finch_avenue_court_1000) && $formData->finch_avenue_court_1000 == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_1000_finch_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="1000_finch_avenue_court" value="N" id="no_1000_finch_avenue_court">
+                <input type="radio" class="custom-control-input" name="finch_avenue_court_1000" value="N" id="no_1000_finch_avenue_court" <?php if (isset($formData->finch_avenue_court_1000) && $formData->finch_avenue_court_1000 == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_1000_finch_avenue_court"> No</label>
             </div>
         </div>
@@ -475,11 +597,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="2201_finch_avenue_court" value="Y" checked="" id="yes_2201_finch_avenue_court">
+                <input type="radio" class="custom-control-input" name="finch_avenue_court_2201" value="Y" checked="" id="yes_2201_finch_avenue_court" <?php if (isset($formData->finch_avenue_court_2201) && $formData->finch_avenue_court_2201 == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_2201_finch_avenue_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="2201_finch_avenue_court" value="N" id="no_2201_finch_avenue_court">
+                <input type="radio" class="custom-control-input" name="finch_avenue_court_2201" value="N" id="no_2201_finch_avenue_court" <?php if (isset($formData->finch_avenue_court_2201) && $formData->finch_avenue_court_2201 == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_2201_finch_avenue_court"> No</label>
             </div>
         </div>
@@ -488,11 +610,11 @@
         </div>
         <div class="col-lg-2">
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="queen_st_west_court" value="Y" id="yes_queen_st_west_court" checked="">
+                <input type="radio" class="custom-control-input" name="queen_st_west_court" value="Y" id="yes_queen_st_west_court" checked="" <?php if (isset($formData->queen_st_west_court) && $formData->queen_st_west_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="yes_queen_st_west_court"> Yes</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" class="custom-control-input" name="queen_st_west_court" value="N" id="no_queen_st_west_court">
+                <input type="radio" class="custom-control-input" name="queen_st_west_court" value="N" id="no_queen_st_west_court" <?php if (isset($formData->queen_st_west_court) && $formData->queen_st_west_court == 'N') { echo "checked"; } ?>>
                 <label class="custom-control-label" for="no_queen_st_west_court"> No</label>
             </div>
         </div>

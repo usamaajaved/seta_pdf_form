@@ -1,4 +1,5 @@
-<?php echo "<pre>"; print_r($_POST);exit; 
+<?php //echo "<pre>"; print_r($_POST['force_member']);exit;
+
 require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
 
@@ -577,6 +578,15 @@ $fields['ConvictionCourts.1']->setValue($_POST['court_after_1992_2']);
 
 //  PAge # 08
 
+$fields['FormI-192[0].#subform[3].Pt4Line1a_CityOrTown[0]']->setValue($_POST['plan_location_city']);
+$fields['FormI-192[0].#subform[3].P1_L7d_State[0]']->setValue($_POST['plan_location_country']);
+$fields['FormI-192[0].#subform[3].Pt3Line4_PortOfEntry[0]']->setValue($_POST['plan_location_poe']);
+$fields['FormI-192[0].#subform[3].Pt3Line4_TravelToUS[0]']->setValue($_POST['plan_to_travel']);
+$fields['FormI-192[0].#subform[3].Pt5Line8_DateOfBirth[0]']->setValue($_POST['plan_doe']);
+$fields['FormI-192[0].#subform[3].Pt3Line4_CountryOfBirth[3]']->setValue($_POST['length_stay']);
+$fields['FormI-192[0].#subform[3].Pt9Line4_Summary[0]']->setValue($_POST['staying_purpose']);
+
+
 $fields['inadmissible']->setValue($_POST['inadmissible']);
 $fields['Text72']->setValue($_POST['immigration_textarea1']);
 $fields['Text73']->setValue($_POST['immigration_textarea2']);
@@ -653,8 +663,8 @@ $fields['Jarvis']->setValue($_POST['jarvis_st_court']);
 $fields['UniversityAve']->setValue($_POST['university_avenue_court']);
 $fields['Eglington']->setValue($_POST['aglinton_avenue_court']);
 $fields['Yonge']->setValue($_POST['yonge_st_court']);
-$fields['1000Finch']->setValue($_POST['1000_finch_avenue_court']);
-$fields['2201Finch']->setValue($_POST['2201_finch_avenue_court']);
+$fields['1000Finch']->setValue($_POST['finch_avenue_court_1000']);
+$fields['2201Finch']->setValue($_POST['finch_avenue_court_2201']);
 $fields['Queen']->setValue($_POST['queen_st_west_court']);
 
 //$fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[1]']->setValue($_POST['hispanic_latino']);
@@ -684,13 +694,16 @@ if (isset($_POST['native_hawaiian']) && $_POST['native_hawaiian'] == 'on') {
 $fields['FormI-192[0].#subform[4].Pt3Line3_HeightFeet[0]']->setValue($_POST['feet']);
 $fields['FormI-192[0].#subform[4].Pt3Line3_HeightInches[0]']->setValue($_POST['inches']);
 if (isset($_POST['pound']) && $_POST['pound'] != "") {
-    $pounds = $_POST['pound'];
-    $pound1 = $pounds[0];
-    $pound2 = $pounds[1];
-    $pound3 = $pounds[2];
-    $fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue($pound1);
-    $fields['FormI-192[0].#subform[4].Pt3Line4_Pound2[0]']->setValue($pound2);
-    $fields['FormI-192[0].#subform[4].Pt3Line4_Pound3[0]']->setValue($pound3);
+    $pounds = str_split($_POST['pound']);
+    if (count($pounds) == 2) {
+        $fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue(0);
+        $fields['FormI-192[0].#subform[4].Pt3Line4_Pound2[0]']->setValue($pounds[0]);
+        $fields['FormI-192[0].#subform[4].Pt3Line4_Pound3[0]']->setValue($pounds[1]);
+    }else{
+        $fields['FormI-192[0].#subform[4].Pt3Line4_Pound1[0]']->setValue($pounds[0]);
+        $fields['FormI-192[0].#subform[4].Pt3Line4_Pound2[0]']->setValue($pounds[1]);
+        $fields['FormI-192[0].#subform[4].Pt3Line4_Pound3[0]']->setValue($pounds[2]);
+    }
 }
 //$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
 
@@ -741,6 +754,8 @@ if (isset($_POST['bald']) && $_POST['bald'] == 'on') {
 }if (isset($_POST['unknown_hair_colour']) && $_POST['unknown_hair_colour'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[8]']->setValue(true);
 }
+
+$fields['OriginalDate']->setValue($_POST['complete_date']);
 
 
 //$fields['arrested']->setValue($_POST['hair_colour']);
