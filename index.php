@@ -141,6 +141,16 @@ if (!$_SESSION) {
             </div>
         </div>
     </div>
+    
+    <div id="modal_default" class="modal fade" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h6 class="font-weight-semibold text-center">Form submitted successfully!</h6>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <script>
     function save_form_data(){
@@ -159,13 +169,11 @@ if (!$_SESSION) {
     }
     function finish_form(){
         var id = '<?php echo $_SESSION['user_id']; ?>';
-        $.post('seta_pdf.php',{id:id}).done(function(data){
+        $.post('seta_pdf.php',{id:id,finishedForm:'finished'}).done(function(data){
+            alert('Form submitted successfully!');
             window.location.replace('authentication/logout.php');
         });
     }
-    // $('.btn-primary').click(function(){
-    //     alert();
-    // });
 
     $("#scroll-down").click(function(){
         $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });

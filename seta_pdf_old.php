@@ -1,10 +1,9 @@
-<?php
-//echo "<pre>";print_r($_POST);exit;
+<?php //echo "<pre>"; print_r($_POST['force_member']);exit;
+
 require_once('library/SetaPDF/Autoload.php');
 include("config/config.php");
 
 //  Insert Form Data into DB
-
 $form_data = json_encode($_POST);
 $checkIfExistsQuery = "SELECT * FROM pdf_form WHERE user_id = ".$_POST['user_id']."";
 $res1 = mysqli_query($con_str, $checkIfExistsQuery);
@@ -18,10 +17,9 @@ $res = mysqli_query($con_str, $query);
 if(isset($_POST['submitType']) && $_POST['submitType']=="ajax"){
     return false;
 }
-  $finisedForm = 'UPDATE `users` set `is_form`="Yes" where `id` ='.$_POST['id'].'';
-    $res1 = mysqli_query($con_str,$finisedForm);
-if(isset($_POST['finishedForm']) && $_POST['finishedForm']=="finished"){
-    return false;
+if (isset($_POST['id'])) {
+    $finisedForm = 'UPDATE `users` set `is_form`="Yes" where `id` ='.$_POST['id'].'';
+    $res1 = mysqli_query($con_str,$finisedForm);    
 }
 
 
@@ -49,19 +47,19 @@ $fields['FN1']->setValue($_POST['fname']); // add some randomness
 $fields['GN1']->setValue($_POST['gname']);
 $fields['MN1']->setValue($_POST['mname']);
 if (isset($_POST['CP']) && $_POST['CP'] == 'on') {
-    $fields['CP']->setValue(true);
+	$fields['CP']->setValue(true);
 }
 if (isset($_POST['USTW']) && $_POST['USTW'] == 'on') {
-    $fields['USTW']->setValue(true);
+	$fields['USTW']->setValue(true);
 }
 if (isset($_POST['Both']) && $_POST['Both'] == 'on') {
-    $fields['Both']->setValue(true);
+	$fields['Both']->setValue(true);
 }
 if (isset($_POST['FileDestruction']) && $_POST['FileDestruction'] == 'on') {
-    $fields['FileDestruction']->setValue(true);
+	$fields['FileDestruction']->setValue(true);
 }
 if (isset($_POST['TRP']) && $_POST['TRP'] == 'on') {
-    $fields['TRP']->setValue(true);
+	$fields['TRP']->setValue(true);
 }
 
 //  Page # 1
@@ -97,8 +95,12 @@ $fields['WorkNo']->setValue($_POST['work']);
 $fields['FormI-192[0].#subform[7].Part8_Line6_Email[0]']->setValue($_POST['email']);
 $fields['SecondaryEmail']->setValue($_POST['email2']);
 $fields['DL']->setValue($_POST['d_license']);
-$fields['DLNo']->setValue($_POST['license_no']);
-$fields['DLIssue']->setValue($_POST['license_province']);
+if (isset($_POST['license_no'])) {
+    $fields['DLNo']->setValue($_POST['license_no']);
+}
+if (isset($_POST['license_province'])) {
+    $fields['DLIssue']->setValue($_POST['license_province']);
+}
 $fields['FormI-192[0].#subform[2].Pt2Line10_StreetNumberName[5]']->setValue($_POST['current_address']);
 $fields['FormI-192[0].#subform[2].Pt2Line12_AptSteFlrNumber[0]']->setValue($_POST['current_unit']);
 $fields['FormI-192[0].#subform[2].Pt2Line10_CityOrTown[5]']->setValue($_POST['current_city']);
@@ -504,7 +506,7 @@ $fields['FormI-192[0].#subform[6].Pt4Line30a_CityOrTown[1]']->setValue($_POST['t
 
 //  PAGE #  06
 
-$fields['Group9']->setValue($_POST['canadian_force_member']);
+$fields['Group9']->setValue($_POST['force_member']);
 $fields['LevelofService']->setValue($_POST['force']);
 $fields['MilitaryStreet']->setValue($_POST['military_address']);
 $fields['MilitaryCity']->setValue($_POST['military_city']);
@@ -575,6 +577,7 @@ $fields['SentenceReceived.1']->setValue($_POST['actual_sentence_2']);
 $fields['ConvictionCourts.1']->setValue($_POST['court_after_1992_2']);
 
 //  PAge # 08
+
 $fields['FormI-192[0].#subform[3].Pt4Line1a_CityOrTown[0]']->setValue($_POST['plan_location_city']);
 $fields['FormI-192[0].#subform[3].P1_L7d_State[0]']->setValue($_POST['plan_location_country']);
 $fields['FormI-192[0].#subform[3].Pt3Line4_PortOfEntry[0]']->setValue($_POST['plan_location_poe']);
@@ -582,6 +585,7 @@ $fields['FormI-192[0].#subform[3].Pt3Line4_TravelToUS[0]']->setValue($_POST['pla
 $fields['FormI-192[0].#subform[3].Pt5Line8_DateOfBirth[0]']->setValue($_POST['plan_doe']);
 $fields['FormI-192[0].#subform[3].Pt3Line4_CountryOfBirth[3]']->setValue($_POST['length_stay']);
 $fields['FormI-192[0].#subform[3].Pt9Line4_Summary[0]']->setValue($_POST['staying_purpose']);
+
 
 $fields['inadmissible']->setValue($_POST['inadmissible']);
 $fields['Text72']->setValue($_POST['immigration_textarea1']);
@@ -663,6 +667,7 @@ $fields['1000Finch']->setValue($_POST['finch_avenue_court_1000']);
 $fields['2201Finch']->setValue($_POST['finch_avenue_court_2201']);
 $fields['Queen']->setValue($_POST['queen_st_west_court']);
 
+//$fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[1]']->setValue($_POST['hispanic_latino']);
 if (isset($_POST['hispanic_latino']) && $_POST['hispanic_latino'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line1_Ethnicity[1]']->setValue(true);
 }
@@ -685,6 +690,7 @@ if (isset($_POST['american_indian']) && $_POST['american_indian'] == 'on') {
 if (isset($_POST['native_hawaiian']) && $_POST['native_hawaiian'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line2_Race[2]']->setValue(true);
 }
+
 $fields['FormI-192[0].#subform[4].Pt3Line3_HeightFeet[0]']->setValue($_POST['feet']);
 $fields['FormI-192[0].#subform[4].Pt3Line3_HeightInches[0]']->setValue($_POST['inches']);
 if (isset($_POST['pound']) && $_POST['pound'] != "") {
@@ -700,6 +706,7 @@ if (isset($_POST['pound']) && $_POST['pound'] != "") {
     }
 }
 //$fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue($_POST['eye_colour']);
+
 if (isset($_POST['black_eye_color']) && $_POST['black_eye_color'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[7]']->setValue(true);
 }
@@ -727,7 +734,7 @@ if (isset($_POST['pink_eye_color']) && $_POST['pink_eye_color'] == 'on') {
 if (isset($_POST['unknown_eye_color']) && $_POST['unknown_eye_color'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line5_EyeColor[8]']->setValue(true);
 }
-//$fields['arrested']->setValue($_POST['hair_colour']);
+
 if (isset($_POST['bald']) && $_POST['bald'] == 'on') {
     $fields['FormI-192[0].#subform[4].Pt3Line6_HairColor[0]']->setValue(true);
 }if (isset($_POST['black_hair_colour']) && $_POST['black_hair_colour'] == 'on') {
@@ -750,41 +757,44 @@ if (isset($_POST['bald']) && $_POST['bald'] == 'on') {
 
 $fields['OriginalDate']->setValue($_POST['complete_date']);
 
+
+//$fields['arrested']->setValue($_POST['hair_colour']);
+
 // save it
 $document->save()->finish();
 // copy it over
-copy($tempWriter->getPath(), $_POST['fname'].''.$_POST['gname'].'.pdf');
-// $to = admin_email;
+copy($tempWriter->getPath(), $_POST['fname'].".pdf");
+// $to = '.base_email.'
 
-//sender
+// //sender
 // $from = 'sender@example.com';
-// $fromName = 'Record Removal Services';
+// $fromName = 'Seta PDF';
 
-//email subject
-// $subject = 'Client Information Form -- '.$_POST['gname'].' '.$_POST['fname'].'';
+// //email subject
+// $subject = 'PHP Email with Attachment by Seta PDF'; 
 
-//attachment file path
-// $file = $_POST['fname'].''.$_POST['gname'].".pdf";
+// //attachment file path
+// $file = $_POST['fname'].".pdf";
 
-//email body content
-// $htmlContent = '<h1></h1>
-//     <p>Hi, <br> '.$_POST['gname'].' has submit Client Information Form, please check the attached PDF.<br>Thanks</p>';
+// //email body content
+// $htmlContent = '<h1>PHP Email with Attachment by Seta PDF</h1>
+//     <p>This email has sent from PHP script with attachment.</p>';
 
-//header for sender info
+// //header for sender info
 // $headers = "From: $fromName"." <".$from.">";
 
-//boundary 
+// //boundary 
 // $semi_rand = md5(time()); 
 // $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
 
-//headers for attachment 
+// //headers for attachment 
 // $headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\""; 
 
-//multipart boundary 
+// //multipart boundary 
 // $message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" .
 // "Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n"; 
 
-//preparing attachment
+// //preparing attachment
 // if(!empty($file) > 0){
 //     if(is_file($file)){
 //         $message .= "--{$mime_boundary}\n";
@@ -802,19 +812,28 @@ copy($tempWriter->getPath(), $_POST['fname'].''.$_POST['gname'].'.pdf');
 // $message .= "--{$mime_boundary}--";
 // $returnpath = "-f" . $from;
 
-// send email
-// $mail = @mail($to, $subject, $message, $headers, $returnpath);
+// //send email
+// $mail = @mail($, $subject, $message, $headers, $returnpath);
+
+// $TY_subject = 'Thank You for reaching us!'
+// $TY_to = $_POST['email'];
+// $TY_messages = '<h1>Thank You for submitting the form. We will respond to you quickly.</h1>';
+// $TY_headers = "From: $fromName"." <".$from.">";
 
 
-// unlink($_POST['fname'].''.$_POST['gname'].".pdf");
-// $to1 = $_POST['email'];
-// $subject1 = 'Record Removal Services';
-// $headers1  = 'MIME-Version: 1.0' . "\r\n";
-// $headers1 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-// $message1 =  '<label>Dear '.$_POST['gname'].' <br> You have successfully filled the Client Information Form, we will contact you soon. <br><br>Thank you!<br>Record Removal Services Canada<br>Web: <a href="https://www.recordremoval.org/">https://www.recordremoval.org/</a><br>Tel: 1-866-922-8159</label>';
+
+
+// unlink($_POST['fname'].".pdf");
+
 // $TY_subject = 'Thank You for reaching us!'
 // $TY_to = $_POST['email'];
 
-// mail($to1, $subject1, $message1, $headers1);
-//echo $mail?"<h1 style='text-align: center;margin-top: 18%;'>Mail sent to your mail address.</h1>":"<h1>Mail sending failed.</h1>";
+// $thankyou_email = @mail($to, $TY_subject, $TY_messages, $TY_headers);
 
+// //email sending status
+// echo $mail?"<h1 style='text-align: center;margin-top: 18%;'>Mail sent to your mail address.</h1>":"<h1>Mail sending failed.</h1>";
+// echo "<SCRIPT type='text/javascript'>
+//         setTimeout(function(){ window.location.replace('index.php'); }, 2000);
+//     </SCRIPT>";
+// //echo $mail?"<h1 class='text-center'>Mail sent.</h1>":"<h1>Mail sending failed.</h1>";
+// //header('Location: index.php');

@@ -204,7 +204,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <input type="text" class="form-control" name="license_no" id="license_no" placeholder="Enter License Number" disabled="" value="<?php if (isset($formData) && !empty($formData->license_no)){echo $formData->license_no;} ?>">
         </div>
         <div class="form-group col-lg-4">
-            <label>Province of issue:</label>
+            <label><strong>Province of Issue: </strong></label>
             <input type="text" class="form-control" name="license_province" id="license_province" placeholder="Enter Province" disabled="" value="<?php if (isset($formData) && !empty($formData->license_province)){echo $formData->license_province;} ?>">
         </div>
     </div>
