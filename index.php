@@ -170,8 +170,8 @@ if (!$_SESSION) {
     function finish_form(){
         var id = '<?php echo $_SESSION['user_id']; ?>';
         $.post('seta_pdf.php',{id:id,finishedForm:'finished'}).done(function(data){
-            alert('Form submitted successfully!');
-            window.location.replace('authentication/logout.php');
+            // alert('Form submitted successfully!');
+            // window.location.replace('authentication/logout.php');
         });
     }
 
