@@ -35,16 +35,16 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_city_1" value="<?php if (isset($formData) && !empty($formData->prev_city_1)){echo $formData->prev_city_1;} ?>" placeholder="City">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_province_1" value="<?php if (isset($formData) && !empty($formData->prev_province_1)){echo $formData->prev_province_1;} ?>" placeholder="Province">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_posta_1" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_posta_1)){echo $formData->prev_posta_1;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <select data-placeholder="Select Country" name="prev_country_1" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($a_result)) { ?>
@@ -55,7 +55,7 @@ $e_result = mysqli_query($con_str,$e_query);
 
             </select>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -63,7 +63,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_1" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->prev_from_date_1)){echo $formData->prev_from_date_1;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -88,16 +88,16 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_city_2" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_2)){echo $formData->prev_city_2;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_province_2" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_2)){echo $formData->prev_province_2;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_postal_2" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_2)){echo $formData->prev_postal_2;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <select data-placeholder="Select Country" name="prev_country_2" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($b_result)) { ?>
@@ -108,7 +108,7 @@ $e_result = mysqli_query($con_str,$e_query);
 
             </select>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -116,7 +116,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_2" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->prev_from_date_2)){echo $formData->prev_from_date_2;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -140,16 +140,16 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_city_3" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_3)){echo $formData->prev_city_3;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_province_3" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_3)){echo $formData->prev_province_3;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_postal_3" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_3)){echo $formData->prev_postal_3;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <select data-placeholder="Select Country" name="prev_country_3" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($c_result)) { ?>
@@ -160,7 +160,7 @@ $e_result = mysqli_query($con_str,$e_query);
 
             </select>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -168,7 +168,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_3" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->prev_from_date_3)){echo $formData->prev_from_date_3;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -192,16 +192,16 @@ $e_result = mysqli_query($con_str,$e_query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_city_4" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_4)){echo $formData->prev_city_4;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_province_4" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_4)){echo $formData->prev_province_4;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_postal_4" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_4)){echo $formData->prev_postal_4;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <select data-placeholder="Select Country" name="prev_country_4" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($d_result)) { ?>
@@ -212,7 +212,7 @@ $e_result = mysqli_query($con_str,$e_query);
 
             </select>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -220,7 +220,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_4" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->prev_from_date_4)){echo $formData->prev_from_date_4;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -243,17 +243,17 @@ $e_result = mysqli_query($con_str,$e_query);
             <input type="text" class="form-control" name="prev_unit_5" placeholder="Unit Number" value="<?php if (isset($formData) && !empty($formData->prev_unit_5)){echo $formData->prev_unit_5;} ?>">
         </div>
     </div>
-    <div class="row">
-        <div class="form-group col-lg-2">
+    <div class="row form-group">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_city_5" placeholder="City" value="<?php if (isset($formData) && !empty($formData->prev_city_5)){echo $formData->prev_city_5;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_province_5" placeholder="Province" value="<?php if (isset($formData) && !empty($formData->prev_province_5)){echo $formData->prev_province_5;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <input type="text" class="form-control" name="prev_postal_5" placeholder="Postal Code" value="<?php if (isset($formData) && !empty($formData->prev_postal_5)){echo $formData->prev_postal_5;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <select data-placeholder="Select Country" name="prev_country_5" class="form-control select" data-fouc>
                 <option></option>
                 <?php while ($countries = mysqli_fetch_assoc($e_result)) { ?>
@@ -264,7 +264,7 @@ $e_result = mysqli_query($con_str,$e_query);
 
             </select>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -272,7 +272,7 @@ $e_result = mysqli_query($con_str,$e_query);
                 <input type="text" class="form-control pickadate-accessibility" name="prev_from_date_5" placeholder="Date From" value="<?php if (isset($formData) && !empty($formData->prev_from_date_5)){echo $formData->prev_from_date_5;} ?>">
             </div>
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>

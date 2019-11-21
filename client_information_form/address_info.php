@@ -46,7 +46,7 @@ $result1 = mysqli_query($con_str,$query1);
             <strong>When did you move to this address? </strong>
         </div>
     </div>
-    <div class="row form-group">
+    <div class="row">
         <div class="form-group col-lg-6">
             <div class="input-group">
                 <span class="input-group-prepend">

@@ -50,6 +50,27 @@ if (!$_SESSION) {
         color: #fff;
     }
 
+    #myBtn {
+        opacity: 0.2;
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #9f0509;
+        color: white;
+        cursor: pointer;
+        padding: 11px;
+        font-size: 15px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
 </style>
 
 <body>
@@ -81,7 +102,6 @@ if (!$_SESSION) {
                     <div class="col-md-12">
                         <div class="row text-right form-group">
                             <div class="col-md-12">
-                                <button type="button" class="btn" id="scroll-down"><i class="icon-circle-down2"></i></button>
                             </div>
                         </div>
 
@@ -134,6 +154,12 @@ if (!$_SESSION) {
                                         </div>
                                     </fieldset>
                                 </form>
+                                <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="icon-circle-down2"></i></button>
+                                <div class="row text-center" style="padding-right: 21px;">
+                                    <div class="col-md-12 text-right" id="pagin">
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -141,18 +167,36 @@ if (!$_SESSION) {
             </div>
         </div>
     </div>
-    
-    <div id="modal_default" class="modal fade" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h6 class="font-weight-semibold text-center">Form submitted successfully!</h6>
-                </div>
-            </div>
-        </div>
-    </div>
 
 <script>
+
+    var mybutton = document.getElementById("myBtn");
+
+    window.onscroll = function() {scrollFunction()};
+
+    $(window).on("scroll", function() {
+        var scrollHeight = $(document).height();
+        var scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+            mybutton.style.display = "none";
+        }
+    });
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        var step = $("#seta_pdf_form_wizard").steps("getCurrentIndex");
+        var stepNo = step + 1;
+        $('#pagin').html("Page "+ stepNo +" of 7");
+        mybutton.style.display = "block";
+      }else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    function topFunction() {
+      $("html, body").animate({ scrollTop: $(document).height()-$(window).height() });
+    }
+
     function save_form_data(){
         var formData = new FormData($("#seta_pdf_form_wizard")[0]);
         formData.append("submitType", "ajax");
@@ -170,8 +214,9 @@ if (!$_SESSION) {
     function finish_form(){
         var id = '<?php echo $_SESSION['user_id']; ?>';
         $.post('seta_pdf.php',{id:id,finishedForm:'finished'}).done(function(data){
-            alert('Form submitted successfully!');
-            window.location.replace('authentication/logout.php');
+            // alert('Form submitted successfully!');
+            // window.location.replace('authentication/logout.php');
+            console.log(data);
         });
     }
 

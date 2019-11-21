@@ -6,21 +6,25 @@ $result = mysqli_query($con_str,$query);
 ?>
 <div class="col-md-12">
     <div class="row mb-10">
-        <div class="form-group mb-3 mb-md-2 col-lg-12 text-center">
+        <div class="mb-md-2 col-lg-12 text-center">
             <strong class="mb-17 mr-2p">Have you ever been a member of the Canadian Forces?</strong>
-            <div class="custom-control custom-radio custom-control-inline">
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-12">
+            <div class="custom-control custom-radio custom-control-inline mb-10">
                 <input type="radio" class="custom-control-input" name="canadian_force_member" value="Choice1" id="no_member" checked="" <?php if (isset($formData->canadian_force_member) && $formData->canadian_force_member == 'Choice1') {echo 'checked';}?>>
                 <label class="custom-control-label" for="no_member"><strong> No</strong></label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-radio custom-control-inline mb-10">
                 <input type="radio" class="custom-control-input" name="canadian_force_member" value="2" id="former_member" <?php if (isset($formData->canadian_force_member) && $formData->canadian_force_member == '2') {echo 'checked';}?>>
                 <label class="custom-control-label" for="former_member"><strong> Yes - Former</strong></label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-radio custom-control-inline mb-10">
                 <input type="radio" class="custom-control-input" name="canadian_force_member" value="2" id="current_member" <?php if (isset($formData->canadian_force_member) && $formData->canadian_force_member == '2') {echo 'checked';}?>>
                 <label class="custom-control-label" for="current_member"><strong> Yes - Current</strong></label>
             </div>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-radio custom-control-inline" style="margin-bottom: 10px !important;">
                 <input type="radio" class="custom-control-input" name="canadian_force_member" value="3" id="reserve_member" <?php if (isset($formData->canadian_force_member) && $formData->canadian_force_member == '3') {echo 'checked';}?>>
                 <label  class="custom-control-label" for="reserve_member"><strong> Yes - Former or Current Reserve Member</strong></label>
             </div>
@@ -29,7 +33,7 @@ $result = mysqli_query($con_str,$query);
     <div class="row text-center mb-10">
         <div class="mb-md-2 col-lg-12 text-center">
             <strong class="mb-17 mr-2p">If yes, indicate your Unit’s Level of Service:</strong>
-            <div class="custom-control custom-radio custom-control-inline">
+            <div class="custom-control custom-radio custom-control-inline mt-10">
                 <input type="radio" class="custom-control-input" name="force" value="Reg" id="regular_force" checked="" <?php if (isset($formData->force) && $formData->force == 'Reg') {echo 'checked';}?>>
                 <label class="custom-control-label" for="regular_force"> Regular Forces</label>
             </div>

@@ -17,11 +17,18 @@ $result5 = mysqli_query($con_str,$query5);
 $query = "SELECT * from countries";
 $result = mysqli_query($con_str,$query);
 ?>
+
+<style type="text/css">
+    .mr-8p{
+        margin-right: 8%;
+    }
+</style>
+
 <div class="col-md-12">
-    <div class="row">
-        <div class="mb-md-2 col-lg-6 text-center">
-            <strong class="mb-17 mr-2p">Are you currently employed:</strong>
-            <div class="custom-control custom-radio custom-control-inline">
+    <div class="row form-group">
+        <div class="mb-md-2 col-lg-6 text-center mb-10">
+            <strong class="mb-17 mr-8p">Are you currently employed:</strong>
+            <div class="custom-control custom-radio custom-control-inline mt-10">
                 <input type="radio" class="custom-control-input" name="employed" value="Y" id="yes_employee" checked="" <?php if (isset($formData->employed) && $formData->employed == 'Y') {echo 'checked';}?>>
                 <label class="custom-control-label" for="yes_employee"><strong>Yes</strong></label>
             </div>
@@ -31,15 +38,15 @@ $result = mysqli_query($con_str,$query);
                 <label  class="custom-control-label" for="no_employee"><strong> No</strong></label>
             </div>
         </div>
-        <div class="mb-md-2 col-lg-6">
+        <div class="mb-md-2 col-lg-6 mt-10">
             <div class="custom-control custom-control-right custom-checkbox custom-control-inline">
                 <input type="checkbox" name="Employment" class="custom-control-input" id="custom_checkbox_inline_right_checked" <?php if (isset($formData->Employment) && $formData->Employment == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label position-static" for="custom_checkbox_inline_right_checked"><strong>If you have never worked, please indicate here</strong></label>
             </div>
         </div>
     </div>
-    <div class="row mt-10">
-        <div class="form-group mb-3 mb-md-2 col-lg-12 text-center">
+    <div class="row">
+        <div class="col-lg-12 text-center">
             <label class="mb-17 mr-2p"><strong>List all employment information for the last 5 years. List present employer first. If you have not worked, write N/A </strong>(not applicable).</label>
         </div>
     </div>
@@ -79,10 +86,10 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-4">
+        <div class="col-lg-4">
             <input type="text" class="form-control" name="emp_occupation" placeholder="Occupation" value="<?php if (isset($formData) && !empty($formData->emp_occupation)){echo $formData->emp_occupation;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -136,10 +143,10 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-4">
+        <div class="col-lg-4">
             <input type="text" class="form-control" name="emp_occupation2" placeholder="Occupation" value="<?php if (isset($formData) && !empty($formData->emp_occupation2)){echo $formData->emp_occupation2;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -193,10 +200,10 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-4">
+        <div class="col-lg-4">
             <input type="text" class="form-control" name="emp_occupation3" placeholder="Occupation" value="<?php if (isset($formData) && !empty($formData->emp_occupation3)){echo $formData->emp_occupation3;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -250,10 +257,10 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-4">
+        <div class="col-lg-4">
             <input type="text" class="form-control" name="emp_occupation4" placeholder="Occupation" value="<?php if (isset($formData) && !empty($formData->emp_occupation4)){echo $formData->emp_occupation4;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -307,10 +314,10 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-4">
+        <div class="col-lg-4">
             <input type="text" class="form-control" name="emp_occupation5" placeholder="Occupation" value="<?php if (isset($formData) && !empty($formData->emp_occupation5)){echo $formData->emp_occupation5;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
@@ -319,7 +326,7 @@ $result = mysqli_query($con_str,$query);
             </div>
         </div>
         <div class="form-group col-lg-2">
-            <div class="input-group">
+            <div class="input-group mb-10">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
@@ -328,7 +335,7 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center mb-10">
         <div class="col-lg-12">
             <strong>If you have not been employed for the last 5 years, please provide information of your <u>Last Employer</u>:</strong>
         </div>
@@ -370,10 +377,10 @@ $result = mysqli_query($con_str,$query);
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-lg-4">
+        <div class="col-lg-4">
             <input type="text" class="form-control" name="emp_occupation6" placeholder="Occupation" value="<?php if (isset($formData) && !empty($formData->emp_occupation6)){echo $formData->emp_occupation6;} ?>">
         </div>
-        <div class="form-group col-lg-2">
+        <div class="col-lg-2">
             <div class="input-group">
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>

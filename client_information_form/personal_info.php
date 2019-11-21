@@ -41,24 +41,24 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <div class="row text-center">
         <div class="form-group col-lg-12">
             <label class="d-block font-weight-semibold"> <strong>CHECK OFF THE BOX THAT IS APPLICABLE TO YOUR APPLICATION</strong></label>
-            <div class="custom-control custom-checkbox custom-control-inline" style="margin-left: 40px;">
+            <div class="custom-control custom-checkbox custom-control-inline mb-10">
                 <input type="checkbox" class="custom-control-input" id="checkbox1" name="CP" <?php if (isset($formData->CP) && $formData->CP == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="checkbox1"> <strong>Canadian Pardon</strong></label>
             </div>
 
-            <div class="custom-control custom-checkbox custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline mb-10">
                 <input type="checkbox" class="custom-control-input" id="checkbox2" name="USTW" <?php if (isset($formData->USTW) && $formData->USTW == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="checkbox2"> <strong>U.S. Travel Waiver</strong></label>
             </div>
-            <div class="custom-control custom-checkbox custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline mb-10">
                 <input type="checkbox" class="custom-control-input" id="checkbox3" name="Both" <?php if (isset($formData->Both) && $formData->Both == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="checkbox3"> <strong>both Pardon & Waiver</strong></label>
             </div>
-            <div class="custom-control custom-checkbox custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline mb-10">
                 <input type="checkbox" class="custom-control-input" id="checkbox4" name="FileDestruction" <?php if (isset($formData->FileDestruction) && $formData->FileDestruction == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="checkbox4"> <strong>File Destruction</strong></label>
             </div>
-            <div class="custom-control custom-checkbox custom-control-inline">
+            <div class="custom-control custom-checkbox custom-control-inline mb-10">
                 <input type="checkbox" class="custom-control-input" id="checkbox5" name="TRP" <?php if (isset($formData->TRP) && $formData->TRP == 'on') {echo 'checked';}?>>
                 <label class="custom-control-label" for="checkbox5"> <strong>TRP</strong></label>
             </div>
@@ -209,7 +209,7 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
         </div>
     </div>
     <div class="row form-group">
-        <div class="form-group col-lg-6">
+        <div class="col-lg-6">
             <label><strong>U.S Social Security Number: </strong><span class="text-danger">*</span></label>
             <input type="text" class="form-control required" name="security_no" placeholder="Social Security Number" value="<?php if (isset($formData) && !empty($formData->security_no)){echo $formData->security_no;} ?>">
         </div>
@@ -222,132 +222,122 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
     <!---------Father & Mother Details Starts------------>
 
     <div class="row form-group">
-        <div class="col-lg-6 text-center">
-            <strong>Father Details:</strong>
-        </div>
-        <div class="col-lg-6 text-center">
-            <strong>Mother Details:</strong>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Family Name: </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="father_family_name" placeholder="Father's Family Name" value="<?php if (isset($formData) && !empty($formData->father_family_name)){echo $formData->father_family_name;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="mother_family_name" placeholder="Mother's Family Name" value="<?php if (isset($formData) && !empty($formData->mother_family_name)){echo $formData->mother_family_name;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>First Name: </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="father_first_name" placeholder="Father's First Name" value="<?php if (isset($formData) && !empty($formData->father_first_name)){echo $formData->father_first_name;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="mother_first_name" placeholder="Mother's First Name" value="<?php if (isset($formData) && !empty($formData->mother_first_name)){echo $formData->mother_first_name;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Date of Birth (MM/DD/YYYY): </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control required pickadate-accessibility" name="father_dob" placeholder="Father's Date of Birth" value="<?php if (isset($formData) && !empty($formData->father_dob)){echo $formData->father_dob;} ?>">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <label><strong>Father Details:</strong></label>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="father_family_name" placeholder="Father's Family Name" value="<?php if (isset($formData) && !empty($formData->father_family_name)){echo $formData->father_family_name;} ?>">
+                </div>
+                <div class="col-md-6 ">
+                    <input type="text" class="form-control required" name="father_first_name" placeholder="Father's First Name" value="<?php if (isset($formData) && !empty($formData->father_first_name)){echo $formData->father_first_name;} ?>">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control required pickadate-accessibility" name="father_dob" placeholder="Father's Date of Birth" value="<?php if (isset($formData) && !empty($formData->father_dob)){echo $formData->father_dob;} ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="father_birth_city" placeholder="Father's Birth City" value="<?php if (isset($formData) && !empty($formData->father_birth_city)){echo $formData->father_birth_city;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <select data-placeholder="Select Father's Birth Country" class="form-control required form-control-select2" name="father_birth_country" data-fouc >
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_array($father_birth_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->father_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="father_residence_city" placeholder="Father's Residence City" value="<?php if (isset($formData) && !empty($formData->father_residence_city)){echo $formData->father_residence_city;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <select data-placeholder="Select Father's Residence Country" class="form-control required form-control-select2" data-fouc name="father_residence_country">
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_array($father_residence_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->father_residence_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control required pickadate-accessibility" name="mother_dob" placeholder="Mother's Date of Birth" value="<?php if (isset($formData) && !empty($formData->mother_dob)){echo $formData->mother_dob;} ?>">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <label><strong>Mother Details:</strong></label>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="mother_family_name" placeholder="Mother's Family Name" value="<?php if (isset($formData) && !empty($formData->mother_family_name)){echo $formData->mother_family_name;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="mother_first_name" placeholder="Mother's First Name" value="<?php if (isset($formData) && !empty($formData->mother_first_name)){echo $formData->mother_first_name;} ?>">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control required pickadate-accessibility" name="mother_dob" placeholder="Mother's Date of Birth" value="<?php if (isset($formData) && !empty($formData->mother_dob)){echo $formData->mother_dob;} ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="mother_birth_city" placeholder="Mother's Birth City" value="<?php if (isset($formData) && !empty($formData->mother_birth_city)){echo $formData->mother_birth_city;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <select data-placeholder="Select Mother's Birth Country" class="form-control required form-control-select2" name="mother_birth_country" data-fouc >
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_array($mother_birth_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mother_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" name="mother_residence_city" placeholder="Mother's Residence City" value="<?php if (isset($formData) && !empty($formData->mother_residence_city)){echo $formData->mother_residence_city;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <select data-placeholder="Select Mother's Residence Country" class="form-control required form-control-select2" name="mother_residence_country" data-fouc >
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_array($mother_residence_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mother_residence_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>City of Birth: </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="father_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->father_birth_city)){echo $formData->father_birth_city;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="mother_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mother_birth_city)){echo $formData->mother_birth_city;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Country of Birth: </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control required form-control-select2" name="father_birth_country" data-fouc >
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_array($father_birth_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->father_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
-
-            </select>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control required form-control-select2" name="mother_birth_country" data-fouc >
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_array($mother_birth_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mother_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
-
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>City of Residence: </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="father_residence_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->father_residence_city)){echo $formData->father_residence_city;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control required" name="mother_residence_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->mother_residence_city)){echo $formData->mother_residence_city;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Country of Residence: </strong><span class="text-danger">*</span></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control required form-control-select2" data-fouc name="father_residence_country">
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_array($father_residence_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->father_residence_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
-
-            </select>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" class="form-control required form-control-select2" name="mother_residence_country" data-fouc >
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_array($mother_residence_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->mother_residence_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
-
-            </select>
-        </div>
-    </div>
+    
 
     <!---------Current & Former Details Starts------------>
 
@@ -356,184 +346,159 @@ $former_spouse_marriage_country_result = mysqli_query($con_str, $former_spouse_m
             <label><strong>Complete this section only if you are currently married (If not, write N/A) or if you were previously married (If not, write N/A)</strong></label>
         </div>
     </div>
-    <div class="row form-group">
-        <div class="col-lg-6 text-center">
-            <strong>Current Spouse:</strong>
-        </div>
-        <div class="col-lg-6 text-center">
-            <strong>Former Spouse:</strong>
-        </div>
-    </div>
     <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Family Name:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="cfamily_name" placeholder="Current Spouse's Family Name" value="<?php if (isset($formData) && !empty($formData->cfamily_name)){echo $formData->cfamily_name;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="ffamily_name" placeholder="Former Spouse's Family Name" value="<?php if (isset($formData) && !empty($formData->ffamily_name)){echo $formData->ffamily_name;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>First Name:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="c_first_name" placeholder="Current Spouse's First Name" value="<?php if (isset($formData) && !empty($formData->c_first_name)){echo $formData->c_first_name;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="f_f_name" placeholder="Former Spouse's First Name" value="<?php if (isset($formData) && !empty($formData->f_f_name)){echo $formData->f_f_name;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Date of Birth (MM/DD/YYYY):</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control pickadate-accessibility" name="c_dob" placeholder="Current Spouse's DOB" value="<?php if (isset($formData) && !empty($formData->c_dob)){echo $formData->c_dob;} ?>">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-12">
+                    <label> <strong>Current Spouse:</strong></label>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control pickadate-accessibility" name="f_dob" placeholder="Former Spouse's DOB" value="<?php if (isset($formData) && !empty($formData->f_dob)){echo $formData->f_dob;} ?>">
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="cfamily_name" placeholder="Current Spouse's Family Name" value="<?php if (isset($formData) && !empty($formData->cfamily_name)){echo $formData->cfamily_name;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="c_first_name" placeholder="Current Spouse's First Name" value="<?php if (isset($formData) && !empty($formData->c_first_name)){echo $formData->c_first_name;} ?>">
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>City of Birth:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="current_spouse_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->current_spouse_birth_city)){echo $formData->current_spouse_birth_city;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="former_spouse_birth_city" placeholder="City" value="<?php if (isset($formData) && !empty($formData->former_spouse_birth_city)){echo $formData->former_spouse_birth_city;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Country of Birth:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" name="current_spouse_birth_country" class="form-control select" data-fouc>
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_assoc($current_spouse_birth_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->current_spouse_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control pickadate-accessibility" name="c_dob" placeholder="Current Spouse's DOB" value="<?php if (isset($formData) && !empty($formData->c_dob)){echo $formData->c_dob;} ?>">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="current_spouse_birth_city" placeholder="Current Spouse's Birth City" value="<?php if (isset($formData) && !empty($formData->current_spouse_birth_city)){echo $formData->current_spouse_birth_city;} ?>">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <select data-placeholder="Select Current Spouse's Birth Country" name="current_spouse_birth_country" class="form-control select" data-fouc>
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_assoc($current_spouse_birth_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->current_spouse_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
 
-            </select>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" name="former_spouse_birth_country" class="form-control select" data-fouc>
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_assoc($former_spouse_birth_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->former_spouse_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control pickadate-accessibility" name="c_dom" placeholder="Current Spouse's Date of Marriage" value="<?php if (isset($formData) && !empty($formData->c_dom)){echo $formData->c_dom;} ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="current_spouse_marriage_city" placeholder="Current Spouse's Marriage City" value="<?php if (isset($formData) && !empty($formData->current_spouse_marriage_city)){echo $formData->current_spouse_marriage_city;} ?>">
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="current_spouse_marriage_state" placeholder="Current Spouse's Marriage State" value="<?php if (isset($formData) && !empty($formData->current_spouse_marriage_state)){echo $formData->current_spouse_marriage_state;} ?>">
+                </div>
+            </div>
+            <div class="row form-group">
+               <div class="col-md-6">
+                   <select data-placeholder="Select Current Spouse's Marriage Country" name="current_spouse_marriage_country" class="form-control select" data-fouc>
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_assoc($current_spouse_marriage_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->current_spouse_marriage_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
 
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Date of Marriage (MM/DD/YYYY): </strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control pickadate-accessibility" name="c_dom" placeholder="Current Spouse's Date of Marriage" value="<?php if (isset($formData) && !empty($formData->c_dom)){echo $formData->c_dom;} ?>">
+                    </select>
+               </div> 
             </div>
         </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control pickadate-accessibility" name="f_dom" placeholder="Former Spouse's Date of Marriage" value="<?php if (isset($formData) && !empty($formData->f_dom)){echo $formData->f_dom;} ?>">
+        <div class="col-lg-6">
+            <div class="row">
+                <div class="col-lg-12">
+                    <label> <strong>Former Spouse:</strong></label>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>City or Town of Marriage:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="current_spouse_marriage_city" placeholder="Marriage City" value="<?php if (isset($formData) && !empty($formData->current_spouse_marriage_city)){echo $formData->current_spouse_marriage_city;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="former_spouse_marriage_city" placeholder="Marriage City" value="<?php if (isset($formData) && !empty($formData->former_spouse_marriage_city)){echo $formData->former_spouse_marriage_city;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>State or Province of Marriage:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="current_spouse_marriage_state" placeholder="Marriage Province" value="<?php if (isset($formData) && !empty($formData->current_spouse_marriage_state)){echo $formData->current_spouse_marriage_state;} ?>">
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="former_spouse_marriage_state" placeholder="Marriage Province" value="<?php if (isset($formData) && !empty($formData->former_spouse_marriage_state)){echo $formData->former_spouse_marriage_state;} ?>">
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-2 pt-10">
-            <label><strong>Country of Marriage:</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" name="current_spouse_marriage_country" class="form-control select" data-fouc>
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_assoc($current_spouse_marriage_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->current_spouse_marriage_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
-
-            </select>
-        </div>
-        <div class="form-group col-lg-5">
-            <select data-placeholder="Select Country" name="former_spouse_marriage_country" class="form-control select" data-fouc>
-                <option value="Canada">Canada</option>
-                <?php while ($countries = mysqli_fetch_assoc($former_spouse_marriage_country_result)) { ?>
-                    <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->former_spouse_marriage_country == $countries['name']){echo 'selected="selected"';} ?>>
-                        <?php echo $countries['name']; ?>
-                    </option>
-                <?php } ?>
-
-            </select>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-7 pt-10">
-            <label><strong>Date of Termination of Marriage (MM/DD/YYYY):</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <div class="input-group">
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-calendar22"></i></span>
-                </span>
-                <input type="text" class="form-control pickadate-accessibility" name="t_m_dob" placeholder="Marriage Termination Date" value="<?php if (isset($formData) && !empty($formData->t_m_dob)){echo $formData->t_m_dob;} ?>">
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="ffamily_name" placeholder="Former Spouse's Family Name" value="<?php if (isset($formData) && !empty($formData->ffamily_name)){echo $formData->ffamily_name;} ?>">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="f_f_name" placeholder="Former Spouse's First Name" value="<?php if (isset($formData) && !empty($formData->f_f_name)){echo $formData->f_f_name;} ?>">
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="form-group col-lg-7 pt-10">
-            <label><strong>Place of Termination of Marriage (MM/DD/YYYY):</strong></label>
-        </div>
-        <div class="form-group col-lg-5">
-            <input type="text" class="form-control" name="terminate_marriage" placeholder="Place" value="<?php if (isset($formData) && !empty($formData->terminate_marriage)){echo $formData->terminate_marriage;} ?>">
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control pickadate-accessibility" name="f_dob" placeholder="Former Spouse's DOB" value="<?php if (isset($formData) && !empty($formData->f_dob)){echo $formData->f_dob;} ?>">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="former_spouse_birth_city" placeholder="Former Spouse's Birth City" value="<?php if (isset($formData) && !empty($formData->former_spouse_birth_city)){echo $formData->former_spouse_birth_city;} ?>">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <select data-placeholder="Select Former Spouse's Birth Country" name="former_spouse_birth_country" class="form-control select" data-fouc>
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_assoc($former_spouse_birth_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->former_spouse_birth_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control pickadate-accessibility" name="f_dom" placeholder="Former Spouse's Date of Marriage" value="<?php if (isset($formData) && !empty($formData->f_dom)){echo $formData->f_dom;} ?>">
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="former_spouse_marriage_city" placeholder="Former Spouse's Marriage City" value="<?php if (isset($formData) && !empty($formData->former_spouse_marriage_city)){echo $formData->former_spouse_marriage_city;} ?>">
+                </div>
+                <div class="col-lg-6">
+                    <input type="text" class="form-control" name="former_spouse_marriage_state" placeholder="Former Spouse's Marriage State" value="<?php if (isset($formData) && !empty($formData->former_spouse_marriage_state)){echo $formData->former_spouse_marriage_state;} ?>">
+                </div>
+            </div>
+            <div class="row form-group">
+               <div class="col-md-6">
+                   <select data-placeholder="Select Former Spouse's Marriage Country" name="former_spouse_marriage_country" class="form-control select" data-fouc>
+                        <option value="Canada">Canada</option>
+                        <?php while ($countries = mysqli_fetch_assoc($former_spouse_marriage_country_result)) { ?>
+                            <option value="<?php echo $countries['name']; ?>" <?php if (isset($formData) && $formData->former_spouse_marriage_country == $countries['name']){echo 'selected="selected"';} ?>>
+                                <?php echo $countries['name']; ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+               </div>
+               <div class="col-md-6">
+                   <div class="input-group">
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-calendar22"></i></span>
+                        </span>
+                        <input type="text" class="form-control pickadate-accessibility" name="t_m_dob" placeholder="Marriage Termination Date" value="<?php if (isset($formData) && !empty($formData->t_m_dob)){echo $formData->t_m_dob;} ?>">
+                    </div>
+               </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="terminate_marriage" placeholder="Marriage Termination Place" value="<?php if (isset($formData) && !empty($formData->terminate_marriage)){echo $formData->terminate_marriage;} ?>">
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -139,7 +139,7 @@ $result = mysqli_query($con_str, $query);
                 <span class="input-group-prepend">
                     <span class="input-group-text"><i class="icon-calendar22"></i></span>
                 </span>
-                <input type="text" class="form-control pickadate-accessibility" name="plan_doe" placeholder="Date of Birth" value="<?php if (isset($formData) && !empty($formData->plan_doe)){echo $formData->plan_doe;} ?>">
+                <input type="text" class="form-control pickadate-accessibility" name="plan_doe" placeholder="Plan to Enter U.S." value="<?php if (isset($formData) && !empty($formData->plan_doe)){echo $formData->plan_doe;} ?>">
             </div>
         </div>
         <div class="form-group col-lg-4">
@@ -208,7 +208,7 @@ $result = mysqli_query($con_str, $query);
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-lg-12">
+        <div class="mb-10 col-lg-12">
             <input type="text" class="form-control" name="court_after_1992_1" placeholder="If any convictions after 1992 were in Toronto, identify which Court(s) you attended (6 different Courts have operated in Toronto since 1992)" value="<?php if (isset($formData) && !empty($formData->court_after_1992_1)){echo $formData->court_after_1992_1;} ?>">
         </div>
     </div>
@@ -438,56 +438,92 @@ $result = mysqli_query($con_str, $query);
             </div>
         </div>
     </div>
-    <div class="row form-group">
-        <div class="form-group col-lg-4">
-            <label><strong> Type of application or petition filed:</strong></label>
-            <input type="text" class="form-control" name="application_type_filed_1" id="application_type_filed" placeholder="application type" value="<?php if (isset($formData) && !empty($formData->application_type_filed_1)){echo $formData->application_type_filed_1;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <label><strong>Location where you filed the application or petition: </strong></label>
-            <input type="text" class="form-control" name="filed_application_location_1" placeholder="for example, USCIS office or Port-of-Entry" value="<?php if (isset($formData) && !empty($formData->filed_application_location_1)){echo $formData->filed_application_location_1;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <label><strong>Describe the outcome of the application or petition: </strong></label>
-            <input type="text" class="form-control" name="filed_application_outcome_1" placeholder="for example, approved, denied, or is pending" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_1)){echo $formData->filed_application_outcome_1;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="application_type_filed_2" id="application_type_filed" placeholder="application type" value="<?php if (isset($formData) && !empty($formData->application_type_filed_2)){echo $formData->application_type_filed_2;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_location_2" placeholder="for example, USCIS office or Port-of-Entry" value="<?php if (isset($formData) && !empty($formData->filed_application_location_2)){echo $formData->filed_application_location_2;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_outcome_2" placeholder="for example, approved, denied, or is pending" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_2)){echo $formData->filed_application_outcome_2;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="application_type_filed_3" id="application_type_filed" placeholder="application type" value="<?php if (isset($formData) && !empty($formData->application_type_filed_3)){echo $formData->application_type_filed_3;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_location_3" placeholder="for example, USCIS office or Port-of-Entry" value="<?php if (isset($formData) && !empty($formData->filed_application_location_3)){echo $formData->filed_application_location_3;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_outcome_3" placeholder="for example, approved, denied, or is pending" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_3)){echo $formData->filed_application_outcome_3;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="application_type_filed_4" id="application_type_filed" placeholder="application type" value="<?php if (isset($formData) && !empty($formData->application_type_filed_4)){echo $formData->application_type_filed_4;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_location_4" placeholder="for example, USCIS office or Port-of-Entry" value="<?php if (isset($formData) && !empty($formData->filed_application_location_4)){echo $formData->filed_application_location_4;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_outcome_4" placeholder="for example, approved, denied, or is pending" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_4)){echo $formData->filed_application_outcome_4;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="application_type_filed_5" id="application_type_filed" placeholder="application type" value="<?php if (isset($formData) && !empty($formData->application_type_filed_5)){echo $formData->application_type_filed_5;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_location_5" placeholder="for example, USCIS office or Port-of-Entry" value="<?php if (isset($formData) && !empty($formData->filed_application_location_5)){echo $formData->filed_application_location_5;} ?>">
-        </div>
-        <div class="form-group col-lg-4">
-            <input type="text" class="form-control" name="filed_application_outcome_5" placeholder="for example, approved, denied, or is pending" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_5)){echo $formData->filed_application_outcome_5;} ?>">
+    <div class="row">
+        <div class="col-lg-12">
+            <label><strong>Application or Petition Filed Details</strong></label>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label><strong>1.</strong></label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="application_type_filed_1" id="application_type_filed" placeholder="Type of Application or Petition" value="<?php if (isset($formData) && !empty($formData->application_type_filed_1)){echo $formData->application_type_filed_1;} ?>">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="filed_application_location_1" placeholder="Location where you Filed the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_location_1)){echo $formData->filed_application_location_1;} ?>">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="filed_application_outcome_1" placeholder="Describe the Outcome of the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_1)){echo $formData->filed_application_outcome_1;} ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label><strong>2.</strong></label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="application_type_filed_2" id="application_type_filed" placeholder="Type of Application or Petition" value="<?php if (isset($formData) && !empty($formData->application_type_filed_2)){echo $formData->application_type_filed_2;} ?>">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="filed_application_location_2" placeholder="Location where you Filed the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_location_2)){echo $formData->filed_application_location_2;} ?>">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="filed_application_outcome_2" placeholder="Describe the Outcome of the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_2)){echo $formData->filed_application_outcome_2;} ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label><strong>3.</strong></label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="application_type_filed_3" id="application_type_filed" placeholder="Type of Application or Petition" value="<?php if (isset($formData) && !empty($formData->application_type_filed_3)){echo $formData->application_type_filed_3;} ?>">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="filed_application_location_3" placeholder="Location where you Filed the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_location_3)){echo $formData->filed_application_location_3;} ?>">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control" name="filed_application_outcome_3" placeholder="Describe the Outcome of the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_3)){echo $formData->filed_application_outcome_3;} ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label><strong>4.</strong></label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="application_type_filed_4" id="application_type_filed" placeholder="Type of Application or Petition" value="<?php if (isset($formData) && !empty($formData->application_type_filed_4)){echo $formData->application_type_filed_4;} ?>">
+        </div>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="filed_application_location_4" placeholder="Location where you Filed the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_location_4)){echo $formData->filed_application_location_4;} ?>">
+        </div>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="filed_application_outcome_4" placeholder="Describe the Outcome of the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_4)){echo $formData->filed_application_outcome_4;} ?>">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label><strong>5.</strong></label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="application_type_filed_5" id="application_type_filed" placeholder="Type of Application or Petition" value="<?php if (isset($formData) && !empty($formData->application_type_filed_5)){echo $formData->application_type_filed_5;} ?>">
+        </div>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="filed_application_location_5" placeholder="Location where you Filed the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_location_5)){echo $formData->filed_application_location_5;} ?>">
+        </div>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" name="filed_application_outcome_5" placeholder="Describe the Outcome of the Application or Petition" value="<?php if (isset($formData) && !empty($formData->filed_application_outcome_5)){echo $formData->filed_application_outcome_5;} ?>">
+        </div>
+    </div>
+
     <div class="row form-group">
         <div class="mb-md-2 col-lg-12">
             <label class="mr-2p"><strong>8. Have you EVER been denied or refused an immigration benefit by the U.S. Government or had a benefit revoked or terminated (including but not limited to Visas)?</strong></label>
@@ -499,6 +535,10 @@ $result = mysqli_query($con_str, $query);
                 <input type="radio" class="custom-control-input" name="immigration_refused" id="no_immigration_refused" value="N" <?php if (isset($formData->immigration_refused) && $formData->immigration_refused == 'N') {echo 'checked';}?>>
                 <label class="custom-control-label" for="no_immigration_refused"> No</label>
             </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-12">
             <textarea rows="2" cols="3" class="form-control" name="immigration_textarea8"><?php if (isset($formData) && !empty($formData->immigration_textarea8)){echo $formData->immigration_textarea8;} ?></textarea>
         </div>
     </div>
@@ -514,16 +554,7 @@ $result = mysqli_query($con_str, $query);
     </div>
     <div class="row mb-10">
         <div class="col-lg-4">
-            <strong>Toronto Court Locations</strong>
-        </div>
-        <div class="col-lg-2">
-            <strong>Select all applicable boxes</strong>
-        </div>
-        <div class="col-lg-4">
-            <strong>Toronto Court Locations</strong>
-        </div>
-        <div class="col-lg-2">
-            <strong>Select all applicable boxes</strong>
+            <label><strong>Toronto Court Locations </strong>(Select all applicable boxes)</label>
         </div>
     </div>
     <div class="row form-group">
